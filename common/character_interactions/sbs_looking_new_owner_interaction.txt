@@ -26,14 +26,14 @@ sbs_looking_new_owner_interaction = {
 	}
 	on_accept = {
 		scope:recipient = {
+			random_living_character = {
+				limit = { has_trait = seed_of_destruction }
+				save_scope_as = buyer
+			}
+			scope:actor = { save_scope_as = seller }
+			scope:recipient = { save_scope_as = slave }
 			if = {
-				limit = { any_living_character = { has_trait = seed_of_destruction } }
-				random_living_character = {
-					limit = { has_trait = seed_of_destruction }
-					save_scope_as = buyer
-				}
-				scope:actor = { save_scope_as = seller }
-				scope:recipient = { save_scope_as = slave }
+				limit = { exists = scope:buyer }
 				carn_buy_slave_effect = { SLAVE_PRICE = scope:recipient.carn_slave_price_value }
 			}
 			else_if = {

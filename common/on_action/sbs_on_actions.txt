@@ -50,6 +50,8 @@ random_ntr_on_action = {
 						count = 0
 					}
 				}
+				has_relation_lover = root
+				primary_spouse = { is_close_family_of = root }
 			}
 			NOT = { has_trait = chaste }
 		}

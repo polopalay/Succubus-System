@@ -251,13 +251,6 @@ sbs_ntr_event.0121 = {
 			reason = lover_shared_deviancy
 			target = scope:ntr_character
 		}
-		scope:ntr_character = {
-			if = {
-				limit = { is_immortal = no }
-				add_trait = immortal
-				set_immortal_age = 45
-			}
-		}
 	}
 	option = {
 		ai_chance = { base = 80 }
@@ -660,12 +653,8 @@ sbs_ntr_event.0231 = {
 		custom_tooltip = sbs_ntr_event.0231.a.tt
 		hidden_effect = {
 			scope:ntr_character = {
-				if = {
-					limit = { has_trait = immortal }
-					remove_trait = immortal
-					add_trait = seed_of_destruction
-					set_immortal_age = 45
-				}
+				add_trait = seed_of_destruction
+				set_immortal_age = 45
 			}
 		}
 		primary_spouse = {
