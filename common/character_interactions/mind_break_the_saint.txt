@@ -1,0 +1,87 @@
+﻿mind_break_the_saint_interaction = {
+	icon = sbs_devils_curse_interaction
+	desc = mind_break_the_saint_interaction.desc
+	category = interaction_category_prison
+	use_diplomatic_range = no
+	cooldown = { years = 1 }
+	cooldown_against_recipient = { years = 1 }
+	is_shown = {
+		scope:actor = {
+			is_ruler = yes
+			faith.religion = religion:satanic_religion
+		}
+		scope:recipient = {
+			has_trait = saint
+		}
+	}
+	is_valid = {
+		scope:actor = {
+			OR = {
+				has_trait = sbs_demon
+				AND = {
+					has_trait_xp = { trait = sbs_succubus track = loyalty value = 5 }
+					has_trait_xp = { trait = sbs_succubus track = corruption value = 5 }
+				}
+			}
+		}
+		scope:recipient = {
+			OR = {
+				is_imprisoned_by = scope:actor
+				has_relation_slave = scope:actor
+			}
+		}
+	}
+	on_accept = {
+		scope:actor = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value = -5
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = -5
+			}
+		}
+		scope:recipient = {
+			if = {
+				NOT = { has_relation_slave_owner = scope:actor }
+				add_opinion = { target = root modifier = carn_wants_to_be_your_slave_opinion }
+				carn_enslave_effect = { SLAVE = this OWNER = root DRAMA = yes }
+			}
+			else_if = {
+				limit = { NOT = { has_trait = deviant } }
+				add_trait = deviant
+			}
+			else_if = {
+				limit = { NOT = { has_trait = witch } }
+				add_trait = witch
+			}
+			else_if = {
+				limit = { NOT = { faith = scope:actor.faith } }
+				set_character_faith_with_conversion = scope:actor.faith
+			}
+			else_if = {
+				limit = { has_trait = saint }
+				remove_trait = saint
+				remove_trait = faith_warrior
+				remove_trait = populist_leader
+				remove_trait = immortal
+				mind_break_personality = yes
+				add_trait = sbs_lesser_succubus
+				remove_trait = loyal
+				add_trait = disloyal
+				give_nickname = nick_the_betrayer
+				set_immortal_age = 18
+			}
+		}
+	}
+	auto_accept = yes
+	ai_frequency = 12
+	ai_targets = {
+		ai_recipients = courtiers
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}

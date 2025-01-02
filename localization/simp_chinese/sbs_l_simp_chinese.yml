@@ -1,0 +1,124 @@
+﻿l_simp_chinese:
+ any_prisoner_count: "任何 [prisoners|E]"
+ any_county_province: "任何 [province|E]"
+
+ have_sex_opinion: "最近有过性行为"
+ be_healed_opinion: "被黑魔法治愈"
+
+ COA_DESIGNER_CATEGORY_cherilewd: "淫荡"
+
+ magic_creation: "$trinket$"
+ magic_creation_miscellaneous: "$trinket$"
+ artifact_magic_creation: "魔法创造"
+
+ philosopher_stone: "哲学之石"
+ philosopher_stone.d: "哲学之石是一种传奇的炼金物质，据说能够将低级金属转变为黄金或白银，并且作为赐予不朽的生命之灵药。"
+
+ master_dildo: "我的主人"
+ master_dildo_desc: "只看着它就让人感到双膝无力。"
+
+ mistress_dildo: "谦卑的守护者"
+ mistress_dildo_desc: "只看着它就让女性部位感到脉动。"
+
+ prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] 和 [had_sex_with_effect_partner.GetShortUIName] 发生性关系。"
+
+ nickname_the_bitch: "母狗"
+ nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 是一只发情的母狗，愿意无偿发生性关系。"
+
+ nickname_the_slut: "妓女"
+ nickname_the_slut_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 公然自称为妓女，这让顾客既愤怒又感到好笑。"
+
+ nickname_the_wench: "女侍"
+ nickname_the_wench_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 在整个王国都以其淫荡的名声而闻名。"
+
+ nickname_the_whore: "妓女"
+ nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 曾是一位贵族，但放弃了一切成为妓女。"
+
+ nickname_the_semen_tank: "精液罐"
+ nickname_the_semen_tank_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 对精液有着强烈的热情。"
+
+ nickname_the_penis_guillotine: "阴茎断头台"
+ nickname_the_penis_guillotine_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 随时随地与任何人发生性关系。"
+
+ nickname_the_sex_machine: "性爱机器"
+ nickname_the_sex_machine_desc: "精液提取器，阴茎切割器，这些称号都不足以形容 [CHARACTER.GetHerHis|U] 的性才能。"
+
+ nickname_the_ladycow: "母牛"
+ nickname_the_ladycow_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 是 [CHARACTER.GetHerHis|U] 军队的母牛妓女。我的荣誉和尊严被自己的士兵践踏。"
+
+ nickname_the_exhibitionist: "展览主义者"
+ nickname_the_exhibitionist_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] 以其展览主义、公共性爱和公开排尿而闻名。"
+
+ nickname_the_demon_queen: "恶魔女王"
+ nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]是一个来自地狱的生物，将把邪恶的祝福带给这个世界。"
+ nickname_the_demon_king: "恶魔王"
+ nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]是一个来自地狱的生物，将把邪恶的祝福带给这个世界。"
+
+ nickname_the_devil_creation: "恶魔生物"
+ nickname_the_devil_creation_desc: "从恶魔的力量中诞生的孩子，注定要给世界带来混乱和毁灭。"
+
+ d_laamp_saint: "圣徒的净化"
+ d_darc: "D'Arc"
+ d_laamp_satan: "撒旦的恶魔"
+ k_lilith: "莉莉丝的妓女"
+ k_abandon: "阿巴顿的战马"
+ k_beelzebub: "别西卜病原体"
+ k_mammon: "玛门的战士"
+ k_belial: "贝利亚尔的恶魔"
+ k_asmodeus: "阿斯莫德的孩子"
+
+ succubus_dark_amry: "邪恶生物"
+ succubus_dark_amry_flavor: "邪恶生物"
+ succubus_death_korps: "死亡军团"
+ succubus_death_korps_flavor: "死亡军团"
+ succubus_zombie: "Zombie"
+ succubus_zombie_flavor: "Zombie"
+ succubus_skeleton: "Skeleton"
+ succubus_skeleton_flavor: "Skeleton"
+
+ succubus_buff: "魔鬼的祝福"
+ succubus_buff_desc: "此人曾受到女魅的祝福"
+ succubus_debuff: "魔鬼的诅咒"
+
+ succubus_generals: "魔鬼将军"
+ succubus_generals_desc: "魔鬼的战士被召唤来服务魔鬼的女主人"
+
+ cast_spell_recetly: "最近使用魔法"
+ cast_spell_recetly_desc: "最近使用的魔法，无法在一段时间内使用。"
+
+ action_can_offer_prostitute_combined_group_name: "提供妓女"
+ action_can_offer_prostitute_combined_group_label: "可以提供妓女"
+ action_can_offer_prostitute_combined_group_description: "您可以向角色提供妓女"
+ action_can_offer_prostitute_combined_label: "为[recipient.GetShortUIName|E]提供妓女"
+ action_can_offer_prostitute: "提供妓女"
+ action_can_offer_prostitute_desc: "为[recipient.GetShortUIName]提供性服务"
+ action_can_offer_prostitute_click: ""
+
+ beelzebub_is_alive: "别西卜还活着"
+ beelzebub_isn_seal: "别西卜没有被封印"
+ beelzebub_is_seal: "别西卜被封印"
+ beelzebub_seal: "封印别西卜"
+ lilith_is_alive: "莉莉丝还活着"
+ lilith_isn_seal: "莉莉丝没有被封印"
+ lilith_is_seal: "莉莉丝被封印"
+ lilith_seal: "封印莉莉丝"
+ abaddon_is_alive: "阿巴顿还活着"
+ abaddon_isn_seal: "阿巴顿没有被封印"
+ abaddon_is_seal: "阿巴顿被封印"
+ abaddon_seal: "封印阿巴顿"
+ mammon_is_alive: "玛门还活着"
+ mammon_isn_seal: "玛门没有被封印"
+ mammon_is_seal: "玛门被封印"
+ mammon_seal: "封印玛门"
+ asmodeus_is_alive: "阿斯莫德还活着"
+ asmodeus_isn_seal: "阿斯莫德没有被封印"
+ asmodeus_is_seal: "阿斯莫德被封印"
+ asmodeus_seal: "封印阿斯莫德"
+ belial_is_alive: "贝利亚尔还活着"
+ belial_isn_seal: "贝利亚尔没有被封印"
+ belial_is_seal: "贝利亚尔被封印"
+ belial_seal: "封印贝利亚尔"
+
+ the_expedition_of_abaddon_1: "阿巴顿的第一次远征"
+ the_expedition_of_abaddon_2: "阿巴顿的第二次远征"
+ the_expedition_of_abaddon_3: "阿巴顿的第三次远征"

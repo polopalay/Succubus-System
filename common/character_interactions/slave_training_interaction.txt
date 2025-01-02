@@ -1,0 +1,240 @@
+﻿slave_training_interaction = {
+	category = interaction_category_prison
+	desc = slave_training_interaction.desc
+	common_interaction = no
+	cooldown = { months = 2 }
+	cooldown_against_recipient = { months = 6 }
+	is_shown = {
+		scope:actor = {
+			is_adult = yes
+		}
+		scope:recipient = {
+			has_trait = slave
+			is_courtier_of = scope:actor
+			is_adult = yes
+		}
+	}
+	auto_accept = yes
+	on_accept = {
+		scope:actor = {
+			if = {
+				limit = { has_trait = seed_of_destruction }
+				add_trait_xp = { trait = seed_of_destruction value = 1 }
+			}
+			save_scope_as = owner
+		}
+		scope:recipient = {
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							age >= 16
+							age <= 45
+						}
+						is_immortal = yes
+					}
+					is_female = yes
+					is_lowborn = no
+				}
+				random_list = {
+					20 = {
+						trigger_event = sbs_slavery_event.0100
+					}
+					10 = {
+						modifier = {
+							OR = {
+								has_trait = lovers_pox
+								has_trait = early_great_pox
+								has_trait = great_pox
+								has_trait = leper
+								has_trait = disfigured
+							}
+							add = 90
+						}
+						modifier = {
+							OR = {
+								has_trait = blind
+								has_trait = one_eyed
+								has_trait = eunuch_1
+								has_trait = scarred
+								has_trait = cancer
+								has_trait = one_legged
+							}
+							add = 40
+						}
+						trigger_event = sbs_slavery_event.0200
+					}
+					5 = { trigger_event = sbs_slavery_event.0300 }
+					0 = {
+						modifier = {
+							scope:actor.liege = { is_attracted_to_gender_of = scope:recipient }
+							NOT = { scope:actor.liege = scope:actor }
+							scope:recipient = { is_immortal = yes }
+							add = 5
+						}
+						trigger_event = sbs_slavery_event.0400
+					}
+					0 = {
+						modifier = { scope:actor = { is_landed = yes } add = 5 }
+						trigger_event = sbs_slavery_event.0800
+					}
+					0 = {
+						modifier = { any_secret = { secret_type = secret_prostitute } add = 100 }
+						trigger_event = sbs_slavery_event.0500
+					}
+					5 = { trigger_event = sbs_slavery_event.0600 }
+					0 = {
+						modifier = {
+							OR = {
+								any_relation = { type = friend is_adult = yes is_attracted_to_gender_of = scope:recipient NOT = { this = scope:actor } }
+								any_relation = { type = best_friend is_adult = yes is_attracted_to_gender_of = scope:recipient NOT = { this = scope:actor }  }
+							}
+							add = 10
+						}
+						trigger_event = sbs_slavery_event.0700
+					}
+					0 = {
+						modifier = {
+							OR = {
+								any_relation = { type = rival is_adult = yes }
+								any_relation = { type = nemesis is_adult = yes }
+							}
+							add = 200
+						}
+						trigger_event = sbs_slavery_event.0900
+					}
+					0 = {
+						modifier = {
+							OR = {
+								any_relation = { type = lover is_adult = yes NOT = { this = scope:actor }  }
+								any_relation = { type = soulmate is_adult = yes NOT = { this = scope:actor }  }
+							}
+							add = 200
+						}
+						trigger_event = sbs_slavery_event.3000
+					}
+					0 = {
+						modifier = {
+							NOT = { has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier }
+							add = 5
+						}
+						trigger_event = sbs_slavery_event.5000
+					}
+					0 = {
+						modifier = {
+							has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
+							add = 5
+						}
+						trigger_event = sbs_slavery_event.5100
+					}
+					0 = {
+						modifier = {
+							scope:actor = { any_prisoner = { NOT = { this = scope:recipient } is_adult = yes is_attracted_to_gender_of = scope:recipient } }
+							add = 5
+						}
+						trigger_event = sbs_slavery_event.5200
+					}
+					0 = {
+						modifier = {
+							scope:actor = { any_courtier = { NOT = { this = scope:recipient } is_adult = yes is_female = no has_trait = slave } }
+							add = 5
+						}
+						trigger_event = sbs_slavery_event.5300
+					}
+					0 = {
+						modifier = {
+							has_trait = drunkard
+							add = 200
+						}
+						trigger_event = sbs_slavery_event.6000
+					}
+					0 = {
+						modifier = {
+							any_scheme = {
+								scheme_type = murder 
+								scheme_target_character = scope:actor
+							}
+							add = 200
+						}
+						trigger_event = sbs_slavery_event.6100
+					}
+					0 = {
+						modifier = {
+							OR = {
+								has_trait = inappetetic
+								current_weight < -30
+							}
+							add = 200
+						}
+						trigger_event = sbs_slavery_event.6200
+					}
+					0 = {
+						modifier = {
+							OR = {
+								has_trait = comfort_eater
+								current_weight > 30
+							}
+							add = 200
+						}
+						trigger_event = sbs_slavery_event.6300
+					}
+					0 = {
+						modifier = {
+							any_child = { father = scope:owner has_trait = bastard has_trait = slave has_relation_slave_owner = scope:actor }
+							any_courtier = { is_adult = yes NOT = { this = scope:recipient } is_attracted_to_gender_of = scope:recipient count > 1 }
+							add = 5
+						}
+						trigger_event = sbs_slavery_event.6400
+					}
+				}
+			}
+			else_if = {
+				limit = { any_scheme = { scheme_type = murder scheme_target_character = scope:actor } }
+				every_scheme = { limit = { scheme_type = murder scheme_target_character = scope:actor } end_scheme = yes }
+			}
+			else_if = {
+				limit = { any_secret = { NOT = { is_known_by = scope:actor } } }
+				random_secret = { limit = { NOT = { is_known_by = scope:actor } } reveal_to = scope:actor }
+			}
+			else_if = {
+				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
+				add_trait = wounded_1
+			}
+			else_if = {
+				limit = { NOT = { has_trait = wounded_2 has_trait = wounded_3 } }
+				remove_trait = wounded_1
+				add_trait = wounded_2
+			}
+			else_if = {
+				limit = { NOT = { has_trait = wounded_3 } }
+				remove_trait = wounded_2
+				add_trait = wounded_3
+			}
+			else = {
+				death = {
+					death_reason = death_execution
+					killer = scope:actor
+				}
+			}
+		}
+	}
+	ai_targets = { ai_recipients = courtiers }
+	ai_potential = { always = yes }
+	ai_frequency = 2
+	ai_will_do = {
+		base = 0
+		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }
+		modifier = { scope:recipient = { is_ai = no } add = 50 }
+		modifier = {
+			scope:recipient = { is_female = yes OR = { AND = { age >= 16 age <= 45 } is_immortal = yes } is_female = yes is_lowborn = no }
+			scope:actor = { has_trait = seed_of_destruction } 
+			add = 1000
+		}
+		modifier = { scope:recipient = { has_relation_friend = scope:actor } add = -25 }
+		modifier = { scope:recipient = { has_relation_lover = scope:actor } add = -25 }
+		modifier = { scope:recipient = { has_relation_soulmate = scope:actor } add = -25 }
+		modifier = { scope:recipient = { has_trait = wounded_1 } add = -25 }
+		modifier = { scope:recipient = { has_trait = wounded_2 } add = -50 }
+		modifier = { scope:recipient = { has_trait = wounded_3 } add = -100 }
+	}
+}

@@ -1,0 +1,321 @@
+sbs_devils_gift_interaction = {
+	desc = sbs_devils_gift_interaction.desc
+	category = interaction_category_hostile
+	use_diplomatic_range = yes
+	cooldown = { years = 1 }
+	common_interaction = yes
+	is_shown = {
+		scope:actor = {
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+			}
+		}
+	}
+	is_valid = {
+		scope:actor = {
+			OR = {
+				has_trait = sbs_demon
+				has_trait_xp = { trait = sbs_succubus track = daring value >= 10 }
+			}
+		}
+	}
+	on_accept = {
+		scope:actor = {
+			if = {
+				limit = { has_trait = sbs_succubus }
+				add_trait_xp = { trait = sbs_succubus track = daring value = -10 }
+			}
+		}
+		scope:recipient = {
+			remove_character_flag = antichrist
+			random_list = {
+				0 = {
+					modifier = {
+						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
+						is_female = no
+						add = 100
+					}
+					modifier = { has_trait = seed_of_destruction add = -100 }
+					modifier = { has_trait = sbs_lesser_succubus add = -100 }
+					modifier = { has_trait = sbs_succubus add = -100 }
+					modifier = { has_trait = sbs_demon add = -100 }
+					add_trait = seed_of_destruction
+					set_immortal_age = 18
+				}
+				0 = {
+					modifier = {
+						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
+						is_female = no
+						add = 100
+					}
+					modifier = { has_trait = seed_of_destruction add = -100 }
+					modifier = { has_trait = sbs_lesser_succubus add = -100 }
+					modifier = { has_trait = sbs_succubus add = -100 }
+					modifier = { has_trait = sbs_demon add = -100 }
+					mind_break_personality = yes
+					if = {
+						limit = {
+							NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } }
+						}
+						if = {
+							trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+							add_secret = { type = secret_deviant }
+							random_secret = { limit = { secret_type = secret_deviant } reveal_to = scope:actor }
+						}
+						else = {
+							add_trait = deviant
+						}
+					}
+					if = {
+						limit = { NOR = { has_trait = witch any_secret = { secret_type = secret_witch } } }
+						if = {
+							trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+							add_secret = { type = secret_witch }
+							random_secret = { limit = { secret_type = secret_witch } reveal_to = scope:actor }
+						}
+						else = {
+							add_trait = witch
+						}
+					}
+					add_trait = sbs_lesser_succubus
+					set_immortal_age = 18
+				}
+				0 = {
+					modifier = { OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 100 }
+					modifier = { is_ruler = yes add = -100 }
+					modifier = { has_trait = slave add = -100 }
+					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier >= tier_duchy } add = -100 }
+					create_landless_adventurer_title_effect = {
+						REASON = flag:voluntary
+						FLAVOR_CHAR = scope:recipient
+					}
+				}
+				0 = {
+					modifier = {
+						scope:recipient = { is_adult = yes is_attracted_to_gender_of = scope:actor }
+						scope:actor = { is_adult = yes }
+						NOT = { scope:recipient = scope:actor }
+						add = 10
+					}
+					prostitute_effect = { PROSTITUTE = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
+				}
+				0 = {
+					modifier = { has_trait = sbs_lesser_succubus add = 10 scope:actor = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
+				}
+				0 = {
+					modifier = { has_trait = seed_of_destruction  scope:actor = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = seed_of_destruction value = 10 }
+				}
+				0 = {
+					modifier = { has_trait = sbs_succubus add = 10 scope:actor = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
+				}
+				0 = {
+					modifier = { has_trait = sbs_succubus add = 10 scope:actor = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
+				}
+				0 = {
+					modifier = { has_trait = sbs_succubus add = 10 scope:actor = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = power value = 20 }
+				}
+				0 = {
+					modifier = { has_trait = sbs_succubus add = 10 scope:actor = { has_trait = sbs_demon } }
+					add_trait_xp = { trait = sbs_succubus track = daring value = 20 }
+				}
+				10 = {
+					modifier = { OR = { any_secret = { secret_type = secret_deviant } has_trait = deviant } is_adult = yes add = -10 }
+					if = {
+						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = deviant }
+						add_secret = { type = secret_deviant }
+						random_secret = { limit = { secret_type = secret_deviant } reveal_to = scope:actor }
+					}
+					else = {
+						add_trait = deviant
+					}
+				}
+				10 = {
+					modifier = { OR = { any_secret = { secret_type = secret_witch } has_trait = witch } is_adult = yes add = -10 }
+					if = {
+						trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+						add_secret = { type = secret_witch }
+						random_secret = { limit = { secret_type = secret_witch } reveal_to = scope:actor }
+					}
+					else = {
+						add_trait = witch
+					}
+				}
+				10 = {
+					modifier = { gold < 0 add = 40 }
+					add_gold = 666
+				}
+				10 = {
+					add_prestige = 666
+				}
+				10 = {
+					add_piety = 666
+				}
+				2 = {
+					modifier = { OR = { has_trait = dull has_trait = shrewd } add = -2 }
+					add_trait = shrewd
+				}
+				2 = {
+					modifier = { OR = { has_trait = weak has_trait = strong } add = -2 }
+					add_trait = strong
+				}
+				2 = {
+					modifier = { OR = { has_trait = fecund has_trait = infertile } add = -2 }
+					add_trait = fecund
+				}
+				2 = {
+					modifier = { has_character_modifier = very_successful_fertility_treatment add = -50 }
+					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house  count = 0 } add = 198 }
+					add_character_modifier = { modifier = very_successful_fertility_treatment years = 4 }
+				}
+				2 = {
+					modifier = { has_character_modifier = modifier_amazing_fertility_counsel add = -50 }
+					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house  count = 0 } add = 198 }
+					add_character_modifier = { modifier = modifier_amazing_fertility_counsel years = 4 }
+				}
+				2 = {
+					modifier = { has_character_modifier = confident_lover add = -50 }
+					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house  count = 0} add = 198 }
+					add_character_modifier = { modifier = confident_lover years = 4 }
+				}
+				1 = {
+					modifier = { OR = { has_trait = physique_good has_trait = weak has_trait = spindly has_trait = physique_bad } add = -21}
+					add_trait = physique_good_1
+				}
+				1 = {
+					modifier = { OR = { has_trait = intellect_good has_trait = dull has_trait = intellect_bad } add = -1 }
+					add_trait = intellect_good_1
+				}
+				1 = {
+					modifier = { OR = { has_trait = beauty_good has_trait = dull has_trait = beauty_bad } add = -1 }
+					add_trait = beauty_good_1
+				}
+				1 = {
+					modifier = { OR = { has_trait = physique_good has_trait = spindly has_trait = weak has_trait = physique_bad } add = -1 }
+					add_trait = physique_good_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = physique_good rank < 3 } add = 1 }
+					change_trait_rank = { trait = physique_good rank = 1 }
+				}
+				0 = {
+					modifier = { OR = { has_trait = intellect_good has_trait = dull has_trait = intellect_bad } add = -1 }
+					add_trait = intellect_good_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = intellect_good rank < 3 } add = 1 }
+					change_trait_rank = { trait = intellect_good rank = 1 }
+				}
+				1 = {
+					modifier = { OR = { has_trait = beauty_good has  has_trait = beauty_bad } add = -1 }
+					add_trait = beauty_good_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = beauty_good rank < 3 } add = 1 }
+					change_trait_rank = { trait = beauty_good rank = 1 }
+				}
+				0 = {
+					modifier = { NOT = { has_trait = education_learning } add = 1 }
+					add_trait = education_learning_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = education_learning_1 rank < 5 } add = 1 }
+					change_trait_rank = { trait = education_learning rank = 1 }
+				}
+				0 = {
+					modifier = { NOT = { has_trait = education_martial } add = 1 }
+					add_trait = education_martial_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = education_martial_1 rank < 5 } add = 1 }
+					change_trait_rank = { trait = education_martial rank = 1 }
+				}
+				0 = {
+					modifier = { NOT = { has_trait = education_intrigue } add = 1 }
+					add_trait = education_intrigue_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = education_intrigue_1 rank < 5 } add = 1 }
+					change_trait_rank = { trait = education_intrigue rank = 1 }
+				}
+				0 = {
+					modifier = { NOT = { has_trait = education_diplomacy } add = 1 }
+					add_trait = education_diplomacy_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = education_diplomacy_1 rank < 5 } add = 1 }
+					change_trait_rank = { trait = education_diplomacy rank = 1 }
+				}
+				0 = {
+					modifier = { NOT = { has_trait = education_stewardship } add = 1 }
+					add_trait = education_stewardship_1
+				}
+				0 = {
+					modifier = { has_trait_rank = { trait = education_stewardship_1 rank < 5 } add = 1 }
+					change_trait_rank = { trait = education_stewardship rank = 1 }
+				}
+				0 = {
+					modifier = {
+						scope:actor = { has_trait = sbs_demon }
+						NOT = { has_character_modifier = succubus_generals }
+						add = 1
+					}
+					modifier = {
+						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
+						add = 19
+					}
+					add_character_modifier = { modifier = succubus_generals years = 10 }
+				}
+				20 = {
+					modifier = { has_character_modifier = succubus_buff add = -10 }
+					add_character_modifier = { modifier = succubus_buff years = 10 }
+				}
+			}
+		}
+	}
+	auto_accept = { scope:recipient = scope:actor }
+	ai_accept = {
+		base = 5
+		opinion_modifier = {
+			opinion_target = scope:actor
+			who = scope:recipient
+			multiplier = 0.1
+		}
+		modifier = { add = -2 scope:recipient.faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous  } } }
+		modifier = { add = -3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous  } } } }
+		modifier = { add = -5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous } } } }
+		modifier = { add = -10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_witchcraft_accepted has_doctrine = doctrine_witchcraft_virtuous } } } }
+		modifier = { add = -2 scope:recipient.faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous  } } }
+		modifier = { add = -3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous  } } } }
+		modifier = { add = -5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous } } } }
+		modifier = { add = -10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { NOR = { has_doctrine = doctrine_deviancy_accepted has_doctrine = doctrine_deviancy_virtuous } } } }
+		modifier = { add = 2 scope:recipient.faith = { has_doctrine = doctrine_witchcraft_virtuous  } }
+		modifier = { add = 3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { has_doctrine = doctrine_witchcraft_virtuous  } } }
+		modifier = { add = 5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { has_doctrine = doctrine_witchcraft_virtuous } } }
+		modifier = { add = 10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { has_doctrine = doctrine_witchcraft_virtuous } } }
+		modifier = { add = 2 scope:recipient.faith = { has_doctrine = doctrine_deviancy_virtuous  } }
+		modifier = { add = 3 scope:recipient = { ai_zeal > high_positive_ai_value faith = { has_doctrine = doctrine_deviancy_virtuous  } } }
+		modifier = { add = 5 scope:recipient = { ai_zeal > very_high_positive_ai_value faith = { has_doctrine = doctrine_deviancy_virtuous } } }
+		modifier = { add = 10 scope:recipient = { ai_zeal > dominant_positive_ai_value faith = { has_doctrine = doctrine_deviancy_virtuous } } }
+	}
+	ai_frequency = 6
+	ai_targets = {
+		ai_recipients = self
+		ai_recipients = family
+		ai_recipients = courtiers
+		max = 5
+	}
+	ai_potential = { always = yes }
+	ai_will_do = {
+		base = 0
+		modifier = { add = 100 scope:recipient = scope:actor scope:actor = { any_child = { is_alive = yes house = scope:actor.house count = 0 } } }
+		modifier = { add = 50 scope:recipient = { is_child_of = scope:actor } }
+		modifier = { add = 25 scope:recipient = { is_close_family_of = scope:actor } }
+		modifier = { add = 5 scope:recipient = scope:actor }
+	}
+}

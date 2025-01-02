@@ -1,0 +1,84 @@
+﻿l_simp_chinese:
+  succubus_weight_interaction: "调整体重"
+  succubus_weight_interaction.desc: "将您的体重调整到完美水平"
+
+  succubus_dealing_with_stress_interaction: "应对压力"
+  succubus_dealing_with_stress_interaction.desc: "消除压力及其带来的所有影响"
+
+  devil_dead_interaction: "治愈"
+  devil_dead_interaction.desc: "消除各种疾病、伤害和所有不光彩的名称"
+
+  succubus_purify_interaction: "净化"
+  succubus_purify_interaction.desc: "净化[recipient.GetShortUIName]的血液，消除所有坏基因"
+
+  succubus_imprison_interaction: "监禁"
+  succubus_imprison_interaction.desc: "将[recipient.GetShortUIName]监禁到你的地牢"
+
+  sbs_devils_gift_interaction: "心灵崩溃"
+  sbs_devils_gift_interaction.desc: "使[recipient.GetShortUIName]受到淫荡思想的困扰"
+
+  sbs_devils_curse_interaction: "诅咒"
+  sbs_devils_curse_interaction.desc: "给[recipient.GetShortUIName]一个\"诅咒\""
+
+  sbs_child_interaction: "创造孩子"
+  sbs_child_interaction.desc: "创造一个是[recipient.GetShortUIName]的孩子"
+
+  sbs_switch_body_interaction: "切换"
+  sbs_switch_body_interaction.desc: "扮演[recipient.GetShortUIName]"
+
+  create_lesser_succubus_interaction: "创造小魅魔"
+  create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName]将变成小魅魔"
+  recipient_secondary_create_lesser_succubus_interaction: "选择一个"
+
+  create_succubus_interaction: "创造魅魔"
+  create_succubus_interaction.desc: "[recipient.GetShortUIName]将变成魅魔"
+  recipient_secondary_create_succubus_interaction: "选择一个"
+
+  sbs_absorb_interaction: "吸收"
+  sbs_absorb_interaction.desc: "将[recipient.GetShortUIName]的力量吸收到忠诚中"
+
+  sbs_makeup_interaction: "化妆"
+  sbs_makeup_interaction.desc: "给[recipient.GetShortUIName]化妆"
+  succubus_no_horn: "没有角"
+  succubus_horn0: "长弯曲角"
+  succubus_horn1: "扭曲的角"
+  succubus_horn2: "尖细的角"
+  succubus_horn3: "弯曲的角"
+  succubus_horn4: "短角"
+  succubus_no_eyes: "没有烟熏眼"
+  succubus_marking_1: "流泪的烟熏眼"
+  succubus_marking_2: "划伤的烟熏眼"
+  succubus_marking_3: "划伤的烟熏眼"
+  succubus_marking_4: "花朵烟熏眼"
+  succubus_marking_5: "小烟熏眼"
+  succubus_marking_6: "微小烟熏眼"
+  succubus_default_eyes: "默认眼睛"
+  succubus_white_eyes: "白眼"
+  succubus_red_eyes: "红眼"
+  succubus_default_hair: "默认头发"
+  succubus_white_hair: "白发"
+  succubus_red_hair: "红发"
+  naked: "裸体"
+  glass: "玻璃"
+
+  deal_with_the_devil_interaction: "与魔鬼交易"
+  deal_with_the_devil_interaction.desc: "与魔鬼达成协议，以 \"小 \"代价获得你想要的一切。"
+  small_price: "小价格"
+
+  ask_for_become_lesser_succubus_interaction: "请求成为低级魅魔"
+  ask_for_become_lesser_succubus_interaction.desc: "请求魔鬼成为低级魅魔。"
+  recipient_secondary_ask_for_become_lesser_succubus_interaction: "选择一个"
+
+  ask_for_become_succubus_interaction: "请求成为魅魔"
+  ask_for_become_succubus_interaction.desc: "请求魔鬼成为魅魔。"
+  recipient_secondary_ask_for_become_succubus_interaction: "选择一个"
+
+  mind_break_the_saint_interaction: "精神崩溃圣徒"
+  mind_break_the_saint_interaction.desc: "使圣徒的精神崩溃"
+
+  sbs_looking_new_owner_interaction: "寻找新主人"
+  sbs_looking_new_owner_interaction.desc: "为[recipient.GetShortUIName]寻找新主人"
+
+  sbs_seal_the_devil_interaction: "封印魔鬼"
+  sbs_seal_the_devil_interaction.desc: "以神之剑的名义，我将封印这些异教徒，阿门。"
+

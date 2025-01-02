@@ -1,0 +1,131 @@
+﻿l_english:
+ any_prisoner_count: "Any [prisoners|E]"
+ any_county_province: "Any [province|E]"
+
+ have_sex_opinion: "Had sex recently"
+ be_healed_opinion: "Healed by black magic"
+
+ COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
+
+ magic_creation: "$trinket$"
+ magic_creation_miscellaneous: "$trinket$"
+ artifact_magic_creation: "Magic Creation"
+
+ philosopher_stone: "Philosopher's Stone"
+ philosopher_stone.d: "The Philosopher's Stone is a legendary alchemical substance said to be capable of turning base metals into gold or silver, and also acting as an elixir of life that grants immortality."
+
+ master_dildo: "My Master"
+ master_dildo_desc: "Just looking at it makes knees feel weak."
+
+ mistress_dildo: "Humble Guardian"
+ mistress_dildo_desc: "Just looking at it makes lady parts pulse."
+
+ prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] lays with [had_sex_with_effect_partner.GetShortUIName]"
+
+ nickname_the_bitch: "The Bitch"
+ nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a horny bitch, willing to fuck without paying."
+ 
+ nickname_the_slut: "The Slut"
+ nickname_the_slut_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] openly declares a prostitute, much to the anger and amusement of customers."
+
+ nickname_the_wench: "The Wench"
+ nickname_the_wench_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is famous throughout the kingdom as a slutty whore"
+
+ nickname_the_whore: "The Whore"
+ nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] used to be a noble, but gave it all up to become a prostitute."
+
+ nickname_the_semen_tank: "The Semen Tank"
+ nickname_the_semen_tank_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] has a strong passion for semen."
+
+ nickname_the_penis_guillotine: "The Penis Guillotine"
+ nickname_the_penis_guillotine_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] makes love anywhere, anytime, with anyone."
+
+ nickname_the_sex_machine: "The Sex Machine"
+ nickname_the_sex_machine_desc: "Semen Extractor, Cock Cutter all these titles are not enough to describe [CHARACTER.GetHerHis|U] talent in sex"
+
+ nickname_the_ladycow: "The Ladycow"
+ nickname_the_ladycow_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is the cow whore of [CHARACTER.GetHerHis|U] army. my honor and dignity were trampled by my own soldiers."
+
+ nickname_the_exhibitionist: "The Exhibitionist"
+ nickname_the_exhibitionist_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is famous for [CHARACTER.GetHerHis|U] exhibitionism, public sex, and public urination."
+
+ nickname_the_demon_queen: "The Demon Queen"
+ nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a creature of hell who will bring the blessings of evil to the world"
+
+ nickname_the_demon_king: "The Demon King"
+ nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a creature of hell who will bring the blessings of evil to the world"
+
+ nickname_the_devil_creation: "Demonic Creatures"
+ nickname_the_devil_creation_desc: "Children born from the power of demons, destined to bring chaos and destruction to the world."
+
+ d_laamp_saint: "Purification of the Saints"
+ d_darc: "D'Arc"
+ d_laamp_satan: "Satan's Devils"
+ k_lilith: "Lilith's Whore"
+ k_abandon: "Abaddon's Warhorses"
+ k_beelzebub: "Beelzebub's Disease"
+ k_mammon: "Mammon's Warrior"
+ k_belial: "Beliath's Scientist"
+ k_asmodeus: "Asmodeus's Children"
+
+ succubus_dark_amry: "Dark Army"
+ succubus_dark_amry_flavor: "Dark Army"
+ succubus_death_korps: "Death Korps"
+ succubus_death_korps_flavor: "Death Korps"
+ succubus_zombie: "Zombie"
+ succubus_zombie_flavor: "Zombie"
+ succubus_skeleton: "Skeleton"
+ succubus_skeleton_flavor: "Skeleton"
+
+ succubus_buff: "Devil's Blessing"
+ succubus_buff_desc: "This person had been blessed by the Devil."
+ succubus_debuff: "Devil's Curse"
+ succubus_debuff_desc: "This person had been cursed by the Devil."
+
+ succubus_generals: "Devil General"
+ succubus_generals_desc: "The devil's warriors are summoned to serve the devil's mistress."
+
+ cast_spell_recetly: "Recently Used Magic"
+ cast_spell_recetly_desc: "Recently used magic, cannot be used for a period of time."
+
+ action_can_offer_prostitute_combined_group_name: "Offer Prostitute"
+ action_can_offer_prostitute_combined_group_label: "Can offer Prostitute"
+ action_can_offer_prostitute_combined_group_description: "You can offer a prostitute to the characters"
+ action_can_offer_prostitute_combined_label: "Offer Prostitute for [recipient.GetShortUIName|E]"
+ action_can_offer_prostitute: "Offer Prostitute"
+ action_can_offer_prostitute_desc: "Offer [recipient.GetShortUIName] sexual services"
+ action_can_offer_prostitute_click: ""
+
+ secret_prostitute: "Secret Prostitute"
+ secret_prostitute_desc: "Is a prostitute"
+ secret_prostitute_tooltip_desc: "This character is a prostitute"
+ secret_prostitute_type_desc: "$secret_prostitute_tooltip_desc$"
+
+ beelzebub_is_alive: "The essence of Beelzebub still exists"
+ beelzebub_isn_seal: "Beelzebub is not sealed yet"
+ beelzebub_is_seal: "Beelzebub is sealed"
+ seal_beelzebub: "Seal Beelzebub"
+ lilith_is_alive: "The essence of Lilith still exists"
+ lilith_isn_seal: "Lilith is not sealed yet"
+ lilith_is_seal: "Lilith is sealed"
+ seal_lilith: "Seal Lilith"
+ abaddon_is_alive: "The essence of Abaddon still exists"
+ abaddon_isn_seal: "Abaddon is not sealed yet"
+ abaddon_is_seal: "Abaddon is sealed"
+ seal_abaddon: "Seal Abaddon"
+ mammon_is_alive: "The essence of Mammon still exists"
+ mammon_isn_seal: "Mammon is not sealed yet"
+ mammon_is_seal: "Mammon is sealed"
+ seal_mammon: "Seal Mammon"
+ asmodeus_is_alive: "The essence of Asmodeus still exists"
+ asmodeus_isn_seal: "Asmodeus is not sealed yet"
+ asmodeus_is_seal: "Asmodeus is sealed"
+ seal_asmodeus: "Seal Asmodeus"
+ belial_is_alive: "The essence of Belial still exists"
+ belial_isn_seal: "Belial is not sealed yet"
+ belial_is_seal: "Belial is sealed"
+ seal_belial: "Seal Belial"
+
+ the_expedition_of_abaddon_1: "The first expedition of Abaddon"
+ the_expedition_of_abaddon_2: "The second expedition of Abaddon"
+ the_expedition_of_abaddon_3: "The third expedition of Abaddon"

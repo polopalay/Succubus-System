@@ -1,0 +1,166 @@
+﻿prostitute_effect = {
+	save_scope_as = had_sex_root_character
+	$PROSTITUTE$ = { save_scope_as = had_sex_with_effect_partner }
+
+	custom_tooltip = prostitute_effect.tt
+
+	hidden_effect = {
+		if = {
+			limit = {
+				is_female = yes
+				is_adult = yes
+				$PROSTITUTE$ = { is_female = no is_adult = yes }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
+			}
+			add_to_variable_list = { name = potential_father_variable_list target = $PROSTITUTE$ }
+			random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = $PROSTITUTE$ } }
+		}
+		else_if = {
+			limit = {
+				is_female = no
+				is_adult = yes
+				$PROSTITUTE$ = { is_female = yes is_adult = yes }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
+			}
+			$PROSTITUTE$ = {
+				add_to_variable_list = { name = potential_father_variable_list target = scope:had_sex_with_effect_partner }
+				random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = scope:had_sex_root_character } }
+			}
+		}
+		add_character_modifier = { modifier = recently_had_sex years = 1 }
+		if = {
+			limit = { has_trait = sbs_succubus }
+			random_list = {
+				1 = { add_trait_xp = { trait = sbs_succubus track = power value = 5 } }
+				1 = { add_trait_xp = { trait = sbs_succubus track = daring value = 5 } }
+			}
+		}
+		if = {
+			limit = { has_trait = sbs_lesser_succubus }
+			add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
+		}
+		$PROSTITUTE$ = {
+			random = { chance = 25 add_character_flag = { flag = face_cum months = 3 } }
+			random = { chance = 25 add_character_flag = { flag = body_cum months = 3 } }
+			random = { chance = 25 add_character_flag = { flag = ass_cum months = 3 } }
+			if = {
+				limit = { is_female = yes }
+				random = { chance = 25 add_character_flag = { flag = pussy_cum months = 3 } }
+			}
+			add_character_modifier = { modifier = recently_had_sex years = 1 }
+			add_trait_xp = { trait = lifestyle_prostitute value = 10 }
+			if = {
+				limit = { OR = { has_trait_xp = { trait = lifestyle_prostitute value < 50 } NOT = { has_trait = lifestyle_prostitute } } }
+				if = {
+					limit = { NOT = { has_character_modifier = carn_working_as_prostitute_1_modifier } }
+					add_character_modifier = carn_working_as_prostitute_1_modifier
+				}
+				if = { 
+					limit = { has_character_modifier = carn_working_as_prostitute_2_modifier }
+					remove_character_modifier = carn_working_as_prostitute_2_modifier
+				}
+				if = {
+					limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
+					remove_character_modifier = carn_working_as_prostitute_3_modifier
+				}
+			}
+			else_if = {
+				limit = { has_trait_xp = { trait = lifestyle_prostitute value >=50 } has_trait_xp = { trait = lifestyle_prostitute value < 100 } }
+				if = {
+					limit = { NOT = { has_character_modifier = carn_working_as_prostitute_2_modifier } }
+					add_character_modifier = carn_working_as_prostitute_2_modifier
+				}
+				if = {
+					limit = { has_character_modifier = carn_working_as_prostitute_1_modifier }
+					remove_character_modifier = carn_working_as_prostitute_1_modifier
+				}
+				if = {
+					limit = { has_character_modifier = carn_working_as_prostitute_3_modifier }
+					remove_character_modifier = carn_working_as_prostitute_3_modifier
+				}
+			}
+			else_if = {
+				limit = { has_trait_xp = { trait = lifestyle_prostitute value >= 100 } }
+				if = {
+					limit = { NOT = { has_character_modifier = carn_working_as_prostitute_3_modifier } }
+					add_character_modifier = carn_working_as_prostitute_3_modifier
+				}
+				if = {
+					limit = { has_character_modifier = carn_working_as_prostitute_1_modifier }
+					remove_character_modifier = carn_working_as_prostitute_1_modifier
+				}
+				if = {
+					limit = { has_character_modifier = carn_working_as_prostitute_2_modifier }
+					remove_character_modifier = carn_working_as_prostitute_2_modifier
+				}
+			}
+			random = {
+				chance = 10
+				modifier = { any_secret = { is_known_by = scope:had_sex_root_character secret_type = secret_prostitute } add = -100 }
+				modifier = { any_secret = { secret_type = secret_prostitute count = 0 } add = -100 }
+				random_secret = {
+					limit = { secret_type = secret_prostitute }
+					reveal_to = scope:had_sex_root_character
+				}
+			}
+			if = {
+				limit = { has_trait = sbs_succubus }
+				random_list = {
+					1 = { add_trait_xp = { trait = sbs_succubus track = power value = 5 } }
+					1 = { add_trait_xp = { trait = sbs_succubus track = daring value = 5 } }
+				}
+			}
+			if = {
+				limit = { has_trait = sbs_lesser_succubus }
+				add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
+			}
+			random = {
+				chance = 1
+				if = {
+					limit = { have_devil_nicknames_trigger = no is_female = yes }
+					random_list = {
+						1 = { give_nickname = nickname_the_bitch }
+						1 = { give_nickname = nickname_the_slut }
+						1 = { give_nickname = nickname_the_whore }
+						1 = { give_nickname = nickname_the_wench }
+					}
+				}
+			}
+		}
+
+		risk_of_std_from_effect = { PARTNER = $PROSTITUTE$ }
+		$PROSTITUTE$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
+		add_opinion = {
+			target = scope:had_sex_with_effect_partner
+			modifier = have_sex_opinion
+		}
+		scope:had_sex_with_effect_partner = {
+			random = {
+				chance = 10
+				modifier = { has_trait = lustful add = 10 }
+				modifier = { has_trait = sbs_demon add = 25 }
+				modifier = { has_trait = sbs_succubus add = 10 }
+				modifier = { has_trait = sbs_lesser_succubus add = 5 }
+				modifier = { has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier add = 10 }
+				modifier = {
+					faith = { has_doctrine = doctrine_adultery_men_accepted has_doctrine = doctrine_adultery_women_accepted }
+					add = 10
+				}
+				modifier = { add = 25  faith = { has_doctrine = tenet_polyamory } }
+				modifier = {
+					add = -100
+					OR = {
+						is_female = no
+						any_artifact = { has_artifact_modifier = master_dildo_modifier }
+						any_artifact = { has_artifact_modifier = mistress_dildo_modifier }
+					}
+				}
+				if = {
+					limit = { OR = { has_trait = sbs_succubus has_trait = sbs_lesser_succubus has_trait = sbs_demon } is_female = yes }
+					trigger_event = { id = sbs_event.0550 days = { 7 14 } }
+				}
+			}
+		}
+	}
+}
+

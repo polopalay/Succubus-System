@@ -1,0 +1,131 @@
+quarterly_playable_pulse = {
+	on_actions = {
+		random_ntr_on_action
+		sbs_devil_on_action
+		hidden_effect_on_action
+	}
+}
+
+random_ntr_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		NOT = {
+			has_trait = chaste
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = sbs_demon
+		}
+		NOT = { has_global_variable = seal_the_gates_of_hell }
+		primary_spouse = {
+			NOT = {
+				has_trait = sbs_demon
+				has_trait = seed_of_destruction
+			}
+		}
+		primary_spouse.father = {
+			OR = {
+				has_trait = seducer
+				has_trait = ambitious
+				has_trait = deceitful
+				has_trait = callous
+				AND = {
+					has_trait = seed_of_destruction
+					any_courtier = {
+						is_female = yes
+						is_immortal = yes
+						count = 0
+					}
+				}
+			}
+			OR = {
+				has_trait = lustful
+				has_trait = deviant
+				any_secret = { secret_type = secret_deviant }
+				AND = {
+					has_trait = seed_of_destruction
+					any_courtier = {
+						is_female = yes
+						is_immortal = yes
+						count = 0
+					}
+				}
+			}
+			NOT = { has_trait = chaste }
+		}
+		is_ruler = yes
+		is_landed = yes
+	}
+	random_events = {
+		25 = sbs_ntr_event.0100
+		10 = sbs_ntr_event.0210
+		10 = sbs_ntr_event.0220
+		100 = sbs_ntr_event.0230
+		10 = sbs_ntr_event.0240
+		10 = sbs_ntr_event.0250
+	}
+}
+
+hidden_effect_on_action = {
+	events = {
+		sbs_event.9992
+		sbs_event.9993
+		sbs_event.9994
+		sbs_event.9995
+		sbs_event.9996
+		sbs_event.9997
+		sbs_event.9998
+		sbs_event.9999
+	}
+}
+
+sbs_devil_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+		}
+		is_ruler = yes
+		is_imprisoned = no
+	}
+	random_events = {
+		chance_to_happen = 10
+		50 = sbs_devil.1410 # gremlin fuck
+		25 = sbs_devil.1300 # special dream
+	}
+}
+
+on_travel_plan_movement = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		has_trait = sbs_succubus
+		is_ruler = yes
+		age >= 18
+	}
+	on_actions = {
+		delay = { days = { 2 4 } }
+		sbs_travel_events
+	}
+}
+
+sbs_travel_events = {
+	random_events = {
+		chance_to_happen = 5
+		100 = sbs_travel.0100 # spot a bound woman having a witch trial
+		100 = sbs_travel.0101
+		100 = sbs_travel.0102
+		100 = sbs_travel.0103
+		100 = sbs_travel.0104
+		100 = sbs_travel.0105
+		100 = sbs_travel.0106
+		100 = sbs_travel.0107
+		100 = sbs_travel.0108
+		100 = sbs_travel.0110 # bandit attack if female
+		100 = sbs_travel.0200 # spot woman fucking a dog
+		50 = sbs_travel.0300 # giant man if lustful female
+		100 = sbs_travel.1000 # lustful female only perverted inn
+	}
+}

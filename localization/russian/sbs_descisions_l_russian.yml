@@ -1,0 +1,66 @@
+﻿l_russian:
+  become_demon: "Стань демоном"
+  become_demon.desc: "Как Суккуб, благословленный сатаной и принцами ада, ты выполнил все условия, чтобы стать истинным демоном, жертвуя 100 человеческими жизнями для проведения этого святого ритуала."
+  become_demon.c: "Получить благословение"
+  become_demon.t: "Начать святой ритуал"
+
+  spawn_death_korp: "Призвать Армию Смерти"
+  spawn_death_korp.desc: "Легенды рассказывают о неживой армии из ада. Кровожадные, бесстрашные и невероятно мощные, эти люди могут сражаться с врагами вдвое большими и все равно побеждать. Демоны с благословением Сатаны могут использовать свои тайные искусства, чтобы призвать эти смертоносные легионы."
+  spawn_death_korp.c: "Призвать"
+  spawn_death_korp.t: "Призвать Армию Смерти в вашу столицу"
+
+  demon_generals: "Призвать Демон-Генералов"
+  demon_generals.desc: "Мужское семя не только усиливает силу Суккуба, но и постепенно трансформирует Суккуба в более мощные существа. Однако они также могут пожертвовать тем, что они собрали, в обмен на временную силу из ада, разрушительную, мощную, но временную. Имейте секс с как можно большим количеством солдат, чтобы ваши солдаты тоже могли получить благословение от Сатаны."
+  demon_generals.c: "Призвать"
+  demon_generals.t: "Преобразовать всех ваших рыцарей в демон-генералов"
+
+  masturbate: "Мастурбировать"
+  masturbate.desc: "Ваша жизнь уже полна стресса, и вы ищете что-то, чтобы облегчить его. Вибраторы — это самый безопасный способ, вы можете предаваться чувственности, не беспокоясь о сплетнях о том, что вы распутны и безнравственны."
+  masturbate.t: "Снять стресс"
+  masturbate.c: "Вставьте это в вашу вагину"
+
+  start_ritual_philosophers_stone_decision: "Начать ритуал философского камня"
+  start_ritual_philosophers_stone_decision.d: "$legend_chapter_rital_start_philosopher_stone$"
+  start_ritual_philosophers_stone_decision.t: "Секрет народной песни был раскрыт, давайте начнем ритуал"
+  start_ritual_philosophers_stone_decision.c: "Начать ритуал"
+  start_ritual_philosophers_stone_decision.e: "Секрет народной песни был раскрыт, давайте начнем ритуал"
+
+  sacrifice_tensoul_ritual_decision: "Пожертвовать 10 душ"
+  sacrifice_tensoul_ritual_decision.d: "$legend_chapter_tensoul_philosopher_stone$"
+  sacrifice_tensoul_ritual_decision.t: "Первый ритуал, 10 смертных жизней"
+  sacrifice_tensoul_ritual_decision.c: "Пожертвовать 10 душ"
+  sacrifice_tensoul_ritual_decision.e: "Первый ритуал, 10 смертных жизней"
+
+  sacrifice_vassal_ritual_decision: "Пожертвовать вассала"
+  sacrifice_vassal_ritual_decision.d: "$legend_chapter_vassal_philosopher_stone$"
+  sacrifice_vassal_ritual_decision.t: "Второй ритуал, кровь вассала"
+  sacrifice_vassal_ritual_decision.c: "Пожертвовать вассала"
+  sacrifice_vassal_ritual_decision.e: "Второй ритуал, кровь вассала"
+
+  sacrifice_homologus_ritual_decision: "Пожертвовать другую ведьму"
+  sacrifice_homologus_ritual_decision.d: "$legend_chapter_homologous_philosopher_stone$"
+  sacrifice_homologus_ritual_decision.t: "Третий ритуал, кровь ведьмы"
+  sacrifice_homologus_ritual_decision.c: "Пожертвовать другую ведьму"
+  sacrifice_homologus_ritual_decision.e: "Третий ритуал, кровь ведьмы"
+
+  sacrifice_family_ritual_decision: "Пожертвовать члена семьи"
+  sacrifice_family_ritual_decision.d: "$legend_chapter_family_philosopher_stone$"
+  sacrifice_family_ritual_decision.t: "Четвертый ритуал, кровь семьи"
+  sacrifice_family_ritual_decision.c: "Пожертвовать члена семьи"
+  sacrifice_family_ritual_decision.e: "Четвертый ритуал, кровь семьи"
+
+  complete_ritual_philosophers_stone_decision: "Ритуал философского камня"
+  complete_ritual_philosophers_stone_decision.d: "$legend_chapter_rital_complete_philosopher_stone$"
+  complete_ritual_philosophers_stone_decision.t: "Завершить ритуал философского камня"
+  complete_ritual_philosophers_stone_decision.c: "Завершить ритуал"
+  complete_ritual_philosophers_stone_decision.e: "Завершить ритуал философского камня"
+
+  seal_the_gates_of_hell: "Запечатать врата ада"
+  seal_the_gates_of_hell.desc: "Врата ада открыты, и демоны готовятся вторгнуть в мир людей. Вам нужно найти способ запечатать врата ада и предотвратить втор жение демонов в мир людей."
+  seal_the_gates_of_hell.t: "Запечатать врата ада"
+  seal_the_gates_of_hell.c: "Запечатать врата ада"
+
+  alienate_people: "Отчуждать людей"
+  alienate_people.desc: "Вы начинаете отчуждать людей, чтобы укрепить свою власть и устранить любых потенциальных угроз."
+  alienate_people.t: "Отчуждать людей"
+  alienate_people.c: "Отчуждать людей"

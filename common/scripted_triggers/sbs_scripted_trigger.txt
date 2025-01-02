@@ -1,0 +1,71 @@
+is_valid_construction_alchemy3_trigger = {
+	OR = {
+		any_held_title = {
+			any_county_province = {
+				has_building_or_higher = alchemy3
+			}
+		}
+		AND = {
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value >= 50
+			}
+			has_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value >= 66
+			}
+		}
+
+	}
+
+}
+
+have_devil_nicknames_trigger = {
+	OR = {
+		has_nickname = nickname_the_semen_tank
+		has_nickname = nickname_the_penis_guillotine
+		has_nickname = nickname_the_sex_machine
+		has_nickname = nickname_the_ladycow
+		has_nickname = nickname_the_exhibitionist
+		has_nickname = nickname_the_demon_queen
+		has_nickname = nickname_the_demon_king
+		has_nickname = nickname_the_devil_creation
+	}
+}
+
+have_witch_forest_trigger = {
+	any_held_title = {
+		any_county_province = {
+			has_building_or_higher = witch_forest
+		}
+	}
+}
+
+have_soul_forge_trigger = {
+	any_held_title = {
+		any_county_province = {
+			has_building_or_higher = soul_forge
+		}
+	}
+}
+
+have_devil_building_trigger = {
+	OR = {
+		any_held_title = {
+			any_county_province = {
+				has_building_or_higher = witch_forest
+			}
+		}
+		any_held_title = {
+			any_county_province = {
+				has_building_or_higher = soul_forge
+			}
+		}
+	}
+}
+
+trait_is_shunned_or_criminal_in_faith_or_liege_trigger = {
+	trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = $TRAIT$ GENDER_CHARACTER = this }
+}

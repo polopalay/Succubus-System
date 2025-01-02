@@ -1,0 +1,126 @@
+﻿l_french:
+ any_prisoner_count: "Tout [prisoners|E]"
+ any_county_province: "Toute [province|E]"
+
+ have_sex_opinion: "A eu des relations sexuelles récemment"
+ be_healed_opinion: "Guéri par la magie noire"
+
+ COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
+
+ magic_creation: "$trinket$"
+ magic_creation_miscellaneous: "$trinket$"
+ artifact_magic_creation: "Création Magique"
+
+ philosopher_stone: "Pierre Philosophale"
+ philosopher_stone.d: "La Pierre Philosophale est une substance alchimique légendaire censée être capable de transformer les métaux de base en or ou en argent, et aussi d'agir comme un élixir de vie qui accorde l'immortalité."
+
+ master_dildo: "Mon Maître"
+ master_dildo_desc: "Rien qu'à le regarder, les genoux deviennent faibles."
+
+ mistress_dildo: "Gardien Humble"
+ mistress_dildo_desc: "Rien qu'à le regarder, les parties féminines palpitent."
+
+ prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] couche avec [had_sex_with_effect_partner.GetShortUIName]"
+
+ nickname_the_bitch: "La Chienne"
+ nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est une chienne en chaleur, prête à baiser sans payer."
+
+ nickname_the_slut: "La Salope"
+ nickname_the_slut_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] se déclare ouvertement prostituée, au grand dam et amusement des clients."
+
+ nickname_the_wench: "La Gueuse"
+ nickname_the_wench_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est célèbre dans tout le royaume comme une prostituée."
+
+ nickname_the_whore: "La Prostituée"
+ nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] était autrefois noble, mais a tout abandonné pour devenir prostituée."
+
+ nickname_the_semen_tank: "Le Réservoir de Semen"
+ nickname_the_semen_tank_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] a une forte passion pour le semen."
+
+ nickname_the_penis_guillotine: "La Guillettine à Pénis"
+ nickname_the_penis_guillotine_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] fait l'amour n'importe où, n'importe quand, avec n'importe qui."
+
+ nickname_the_sex_machine: "La Machine à Sexe"
+ nickname_the_sex_machine_desc: "Extracteur de Semen, Trancheur de Pénis, tous ces titres ne suffisent pas à décrire le talent de [CHARACTER.GetHerHis|U] en matière de sexe."
+
+ nickname_the_ladycow: "La Dame-Cow"
+ nickname_the_ladycow_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est la prostituée vache de l'armée de [CHARACTER.GetHerHis|U]. Mon honneur et ma dignité ont été piétinés par mes propres soldats."
+
+ nickname_the_exhibitionist: "L'Exhibitionniste"
+ nickname_the_exhibitionist_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est célèbre pour son exhibitionnisme, son sexe public et son urine publique."
+
+ nickname_the_demon_queen: "La Reine Démon"
+ nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est une créature de l'enfer qui apportera les bénédictions du mal dans le monde."
+
+ nickname_the_demon_king: "Le Roi Démon"
+ nickname_the_demon_king_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] est une créature de l'enfer qui apportera les bénédictions du mal dans le monde."
+
+ nickname_the_devil_creation: "Créatures Démons"
+ nickname_the_devil_creation_desc: "Enfants nés du pouvoir des démons, destinés à apporter le chaos et la destruction dans le monde."
+
+ d_laamp_saint: "Purification des Saints"
+ d_darc: "D'Arc"
+ d_laamp_satan: "Les Diables de Satan"
+ k_lilith: "La Putain de Lilith"
+ k_abandon: "Les Chevaux de Guerre d'Abaddon"
+ k_beelzebub: "La Maladie de Beelzebub"
+ k_mammon: "Le Guerrier de Mammon"
+ k_belial: "Le Scientifique de Belial"
+ k_asmodeus: "Le Scientifique d'Asmod"
+
+ succubus_dark_amry: "Armée Sombre"
+ succubus_dark_amry_flavor: "Armée Sombre"
+ succubus_death_korps: "Korps de la Mort"
+ succubus_death_korps_flavor: "Korps de la Mort"
+ succubus_zombie: "Zombie"
+ succubus_zombie_flavor: "Zombie"
+ succubus_skeleton: "Squelette"
+ succubus_skeleton_flavor: "Squelette"
+
+ succubus_buff: "Bénédiction du Diable"
+ succubus_buff_desc: "Cette personne a été bénie par le Succube."
+ succubus_debuff: "Malédiction du Diable"
+ succubus_debuff_desc: "Cette personne a été maudite par le Succube."
+
+ succubus_generals: "Général du Diable"
+ succubus_generals_desc: "Les guerriers du diable sont convoqués pour servir la maîtresse du diable."
+
+ cast_spell_recetly: "Magie Récemment Utilisée"
+ cast_spell_recetly_desc: "Magie récemment utilisée, ne peut pas être utilisée pendant un certain temps."
+
+ action_can_offer_prostitute_combined_group_name: "Offrir une prostituée"
+ action_can_offer_prostitute_combined_group_label: "Peut offrir une prostituée"
+ action_can_offer_prostitute_combined_group_description: "Vous pouvez offrir une prostituée aux personnages"
+ action_can_offer_prostitute_combined_label: "Offrir une prostituée à [recipient.GetShortUIName|E]"
+ action_can_offer_prostitute: "Offrir une prostituée"
+ action_can_offer_prostitute_desc: "Offrir des services sexuels à [recipient.GetShortUIName]"
+ action_can_offer_prostitute_click: ""
+
+ beelzebub_is_alive: "Beelzebub est vivant"
+ beelzebub_isn_seal: "Beelzebub n'est pas scellé"
+ beelzebub_is_seal: "Beelzebub est scellé"
+ seal_beelzebub: "Sceller Beelzebub"
+ lilith_is_alive: "Lilith est vivante"
+ lilith_isn_seal: "Lilith n'est pas scellée"
+ lilith_is_seal: "Lilith est scellée"
+ seal_lilith: "Sceller Lilith"
+ abaddon_is_alive: "Abaddon est vivant"
+ abaddon_isn_seal: "Abaddon n'est pas scellé"
+ abaddon_is_seal: "Abaddon est scellé"
+ seal_abaddon: "Sceller Abaddon"
+ mammon_is_alive: "Mammon est vivant"
+ mammon_isn_seal: "Mammon n'est pas scellé"
+ mammon_is_seal: "Mammon est scellé"
+ seal_mammon: "Sceller Mammon"
+ asmodeus_is_alive: "Asmodée est vivant"
+ asmodeus_isn_seal: "Asmodée n'est pas scellé"
+ asmodeus_is_seal: "Asmodée est scellé"
+ seal_asmodeus: "Sceller Asmodée"
+ belial_is_alive: "Bélial est vivant"
+ belial_isn_seal: "Bélial n'est pas scellé"
+ belial_is_seal: "Bélial est scellé"
+ seal_belial: "Sceller Bélial"
+
+ the_expedition_of_abaddon_1: "La première expédition d'Abaddon"
+ the_expedition_of_abaddon_2: "La deuxième expédition d'Abaddon"
+ the_expedition_of_abaddon_3: "La troisième expédition d'Abaddon"

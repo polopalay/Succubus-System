@@ -1,0 +1,83 @@
+semen_tank = {
+	portrait_animation = shame
+
+	properties = {}
+	chapters = {
+		opening = legend_chapter_opening_semen_tank
+		mind_break = legend_chapter_mind_break
+		toy = legend_chapter_toy
+		conclusion = legend_chapter_conclusion_semen_tank
+	}
+}
+
+sex_machine = {
+	portrait_animation = flirtation_left
+
+	properties = {}
+	chapters = {
+		opening = legend_chapter_opening_sex_machine
+		bitch = legend_chapter_bitch
+		machine = legend_chapter_machine
+		conclusion = legend_chapter_conclusion_sex_machine
+	}
+}
+
+ladycow = {
+	portrait_animation = prisondungeon
+
+	properties = {}
+	chapters = {
+		opening = legend_chapter_opening_ladycow
+		promise = legend_chapter_promise
+		oath = legend_chapter_oath
+		conclusion = legend_chapter_conclusion_ladycow
+	}
+}
+
+penis_guillotine = {
+	portrait_animation = personality_greedy
+
+	properties = {}
+	chapters = {
+		opening = legend_chapter_opening_penis_guillotine
+		cutter = legend_chapter_cutter
+		guillotine = legend_chapter_guillotine
+		expose = legend_chapter_expose
+		conclusion = legend_chapter_conclusion_penis_guillotine
+	}
+}
+
+exhibitionist = {
+	portrait_animation = war_over_tie
+
+	properties = {}
+	chapters = {
+		opening = legend_chapter_opening_exhibitionist
+		naked_lady = legend_chapter_naked_lady
+		naked_court = legend_chapter_naked_court
+		conclusion = legend_chapter_conclusion_exhibitionist
+	}
+}
+
+philosopher_stone = {
+	portrait_animation = personality_callous
+
+	properties = {
+		ritual_start = flag
+		tensoul = flag
+		vassal = flag
+		homologus = flag
+		family = flag
+		rital_complete = flag
+	}
+	chapters = {
+		opening = legend_chapter_opening_philosopher_stone
+		ritual_start = legend_chapter_rital_start_philosopher_stone
+		tensoul = legend_chapter_tensoul_philosopher_stone
+		vassal = legend_chapter_vassal_philosopher_stone
+		homologus = legend_chapter_homologous_philosopher_stone
+		family = legend_chapter_family_philosopher_stone
+		rital_complete = legend_chapter_rital_complete_philosopher_stone
+		conclusion = legend_chapter_conclusion_philosopher_stone
+	}
+}
