@@ -1,4 +1,4 @@
-is_character_allowed_to_be_player = {
+﻿is_character_allowed_to_be_player = {
 	trigger_if = {
 		limit = {
 			always = no
@@ -14,4 +14,3 @@ is_character_allowed_to_be_player = {
 		}
 	}
 }
-
