@@ -719,6 +719,12 @@ sbs_ntr_event.0232 = {
 				opinion = -100
 			}
 		}
+		every_vassal = {
+			limit = { primary_title.tier >= tier_county }
+			save_scope_as = recipient
+			scope:ntr_character = { save_scope_as = actor }
+			offer_vassalization_interaction_effect = yes
+		}
 		remove_relation_lover = scope:ntr_character
 		hidden_effect = {
 			remove_trait = sbs_lesser_succubus

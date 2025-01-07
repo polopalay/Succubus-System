@@ -2200,7 +2200,10 @@ sbs_slavery_event.6110 = {
 				killer = scope:owner
 			}
 		}
-		trigger_event = sbs_slavery_event.6110
+		trigger_event = {
+			id = sbs_slavery_event.6110
+			days = { 7 14 }
+		}
 	}
 	option = {
 		ai_chance = { base = 20 }

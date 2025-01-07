@@ -483,7 +483,10 @@ sbs_event.9996 = {
 			}
 			set_relation_slave_owner = { target = root }
 			save_scope_as = slave
-			root = { set_relation_slave = { target = scope:slave } }
+			if = {
+				limit = { NOT = { root = { has_relation_slave = scope:slave } } }
+				root = { set_relation_slave = { target = scope:slave } }
+			}
 		}
 	}
 }

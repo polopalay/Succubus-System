@@ -99,7 +99,7 @@
 								any_relation = { type = rival is_adult = yes }
 								any_relation = { type = nemesis is_adult = yes }
 							}
-							add = 200
+							add = 100
 						}
 						trigger_event = sbs_slavery_event.0900
 					}
@@ -109,7 +109,7 @@
 								any_relation = { type = lover is_adult = yes NOT = { this = scope:actor }  }
 								any_relation = { type = soulmate is_adult = yes NOT = { this = scope:actor }  }
 							}
-							add = 200
+							add = 100
 						}
 						trigger_event = sbs_slavery_event.3000
 					}
@@ -144,7 +144,7 @@
 					0 = {
 						modifier = {
 							has_trait = drunkard
-							add = 200
+							add = 100
 						}
 						trigger_event = sbs_slavery_event.6000
 					}
@@ -154,7 +154,7 @@
 								scheme_type = murder 
 								scheme_target_character = scope:actor
 							}
-							add = 200
+							add = 100
 						}
 						trigger_event = sbs_slavery_event.6100
 					}
@@ -164,7 +164,7 @@
 								has_trait = inappetetic
 								current_weight < -30
 							}
-							add = 200
+							add = 100
 						}
 						trigger_event = sbs_slavery_event.6200
 					}
@@ -174,7 +174,7 @@
 								has_trait = comfort_eater
 								current_weight > 30
 							}
-							add = 200
+							add = 100
 						}
 						trigger_event = sbs_slavery_event.6300
 					}

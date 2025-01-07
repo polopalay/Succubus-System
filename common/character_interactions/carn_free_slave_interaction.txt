@@ -3,9 +3,6 @@
 	desc = carn_free_slave_interaction.desc
 	common_interaction = yes
 	is_shown = {
-		scope:actor = {
-			is_ruler = yes
-		}
 		scope:recipient = {
 			has_trait = slave
 			OR = {
