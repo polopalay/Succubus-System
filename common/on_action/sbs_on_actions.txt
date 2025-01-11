@@ -12,9 +12,7 @@ random_ntr_on_action = {
 		is_female = yes
 		NOT = {
 			has_trait = chaste
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = sbs_demon
+			is_immortal = yes
 		}
 		NOT = { has_global_variable = seal_the_gates_of_hell }
 		exists = primary_spouse
@@ -26,6 +24,7 @@ random_ntr_on_action = {
 			}
 		}
 		primary_spouse.father = {
+			is_alive = yes
 			OR = {
 				has_trait = seducer
 				has_trait = ambitious
