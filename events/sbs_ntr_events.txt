@@ -6,6 +6,7 @@ sbs_ntr_event.0100 = {
 	desc = sbs_ntr_event.0100.desc
 	theme = friendly
 	override_background = { reference = bath_house }
+	cooldown = { years = 5 }
 	trigger = {
 		exists = primary_spouse.father
 		NOT = { has_relation_lover = primary_spouse.father }
