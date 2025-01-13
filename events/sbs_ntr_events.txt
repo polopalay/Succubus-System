@@ -743,9 +743,12 @@ sbs_ntr_event.0232 = {
 					remove_trait = immortal
 					add_trait = sbs_lesser_succubus
 					set_immortal_age = 18
-					create_landless_adventurer_title_effect = {
-						REASON = flag:voluntary
-						FLAVOR_CHAR = this
+					if = {
+						limit = { is_ruler = no }
+						create_landless_adventurer_title_effect = {
+							REASON = flag:voluntary
+							FLAVOR_CHAR = this
+						}
 					}
 				}
 			}
@@ -769,6 +772,11 @@ sbs_ntr_event.0232 = {
 		carn_enslave_effect = { SLAVE = root OWNER = scope:ntr_character DRAMA = yes }
 	}
 	option = {
+		trigger = {
+			scope:ntr_character.primary_spouse = {
+				is_ruler = no
+			}
+		}
 		ai_chance = {
 			base = 20
 			modifier = { has_trait = ambitious add = 80 }
@@ -832,6 +840,20 @@ sbs_ntr_event.0232 = {
 		name = sbs_ntr_event.0232.d
 		custom_tooltip = sbs_ntr_event.0232.d.tt
 		add_trait = saint
+		every_secret = {
+			limit = {
+				OR = {
+					secret_type = secret_witch
+					secret_type = secret_deviant
+					secret_type = secret_prostitute
+				}
+			}
+			remove_secret = yes
+		}
+		remove_trait = deviant
+		remove_trait = witch
+		remove_trait = lifestyle_prostitute
+		remove_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		scope:ntr_character = {
 			death = {
 				death_reason = death_execution

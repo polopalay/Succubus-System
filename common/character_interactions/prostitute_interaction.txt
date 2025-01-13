@@ -191,6 +191,26 @@
 	}
 	ai_will_do = {
 		base = 0
+		modifier = {
+			add = 12
+			scope:recipient.primary_title.tier = tier_duchy
+		}
+		modifier = {
+			add = 25
+			scope:recipient.primary_title.tier = tier_kingdom
+		}
+		modifier = {
+			add = 50
+			scope:recipient.primary_title.tier = tier_empire
+		}
+		modifier = {
+			add = 12
+			scope:recipient.primary_spouse.primary_title.tier = tier_kingdom
+		}
+		modifier = {
+			add = 25
+			scope:recipient.primary_spouse.primary_title.tier = tier_empire
+		}
 		modifier = { add = 10 scope:actor = { faith = { has_doctrine = tenet_polyamory } } scope:recipient = scope:actor }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
 		modifier = { add = -10 scope:actor = { has_trait = chaste } }
