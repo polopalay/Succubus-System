@@ -1,9 +1,21 @@
 succubus_cost_value = {
 	value = 0
-	add = succubus_cost_dealing_with_stress_value
-	add = succubus_cost_heal_value
-	add = succubus_cost_purify_price_value
-	add = succubus_cost_honor_price_value
+	if = {
+		limit = { scope:stress = yes }
+		add = succubus_cost_dealing_with_stress_value
+	}
+	if = {
+		limit = { scope:healing = yes }
+		add = succubus_cost_heal_value
+	}
+	if = {
+		limit = { scope:dna = yes }
+		add = succubus_cost_purify_price_value
+	}
+	if = {
+		limit = { scope:honor = yes }
+		add = succubus_cost_honor_price_value
+	}
 	max = 50
 	min = 1
 }
@@ -430,10 +442,22 @@ succubus_cost_honor_price_value = {
 
 deal_price_value = {
 	value = 0
-	add = dealing_with_stress_value
-	add = heal_price_value
-	add = purify_price_value
-	add = honor_price_value
+	if = {
+		limit = { scope:stress = yes }
+		add = dealing_with_stress_value
+	}
+	if = {
+		limit = { scope:healing = yes }
+		add = heal_price_value
+	}
+	if = {
+		limit = { scope:dna = yes }
+		add = purify_price_value
+	}
+	if = {
+		limit = { scope:honor = yes }
+		add = honor_price_value
+	}
 	min = 10
 }
 

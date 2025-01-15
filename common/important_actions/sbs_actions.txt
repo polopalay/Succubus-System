@@ -6,12 +6,12 @@ action_can_offer_prostitute = {
 		if = {
 			limit = { carn_is_working_as_prostitute_trigger = yes }
 			add_to_list = prostitute_list
-			every_courtier = {
-				limit = {
-					carn_is_working_as_prostitute_trigger = yes
-				}
-				add_to_list = prostitute_list
+		}
+		every_courtier = {
+			limit = {
+				carn_is_working_as_prostitute_trigger = yes
 			}
+			add_to_list = prostitute_list
 		}
 		if = {
 			limit = {
