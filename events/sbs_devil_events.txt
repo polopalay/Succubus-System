@@ -2321,6 +2321,10 @@ sbs_devil.1319 = {
 				}
 			}
 		}
+		random_living_character = {
+			limit = { has_trait = sbs_demon is_female = no }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 100 }
+		}
 	}
 	# this is wrong, go repent
 	option = {

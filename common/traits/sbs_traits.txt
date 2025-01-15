@@ -319,10 +319,22 @@ seed_of_destruction = {
 		50 = {
 			character_travel_speed = 10
 			character_travel_safety = 10
+			stewardship = 7
+			diplomacy = 7
+			prowess = 7
+			martial = 7
+			intrigue = 7
+			learning = 7
 		}
 		100 = {
 			health = 1
 			negate_health_penalty_add = 1
+			stewardship = 6
+			diplomacy = 6
+			prowess = 6
+			martial = 6
+			intrigue = 6
+			learning = 6
 		}
 	}
 

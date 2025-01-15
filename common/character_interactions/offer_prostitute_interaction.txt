@@ -4,7 +4,7 @@
 	category = interaction_category_diplomacy
 	use_diplomatic_range = yes
 	common_interaction = yes
-	cooldown = { years = 1 }
+	cooldown = { months = 1 }
 	needs_recipient_to_open = yes
 
 	send_option = {

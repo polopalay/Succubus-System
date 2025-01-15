@@ -108,6 +108,7 @@ on_travel_plan_movement = {
 		is_female = yes
 		has_trait = sbs_succubus
 		is_ruler = yes
+		is_landed = no
 		age >= 18
 	}
 	on_actions = {

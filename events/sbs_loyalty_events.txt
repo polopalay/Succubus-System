@@ -50,7 +50,30 @@ sbs_loyalty.8000 = {
 	option = {
 		name = sbs_loyalty.8000.c
 		custom_tooltip = sbs_loyalty.8000.c.tt
-		death = { death_reason = death_vanished }
+		hidden_effect = {
+			scope:sbs_loyalty_random_1 = {
+				add_trait = seed_of_destruction
+				set_immortal_age = 45
+			}
+		}
+		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
+		every_held_title = {
+			create_title_and_vassal_change = {
+				type = usurped
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			change_title_holder_include_vassals = {
+				holder = scope:sbs_loyalty_random_1
+				change = scope:change
+				take_baronies = no
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		random_living_character = {
+			limit = { is_ruler = yes NOT = { in_diplomatic_range = root } }
+			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = yes }
+		}
 	}
 }
 
@@ -896,8 +919,29 @@ sbs_loyalty.8900 = {
 	option = {
 		name = sbs_loyalty.8900.c
 		custom_tooltip = sbs_loyalty.8900.c.tt
-		death = {
-			death_reason = death_vanished
+		hidden_effect = {
+			scope:sbs_loyalty_random_1 = {
+				add_trait = seed_of_destruction
+				set_immortal_age = 45
+			}
+		}
+		add_opinion = { target = scope:sbs_loyalty_random_1 modifier = carn_wants_to_be_your_slave_opinion }
+		every_held_title = {
+			create_title_and_vassal_change = {
+				type = usurped
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			change_title_holder_include_vassals = {
+				holder = scope:sbs_loyalty_random_1
+				change = scope:change
+				take_baronies = no
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		random_living_character = {
+			limit = { is_ruler = yes NOT = { in_diplomatic_range = root } }
+			carn_enslave_effect = { SLAVE = root OWNER = this DRAMA = yes }
 		}
 	}
 }

@@ -13,7 +13,13 @@
 				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
 			}
 			add_to_variable_list = { name = potential_father_variable_list target = $PROSTITUTE$ }
-			random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = $PROSTITUTE$ } }
+			if = {
+				limit = { scope:use_contraception = no }
+				random = { chance = 1 make_pregnant = { father = $PROSTITUTE$ } }
+			}
+			else = {
+				random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = $PROSTITUTE$ } }
+			}
 		}
 		else_if = {
 			limit = {
@@ -24,8 +30,14 @@
 			}
 			$PROSTITUTE$ = {
 				add_to_variable_list = { name = potential_father_variable_list target = scope:had_sex_with_effect_partner }
-				random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = scope:had_sex_root_character } }
-			}
+				if = {
+					limit = { scope:use_contraception = no }
+				}
+				else = {
+					random = { chance = $PREGNANCY_CHANCE$ make_pregnant = { father = $PROSTITUTE$ } }
+				}
+					random = { chance = 1 make_pregnant = { father = $PROSTITUTE$ } }
+				}
 		}
 		add_character_modifier = { modifier = recently_had_sex years = 1 }
 		if = {
@@ -128,8 +140,11 @@
 			}
 		}
 
-		risk_of_std_from_effect = { PARTNER = $PROSTITUTE$ }
-		$PROSTITUTE$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
+		if = {
+			limit = { scope:use_contraception = no }
+			risk_of_std_from_effect = { PARTNER = $PROSTITUTE$ }
+			$PROSTITUTE$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
+		}
 		add_opinion = {
 			target = scope:had_sex_with_effect_partner
 			modifier = have_sex_opinion
