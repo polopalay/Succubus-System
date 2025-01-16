@@ -40,12 +40,12 @@ sbs_devils_curse_interaction = {
 				0 = {
 					modifier = {
 						scope:recipient = { is_adult = yes is_attracted_to_gender_of = scope:actor }
-						scope:actor = { is_adult = yes }
-						add = 5
+						scope:actor = { carn_is_working_as_prostitute_trigger = yes }
+						add = 20
 					}
 					prostitute_effect = { PROSTITUTE = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
 				}
-				1 = {
+				5 = {
 					modifier = {
 						OR = {
 							has_trait = slave
@@ -53,18 +53,14 @@ sbs_devils_curse_interaction = {
 							has_trait_with_flag = carn_cannot_be_enslaved
 							has_opinion_modifier = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
 						}
-						add = -1
+						add = -5
 					}
-					modifier = { has_trait = seed_of_destruction add = -1 }
-					modifier = { has_trait = sbs_lesser_succubus add = -1 }
-					modifier = { has_trait = sbs_succubus add = -1 }
-					modifier = { has_trait = sbs_demon add = -1 }
 					add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
 				}
-				1 = {
+				3 = {
 					modifier = {
 						NOT = { has_opinion_modifier = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion } }
-						add = -1
+						add = -3
 					}
 					modifier = { has_trait = seed_of_destruction add = -1 }
 					modifier = { has_trait = sbs_lesser_succubus add = -1 }

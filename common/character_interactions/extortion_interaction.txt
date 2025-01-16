@@ -24,7 +24,6 @@
 	ai_frequency = 12
 	ai_will_do = {
 		base = 25
-		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }
 		modifier = { add = -25 scope:actor.dynasty = scope:recipient.dynasty }
 		modifier = { add = -25 is_close_or_extended_family_of = scope:recipient }
 		modifier = { add = -25 is_close_family_of = scope:recipient }

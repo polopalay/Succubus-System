@@ -142,12 +142,18 @@
 	}
 
 	ai_accept = {
-		base = 5
+		base = 0
+		opinion_modifier = {
+			opinion_target = scope:secondary_recipient
+			who = scope:recipient
+			multiplier = 0.1
+		}
 		modifier = { add = 10 scope:recipient = { stress_level >= 1 } }
 		modifier = { add = -10 scope:recipient = { has_trait = chaste } }
 		modifier = { add = 15 scope:recipient = { has_trait = lustful } }
 		modifier = { add = 15 scope:recipient = { has_trait = rakish } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_good_1 } }
+		modifier = { add = -5 scope:secondary_recipient = { is_lowborn = yes } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_good_2 } }
 		modifier = { add = 20 scope:secondary_recipient = { has_trait = beauty_good_3 } }
 		modifier = { add = -5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
@@ -186,14 +192,45 @@
 		modifier = { add = 10 scope:secondary_recipient = { should_be_naked_trigger = yes } }
 		modifier = {
 			desc = cant_have_sex_without_contraception
-			add = -25
-			scope:recipient = {  NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } }
+			add = -10
+			scope:recipient = {
+				NOT = {
+					has_trait = deviant
+					any_secret = { secret_type = secret_deviant }
+					has_trait = lustful
+					has_trait  = rakish
+					faith = { has_doctrine = tenet_polyamory }
+				}
+			}
 			scope:use_contraception = no
 		}
-		opinion_modifier = {
-			opinion_target = scope:secondary_recipient
-			who = scope:recipient
-			multiplier = 0.1
+		modifier = {
+			add = 1
+			scope:secondary_recipient.primary_title.tier = tier_duchy
+		}
+		modifier = {
+			add = 2
+			scope:secondary_recipient.primary_title.tier = tier_kingdom
+		}
+		modifier = {
+			add = 3
+			scope:secondary_recipient.primary_title.tier = tier_empire
+		}
+		modifier = {
+			add = 1
+			scope:secondary_recipient.primary_spouse.primary_title.tier = tier_kingdom
+		}
+		modifier = {
+			add = 2
+			scope:secondary_recipient.primary_spouse.primary_title.tier = tier_empire
+		}
+		modifier = {
+			add = 1
+			scope:secondary_recipient = { any_child = { primary_title = { tier = tier_kingdom } } }
+		}
+		modifier = {
+			add = 2
+			scope:secondary_recipient = { any_child = { primary_title = { tier = tier_empire } } }
 		}
 	}
 	ai_potential = { always = yes }

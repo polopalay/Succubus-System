@@ -18,7 +18,7 @@
   mistress_dildo: "Guardiana Humilde"
   mistress_dildo_desc: "Solo mirarlo hace que las partes femeninas palpen."
 
-  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] se acuesta con [had_sex_with_effect_partner.GetShortUIName]"
+  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] se acuesta con [prostitute.GetShortUIName]"
 
   nickname_the_bitch: "La Perra"
   nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] es una perra caliente, dispuesta a tener sexo sin pagar."

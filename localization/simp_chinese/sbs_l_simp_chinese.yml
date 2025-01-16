@@ -10,7 +10,7 @@
  master_dildo_desc: "光是看着它，就让人觉得膝盖发软。"
  mistress_dildo: "谦虚的监护人"
  mistress_dildo_desc: "光是看着它，就能让女人欲罢不能。"
- prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U]与[had_sex_with_effect_partner.GetShortUIName]共赴巫山"
+ prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U]与[prostitute.GetShortUIName]共赴巫山"
  nickname_the_bitch: "婊子"
  nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]是个异常饥渴的婊子，即使不给嫖资也甘愿被千骑万睡。"
  nickname_the_slut: "荡妇"

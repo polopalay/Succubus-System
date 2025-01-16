@@ -81,6 +81,7 @@
 	ai_frequency = 12
 	ai_targets = {
 		ai_recipients = courtiers
+		ai_recipients = prisoners
 	}
 	ai_potential = { always = yes }
 	ai_will_do = { base = 100 }

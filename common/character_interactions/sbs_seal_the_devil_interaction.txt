@@ -244,7 +244,7 @@ sbs_seal_the_devil_interaction = {
 					scope:actor = {
 						if = {
 							limit = { has_trait = education_learning }
-							change_trait_rank = { trait = education_stewardship_1 rank = 1 }
+							change_trait_rank = { trait = education_stewardship rank = 1 }
 						}
 						esle_if = {
 							add_trait = education_learning_1	
@@ -256,7 +256,7 @@ sbs_seal_the_devil_interaction = {
 					scope:actor = {
 						if = {
 							limit = { has_trait = education_intrigue }
-							change_trait_rank = { trait = education_intrigue_1 rank = 1 }
+							change_trait_rank = { trait = education_intrigue rank = 1 }
 						}
 						else_if = {
 							add_trait = education_intrigue_1
@@ -268,7 +268,7 @@ sbs_seal_the_devil_interaction = {
 					scope:actor = {
 						if = {
 							limit = { has_trait = education_martial }
-							change_trait_rank = { trait = education_martial_1 rank = 1 }
+							change_trait_rank = { trait = education_martial rank = 1 }
 						}
 						else_if = {
 							add_trait = education_martial_1
@@ -280,7 +280,7 @@ sbs_seal_the_devil_interaction = {
 					scope:actor = {
 						if = {
 							limit = { has_trait = education_diplomacy }
-							change_trait_rank = { trait = education_diplomacy_1 rank = 1 }
+							change_trait_rank = { trait = education_diplomacy rank = 1 }
 						}
 						else_if = {
 							add_trait = education_diplomacy_1
@@ -292,7 +292,7 @@ sbs_seal_the_devil_interaction = {
 					scope:actor = {
 						if = {
 							limit = { has_trait = education_stewardship }
-							change_trait_rank = { trait = education_stewardship_1 rank = 1 }
+							change_trait_rank = { trait = education_stewardship rank = 1 }
 						}
 						else_if = {
 							add_trait = education_stewardship_1

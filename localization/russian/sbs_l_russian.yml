@@ -20,7 +20,7 @@
   mistress_dildo: "Скромный хранитель"
   mistress_dildo_desc: "Одного взгляда на него достаточно, чтобы заставить женские части тела пульсировать."
 
-  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] спит с [had_sex_with_effect_partner.GetShortUIName]"
+  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] спит с [prostitute.GetShortUIName]"
 
   nickname_the_bitch: "Сука"
   nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] — возбужденная сука, готовая заняться сексом без оплаты."

@@ -70,6 +70,8 @@ lifestyle_prostitute = {
 
 	ai_greed = medium_positive_ai_value
 	ai_sociability = medium_positive_ai_value
+	ai_honor = low_negative_ai_value
+	ai_zeal = low_negative_ai_value
 
 	culture_modifier = {
 		parameter = adulterer_fornicator_penalties

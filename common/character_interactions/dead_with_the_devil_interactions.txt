@@ -174,7 +174,7 @@
 			scope:stress = yes
 			scope:healing = yes
 			scope:honor = yes
-			scope:gold = yes
+			scope:dna = yes
 		}
 	}
 	send_option = {
@@ -346,8 +346,10 @@
 	}
 	send_option = {
 		is_shown = {
-			scope:actor ?= { gold >= scope:actor.deal_price_value }
 			scope:actor.deal_price_value > 0
+		}
+		is_valid = {
+			scope:actor ?= { gold >= scope:actor.deal_price_value }
 		}
 		flag = gold
 		localization = "RANSOM_GOLD_OPTION"

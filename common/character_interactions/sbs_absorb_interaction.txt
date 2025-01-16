@@ -226,7 +226,7 @@
 	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { has_trait = sbs_lesser_succubus scope:lesser_succubus = yes }
+				limit = { has_trait = sbs_lesser_succubus }
 				add_trait_xp = { trait = sbs_lesser_succubus value = 20 }
 			}
 			else_if = {

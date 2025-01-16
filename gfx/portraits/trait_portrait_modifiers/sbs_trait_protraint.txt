@@ -386,17 +386,17 @@ physical_traits_portrait_modifier = {
 				morph = {
 					mode = modify_multiply
 					gene = gene_height
-					value = 1.05
+					value = 1.1
 				}
 				morph = {
 					mode = modify_multiply
 					gene = gene_head_width
-					value = 1.05
+					value = 1.1
 				}
 				morph = {
 					mode = modify_multiply
 					gene = gene_head_height
-					value = 1.05
+					value = 1.1
 				}
 			}
 		}
@@ -410,17 +410,17 @@ physical_traits_portrait_modifier = {
 				morph = {
 					mode = modify_multiply
 					gene = gene_height
-					value = 1.1
+					value = 1.2
 				}
 				morph = {
 					mode = modify_multiply
 					gene = gene_head_width
-					value = 1.1
+					value = 1.2
 				}
 				morph = {
 					mode = modify_multiply
 					gene = gene_head_height
-					value = 1.1
+					value = 1.2
 				}
 			}
 		}
@@ -434,17 +434,17 @@ physical_traits_portrait_modifier = {
 				morph = {
 					mode = modify_multiply
 					gene = gene_height
-					value = 1.2
+					value = 1.25
 				}
 				morph = {
 					mode = modify_multiply
 					gene = gene_head_width
-					value = 1.2
+					value = 1.25
 				}
 				morph = {
 					mode = modify_multiply
 					gene = gene_head_height
-					value = 1.2
+					value = 1.25
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 ﻿prostitute_effect = {
 	save_scope_as = had_sex_root_character
-	$PROSTITUTE$ = { save_scope_as = had_sex_with_effect_partner }
+	$PROSTITUTE$ = { save_scope_as = prostitute }
 
 	custom_tooltip = prostitute_effect.tt
 
@@ -10,7 +10,7 @@
 				is_female = yes
 				is_adult = yes
 				$PROSTITUTE$ = { is_female = no is_adult = yes }
-				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:prostitute }
 			}
 			add_to_variable_list = { name = potential_father_variable_list target = $PROSTITUTE$ }
 			if = {
@@ -26,10 +26,10 @@
 				is_female = no
 				is_adult = yes
 				$PROSTITUTE$ = { is_female = yes is_adult = yes }
-				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:prostitute }
 			}
 			$PROSTITUTE$ = {
-				add_to_variable_list = { name = potential_father_variable_list target = scope:had_sex_with_effect_partner }
+				add_to_variable_list = { name = potential_father_variable_list target = scope:prostitute }
 				if = {
 					limit = { scope:use_contraception = no }
 				}
@@ -146,10 +146,10 @@
 			$PROSTITUTE$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
 		}
 		add_opinion = {
-			target = scope:had_sex_with_effect_partner
+			target = scope:prostitute
 			modifier = have_sex_opinion
 		}
-		scope:had_sex_with_effect_partner = {
+		scope:prostitute = {
 			random = {
 				chance = 10
 				modifier = { has_trait = lustful add = 10 }

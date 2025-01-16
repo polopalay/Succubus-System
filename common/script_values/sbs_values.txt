@@ -458,7 +458,7 @@ deal_price_value = {
 		limit = { scope:honor = yes }
 		add = honor_price_value
 	}
-	min = 10
+	min = 0
 }
 
 dealing_with_stress_value = {

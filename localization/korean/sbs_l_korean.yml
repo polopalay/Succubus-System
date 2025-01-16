@@ -20,7 +20,7 @@
   mistress_dildo: "겸손한 수호자"
   mistress_dildo_desc: "그것을 보는 것만으로도 여성의 부분이 두근거립니다."
 
-  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U]가 [had_sex_with_effect_partner.GetShortUIName]와 성관계를 가짐"
+  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U]가 [prostitute.GetShortUIName]와 성관계를 가짐"
 
   nickname_the_bitch: "창녀"
   nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U]는 음탕한 창녀로, 돈 없이도 성관계를 맺을 준비가 되어 있습니다."

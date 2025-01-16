@@ -22,7 +22,6 @@
 	ai_frequency = 12
 	ai_will_do = {
 		base = 50
-		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }
 		modifier = { scope:recipient = { has_relation_friend = scope:actor } add = -50 }
 		modifier = { scope:recipient = { has_relation_lover = scope:actor } add = -50 }
 		modifier = { scope:recipient = { has_relation_soulmate = scope:actor } add = -100 }

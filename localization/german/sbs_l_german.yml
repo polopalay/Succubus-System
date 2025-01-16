@@ -20,7 +20,7 @@
   mistress_dildo: "Demütiger Wächter"
   mistress_dildo_desc: "Allein beim Anblick pulsieren die weiblichen Teile."
 
-  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] schläft mit [had_sex_with_effect_partner.GetShortUIName]"
+  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] schläft mit [prostitute.GetShortUIName]"
 
   nickname_the_bitch: "Die Hündin"
   nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] ist eine erregte Hündin, bereit, ohne Bezahlung zu schlafen."

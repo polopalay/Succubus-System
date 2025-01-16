@@ -128,7 +128,7 @@
 	}
 
 	ai_accept = {
-		base = 25
+		base = 0
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
@@ -170,8 +170,16 @@
 		modifier = { add = 10 scope:recipient = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = {
 			desc = cant_have_sex_without_contraception
-			add = -25
-			scope:recipient = {  NOR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } }
+			add = -10
+			scope:recipient = {
+				NOT = {
+					has_trait = deviant
+					any_secret = { secret_type = secret_deviant }
+					has_trait = lustful
+					has_trait  = rakish
+					faith = { has_doctrine = tenet_polyamory }
+				}
+			}
 			scope:use_contraception = no
 		}
 	}
@@ -211,6 +219,14 @@
 			add = 25
 			scope:recipient.primary_spouse.primary_title.tier = tier_empire
 		}
+		modifier = {
+			add = 12
+			scope:recipient = { any_child = { primary_title = { tier = tier_kingdom } } }
+		}
+		modifier = {
+			add = 25
+			scope:recipient = { any_child = { primary_title = { tier = tier_empire } } }
+		}
 		modifier = { add = 10 scope:actor = { faith = { has_doctrine = tenet_polyamory } } scope:recipient = scope:actor }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
 		modifier = { add = -10 scope:actor = { has_trait = chaste } }
@@ -222,6 +238,7 @@
 		modifier = { add = 1 scope:actor = { has_trait = profligate } }
 		modifier = { add = 1 scope:actor = { has_trait = seducer } }
 		modifier = { add = 1 scope:actor = { has_trait = paranoid } }
+		modifier = { add = -5 scope:recipient = { is_lowborn = yes } }
 		modifier = { add = -5 scope:recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = -10 scope:recipient = { has_trait = beauty_bad_2 } }
 		modifier = { add = -20 scope:recipient = { has_trait = beauty_bad_3 } }
