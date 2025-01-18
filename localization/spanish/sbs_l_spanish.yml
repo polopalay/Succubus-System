@@ -89,6 +89,7 @@
   action_can_offer_prostitute_combined_group_label: "Puede ofrecer Prostituta"
   action_can_offer_prostitute_combined_group_description: "Puede ofrecer una prostituta a los personajes"
   action_can_offer_prostitute_combined_label: "Ofrecer Prostituta para [recipient.GetShortUIName|E]"
+  action_can_offer_prostitute_label: "Ofrecer Prostituta para [recipient.GetShortUIName|E]"
   action_can_offer_prostitute: "Ofrecer Prostituta"
   action_can_offer_prostitute_desc: "Ofrecer servicios sexuales a [recipient.GetShortUIName]"
   action_can_offer_prostitute_click: ""

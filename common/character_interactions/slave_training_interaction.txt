@@ -2,7 +2,7 @@
 	category = interaction_category_prison
 	desc = slave_training_interaction.desc
 	common_interaction = no
-	cooldown = { months = 2 }
+	cooldown = { months = 1 }
 	cooldown_against_recipient = { months = 6 }
 	is_shown = {
 		scope:actor = {
@@ -59,6 +59,7 @@
 								has_trait = scarred
 								has_trait = cancer
 								has_trait = one_legged
+								has_trait = ill
 							}
 							add = 40
 						}
@@ -82,7 +83,10 @@
 						modifier = { any_secret = { secret_type = secret_prostitute } add = 100 }
 						trigger_event = sbs_slavery_event.0500
 					}
-					5 = { trigger_event = sbs_slavery_event.0600 }
+					1 = {
+						modifier = { has_trait = ambitious add = 4 }
+						trigger_event = sbs_slavery_event.0600
+					}
 					0 = {
 						modifier = {
 							OR = {
@@ -123,7 +127,7 @@
 					0 = {
 						modifier = {
 							has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
-							add = 5
+							add = 2
 						}
 						trigger_event = sbs_slavery_event.5100
 					}
@@ -161,6 +165,7 @@
 					0 = {
 						modifier = {
 							OR = {
+								has_trait = temperate
 								has_trait = inappetetic
 								current_weight < -30
 							}
@@ -180,9 +185,9 @@
 					}
 					0 = {
 						modifier = {
-							any_child = { father = scope:owner has_trait = bastard has_trait = slave has_relation_slave_owner = scope:actor }
+							any_child = { father = scope:actor has_trait = slave has_relation_slave_owner = scope:actor }
 							any_courtier = { is_adult = yes NOT = { this = scope:recipient } is_attracted_to_gender_of = scope:recipient count > 1 }
-							add = 5
+							add = 25
 						}
 						trigger_event = sbs_slavery_event.6400
 					}
@@ -220,7 +225,7 @@
 	}
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
-	ai_frequency = 2
+	ai_frequency = 1
 	ai_will_do = {
 		base = 0
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }

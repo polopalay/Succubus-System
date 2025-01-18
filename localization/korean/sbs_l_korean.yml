@@ -92,6 +92,7 @@
   action_can_offer_prostitute_combined_group_label: "성매매 제공 가능"
   action_can_offer_prostitute_combined_group_description: "캐릭터에게 성매매를 제공할 수 있습니다"
   action_can_offer_prostitute_combined_label: "[recipient.GetShortUIName|E]에게 성매매 제공"
+  action_can_offer_prostitute_label: "[recipient.GetShortUIName|E]에게 성매매 제공"
   action_can_offer_prostitute: "성매매 제공"
   action_can_offer_prostitute_desc: "[recipient.GetShortUIName]에게 성적 서비스를 제공합니다"
   action_can_offer_prostitute_click: ""

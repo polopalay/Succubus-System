@@ -19,15 +19,15 @@
 			OR = {
 				has_trait = sbs_demon
 				AND = {
-					has_trait_xp = { trait = sbs_succubus track = loyalty value = 5 }
-					has_trait_xp = { trait = sbs_succubus track = corruption value = 5 }
+					has_trait_xp = { trait = sbs_succubus track = loyalty value >= }
+					has_trait_xp = { trait = sbs_succubus track = corruption value >= 5 }
 				}
 			}
 		}
 		scope:recipient = {
 			OR = {
 				is_imprisoned_by = scope:actor
-				has_relation_slave = scope:actor
+				has_relation_slave_owner = scope:actor
 			}
 		}
 	}
@@ -47,8 +47,8 @@
 		scope:recipient = {
 			if = {
 				NOT = { has_relation_slave_owner = scope:actor }
-				add_opinion = { target = root modifier = carn_wants_to_be_your_slave_opinion }
-				carn_enslave_effect = { SLAVE = this OWNER = root DRAMA = yes }
+				add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
+				carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
 			}
 			else_if = {
 				limit = { NOT = { has_trait = deviant } }

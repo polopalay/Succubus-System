@@ -171,6 +171,7 @@
 			scope:healing = yes
 			scope:honor = yes
 			scope:dna = yes
+			scope:actor = { is_ai = yes }
 		}
 	}
 	send_option = {
@@ -527,8 +528,8 @@
 					modifier = be_healed_opinion
 				}
 			}
-						if = {
-				limit = { scope:stress = yes }
+			if = {
+				limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
 				remove_trait = drunkard
 				remove_trait = hashishiyah
 				remove_trait = rakish
@@ -544,7 +545,7 @@
 			}
 
 			if = {
-				limit = { scope:healing = yes }
+				limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
 				remove_trait = depressed_1
 				remove_trait = depressed_genetic
 				remove_trait = lunatic_1
@@ -595,7 +596,7 @@
 			}
 
 			if = {
-				limit = { scope:dna = yes }
+				limit = { OR = { scope:dna = yes scope:actor = { is_ai = yes } } }
 				remove_trait = albino
 				remove_trait = lisping
 				remove_trait = stuttering
@@ -630,7 +631,7 @@
 			}
 
 			if = {
-				limit = { scope:honor = yes }
+				limit = { OR = { scope:honor = yes scope:actor = { is_ai = yes } } }
 				if = {
 					limit = {
 						has_trait = witch

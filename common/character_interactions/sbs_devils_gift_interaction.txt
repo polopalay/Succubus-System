@@ -3,6 +3,7 @@ sbs_devils_gift_interaction = {
 	category = interaction_category_hostile
 	use_diplomatic_range = yes
 	cooldown = { years = 1 }
+	cooldown_against_recipient = { years = 3 }
 	common_interaction = yes
 	is_shown = {
 		scope:actor = {
@@ -232,7 +233,7 @@ sbs_devils_gift_interaction = {
 				}
 				20 = {
 					modifier = { has_character_modifier = succubus_buff add = -15 }
-					add_character_modifier = { modifier = succubus_buff years = 10 }
+					add_character_modifier = { modifier = succubus_buff years = 20 }
 				}
 			}
 		}

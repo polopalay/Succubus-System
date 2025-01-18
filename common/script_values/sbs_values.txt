@@ -1,19 +1,19 @@
 succubus_cost_value = {
 	value = 0
 	if = {
-		limit = { scope:stress = yes }
+		limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
 		add = succubus_cost_dealing_with_stress_value
 	}
 	if = {
-		limit = { scope:healing = yes }
+		limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
 		add = succubus_cost_heal_value
 	}
 	if = {
-		limit = { scope:dna = yes }
+		limit = { OR = { scope:dna = yes scope:actor = { is_ai = yes } } }
 		add = succubus_cost_purify_price_value
 	}
 	if = {
-		limit = { scope:honor = yes }
+		limit = { OR = { scope:honor = yes scope:actor = { is_ai = yes } } }
 		add = succubus_cost_honor_price_value
 	}
 	max = 50
@@ -443,19 +443,19 @@ succubus_cost_honor_price_value = {
 deal_price_value = {
 	value = 0
 	if = {
-		limit = { scope:stress = yes }
+		limit = { OR = { scope:stress = yes scope:actor = { is_ai = yes } } }
 		add = dealing_with_stress_value
 	}
 	if = {
-		limit = { scope:healing = yes }
+		limit = { OR = { scope:healing = yes scope:actor = { is_ai = yes } } }
 		add = heal_price_value
 	}
 	if = {
-		limit = { scope:dna = yes }
+		limit = { OR = {  scope:dna = yes scope:actor = { is_ai = yes } } }
 		add = purify_price_value
 	}
 	if = {
-		limit = { scope:honor = yes }
+		limit = { OR = {  scope:honor = yes scope:actor = { is_ai = yes } } }
 		add = honor_price_value
 	}
 	min = 0

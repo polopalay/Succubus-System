@@ -24,7 +24,10 @@ sbs_slavery_event.0100 = {
 				modifier = { OR = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } add = -4 }
 				trigger_event = sbs_slavery_event.0110
 			}
-			5 = { trigger_event = sbs_slavery_event.0111 }
+			5 = {
+				modifier = { scope:owner = { any_former_spouse = { this = root } } add = 1 }
+				trigger_event = sbs_slavery_event.0111
+			}
 			5 = { 
 				modifier = { is_immortal = yes scope:owner = { any_vassal = { is_adult = yes is_attracted_to_gender_of = root count = 0 } } add = -5 }
 				trigger_event = sbs_slavery_event.0112
@@ -33,29 +36,31 @@ sbs_slavery_event.0100 = {
 				modifier = { scope:owner = { any_courtier = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } count = 0 } } add = -5 }
 				trigger_event = sbs_slavery_event.0113
 			}
-			5 = { 
-				modifier = { dynasty = { any_dynasty_member = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } count = 0 } } add = -5 }
+			0 = { 
+				modifier = { dynasty = { any_dynasty_member = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } is_vassal_or_below_of = scope:owner } } add = 5 }
 				trigger_event = sbs_slavery_event.0114
 			}
-			5 = { trigger_event = sbs_slavery_event.0115 }
+			5 = {
+				modifier = { scope:owner = { any_former_spouse = { this = root } } add = 1 }
+				trigger_event = sbs_slavery_event.0115
+			}
 			0 = {
-				modifier = { scope:owner = { is_attracted_to_gender_of = root } add = 5 }
+				modifier = { father = { is_alive = no } scope:owner = { is_attracted_to_gender_of = root } add = 2 }
+				modifier = { has_trait = zealous father = { is_alive = no } scope:owner = { is_attracted_to_gender_of = root } add = 3 }
 				trigger_event = sbs_slavery_event.0116
 			}
 			0 = {
-				modifier = { is_immortal = yes add = 5 }
+				modifier = { is_immortal = yes add = 2 }
+				modifier = { is_immortal = yes has_trait = brave add = 3 }
 				trigger_event = sbs_slavery_event.0117
 			}
 			0 = {
-				modifier = {
-					NOT = { has_trait = pregnant }
-					scope:owner = { is_female = no }
-					add = 5
-				}
+				modifier = { NOT = { has_trait = pregnant } scope:owner = { is_female = no } add = 1 }
+				modifier = { scope:owner = { any_former_spouse = { this = root } } add = 4 }
 				trigger_event = sbs_slavery_event.0118
 			}
 			0 = {
-				modifier = { any_close_family_member = { is_alive = yes is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } } add = 5 }
+				modifier = { any_close_family_member = { is_alive = yes is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } is_vassal_or_below_of = scope:owner } add = 5 }
 				trigger_event = sbs_slavery_event.0119
 			}
 		}
@@ -170,6 +175,11 @@ sbs_slavery_event.0112 = {
 				pay_short_term_gold = { target = scope:owner gold = root.prostitute_tips_value }
 			}
 		}
+		if = {
+			limit = { has_trait = arrogant }
+			remove_trait = arrogant
+			add_trait = humble
+		}
 		add_character_modifier = { modifier = licentious_04_modifier months = 2 }
 	}
 }
@@ -221,7 +231,10 @@ sbs_slavery_event.0114 = {
 	immediate = {
 		dynasty = {
 			random_dynasty_member = {
-				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } }
+				limit = {
+					is_adult = yes is_attracted_to_gender_of = root NOT = { this = root }
+					is_vassal_or_below_of = scope:owner
+				}
 				save_scope_as = owner2
 			}
 		}
@@ -283,6 +296,21 @@ sbs_slavery_event.0116 = {
 		custom_tooltip = sbs_slavery_event.0116.a.tt
 		add_stress = minor_stress_loss
 		had_sex_with_effect = { CHARACTER = scope:owner PREGNANCY_CHANCE = pregnancy_chance }
+		if = {
+			limit = { has_trait = zealous }
+			remove_trait = zealous
+			random_list = {
+				1 = { add_trait = cynical }
+				1 = {
+					modifier = { has_trait = fickle add = -1 }
+					add_trait = fickle
+				}
+				1 = {
+					modifier = { has_trait = eccentric add = -1 }
+					add_trait = eccentric
+				}
+			}
+		}
 	}
 }
 
@@ -308,6 +336,11 @@ sbs_slavery_event.0117 = {
 		trigger_event = sbs_slavery_event.2100
 		add_stress = minor_stress_loss
 		add_character_modifier = { modifier = licentious_01_modifier years = 1 }
+		if = {
+			limit = { has_trait = brave }
+			remove_trait = brave
+			add_trait = craven
+		}
 	}
 	option = {
 		ai_chance = { base = 20 }
@@ -351,7 +384,10 @@ sbs_slavery_event.0119 = {
 	override_background = { reference = throne_room }
 	immediate = {
 		random_close_family_member = {
-			limit = { is_adult = yes is_alive = yes is_attracted_to_gender_of = root NOT = { this = root } }
+			limit = {
+				is_adult = yes is_alive = yes is_attracted_to_gender_of = root NOT = { this = root }
+				is_vassal_or_below_of = scope:owner
+			}
 			save_scope_as = owner2
 		}
 	}
@@ -742,6 +778,10 @@ sbs_slavery_event.0200 = {
 					modifier = { OR = { has_trait = cancer } add = 20 }
 					remove_trait = cancer
 				}
+				0 = {
+					modifier = { OR = { has_trait = ill } add = 20 }
+					remove_trait = ill
+				}
 				5 = {
 					modifier = { current_weight >= 30 add = 15 }
 					change_current_weight = -10
@@ -749,6 +789,11 @@ sbs_slavery_event.0200 = {
 				5 = {
 					modifier = { current_weight < -30 add = 15 }
 					change_current_weight = 10
+				}
+				5 = {
+					modifier = { has_trait = lustful add = -5 }
+					remove_trait = chaste
+					add_trait = lustful
 				}
 				1 = {
 					modifier = { has_trait = fecund add = -1 }
@@ -758,17 +803,12 @@ sbs_slavery_event.0200 = {
 				1 = {
 					modifier = { has_trait = dull add = -1 }
 					remove_trait = shrewd
-					remove_trait = intellect_good_1
-					remove_trait = intellect_good_2
-					remove_trait = intellect_good_3
+					set_trait_rank = { trait = intellect_good rank = 0 }
 					add_trait = dull
 				}
 				1 = {
 					modifier = { has_trait = weak add = -1 }
 					remove_trait = strong
-					remove_trait = physique_good_1
-					remove_trait = physique_good_2
-					remove_trait = physique_good_3
 					add_trait = weak
 				}
 				3 = {
@@ -827,9 +867,11 @@ sbs_slavery_event.0200 = {
 				prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
 			}
 		}
-		add_character_modifier = { modifier = sleep_deprived_modifier months = 6 }
-		add_character_modifier = { modifier = lost_in_lust_modifier years = 10 }
-		add_character_modifier = { modifier = possessed_by_lust_demon_modifier years = 10 }
+		random_list = {
+			1 = { add_character_modifier = { modifier = possessed_by_lust_demon_modifier years = 10 } }
+			1 = { add_character_modifier = { modifier = lost_in_lust_modifier years = 10 } }
+			1 = { add_character_modifier = { modifier = sleep_deprived_modifier months = 6 } }
+		}
 	}
 }
 
@@ -852,6 +894,11 @@ sbs_slavery_event.0300 = {
 		ai_chance = { base = 80 }
 		name = sbs_slavery_event.0300.a
 		custom_tooltip = sbs_slavery_event.0300.a.tt
+		if = {
+			limit = { has_trait = lazy }
+			remove_trait = lazy
+			add_trait = diligent
+		}
 		every_courtier = {
 			limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = pregnancy_chance }
@@ -1441,6 +1488,11 @@ sbs_slavery_event.0600 = {
 		add_prestige_level = -6
 		add_legitimacy = -1000
 		change_influence_level = -6
+		if = {
+			limit = { has_trait = ambitious }
+			remove_trait = ambitious
+			add_trait = content
+		}
 		scope:owner = {
 			every_courtier = {
 				limit = { is_adult = yes is_attracted_to_gender_of = root NOT = { this = root } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
@@ -1647,8 +1699,8 @@ sbs_slavery_event.1100 = {
 	}
 	option = {
 		ai_chance = { base = 20 }
-		name = sbs_slavery_event.1000.a
-		custom_tooltip = sbs_slavery_event.1000.a.tt
+		name = sbs_slavery_event.1100.a
+		custom_tooltip = sbs_slavery_event.1100.a.tt
 		add_piety = medium_piety_loss
 		if = {
 			limit = { scope:owner = { is_attracted_to_gender_of = root } }
@@ -2247,6 +2299,11 @@ sbs_slavery_event.6200 = {
 		custom_tooltip = sbs_slavery_event.6200.a.tt
 		remove_trait = inappetetic
 		add_stress = minor_stress_gain
+		if = {
+			limit = { has_trait = temperate }
+			remove_trait = temperate
+			add_trait = gluttonous
+		}
 	}
 	option = {
 		ai_chance = { base = 20 }
