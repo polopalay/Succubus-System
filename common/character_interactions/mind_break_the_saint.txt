@@ -46,7 +46,7 @@
 		}
 		scope:recipient = {
 			if = {
-				NOT = { has_relation_slave_owner = scope:actor }
+				limit = { NOT = { has_relation_slave_owner = scope:actor } }
 				add_opinion = { target = scope:actor modifier = carn_wants_to_be_your_slave_opinion }
 				carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
 			}

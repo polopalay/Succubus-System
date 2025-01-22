@@ -8,6 +8,7 @@
 			NOT = { has_character_modifier = forced_labor }
 			is_courtier_of = scope:actor
 			is_adult = yes
+			is_female = no
 		}
 	}
 	auto_accept = yes

@@ -68,7 +68,7 @@
 					5 = { trigger_event = sbs_slavery_event.0300 }
 					0 = {
 						modifier = {
-							scope:actor.liege = { is_attracted_to_gender_of = scope:recipient }
+							scope:actor.liege = { is_adult = yes is_attracted_to_gender_of = scope:recipient }
 							NOT = { scope:actor.liege = scope:actor }
 							scope:recipient = { is_immortal = yes }
 							add = 5
@@ -80,7 +80,7 @@
 						trigger_event = sbs_slavery_event.0800
 					}
 					0 = {
-						modifier = { any_secret = { secret_type = secret_prostitute } add = 100 }
+						modifier = { any_secret = { secret_type = secret_prostitute } add = 20 }
 						trigger_event = sbs_slavery_event.0500
 					}
 					1 = {
@@ -127,7 +127,7 @@
 					0 = {
 						modifier = {
 							has_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
-							add = 2
+							add = 1
 						}
 						trigger_event = sbs_slavery_event.5100
 					}
@@ -185,11 +185,20 @@
 					}
 					0 = {
 						modifier = {
-							any_child = { father = scope:actor has_trait = slave has_relation_slave_owner = scope:actor }
-							any_courtier = { is_adult = yes NOT = { this = scope:recipient } is_attracted_to_gender_of = scope:recipient count > 1 }
+							any_child = { OR = { father = scope:actor real_father = scope:actor } has_trait = slave has_relation_slave_owner = scope:actor }
+							scope:actor = { any_courtier = { is_adult = yes NOT = { this = scope:recipient is_child_of = scope:recipient } is_attracted_to_gender_of = scope:recipient } }
 							add = 25
 						}
 						trigger_event = sbs_slavery_event.6400
+					}
+				}
+			}
+			else_if = {
+				limit = { is_female = no scope:actor = { any_courtier = { is_adult = yes has_trait = slave is_female = yes NOT = { has_trait = pregnant } } }
+				scope:actor = {
+					random_courtier = {
+						limit = { is_adult = yes has_trait slave is_female = yes NOT = { has_trait = pregnant } }
+						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 					}
 				}
 			}

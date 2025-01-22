@@ -18,6 +18,8 @@
 					}
 				}
 				has_trait = seed_of_destruction
+				has_trait = sadistic
+				has_trait = callous
 			}
 		}
 		scope:recipient = {
