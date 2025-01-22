@@ -492,19 +492,18 @@ sbs_event.9996 = {
 }
 
 sbs_event.9997 = {
-	trigger = { is_ruler = yes any_relation = { type = slave is_ruler = no NOT = { liege = root } } }
+	trigger = { is_ruler = yes any_relation = { type = slave is_ruler = no NOT = { is_courtier_of = root } } }
 	hidden = yes
 	immediate = {
 		every_relation = {
 			type = slave
 			limit = {
 				is_ruler = no
-				NOT = { liege = root }
+				NOT = { is_courtier_of = root }
 			}
-			save_scope_as = slave
-		}
-		root = {
-			add_courtier = scope:slave
+			root = {
+				add_courtier = prev
+			}
 		}
 	}
 }

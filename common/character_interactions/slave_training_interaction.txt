@@ -194,17 +194,17 @@
 				}
 			}
 			else_if = {
-				limit = { is_female = no scope:actor = { any_courtier = { is_adult = yes has_trait = slave is_female = yes NOT = { has_trait = pregnant } } }
+				limit = { any_scheme = { scheme_type = murder scheme_target_character = scope:actor } }
+				every_scheme = { limit = { scheme_type = murder scheme_target_character = scope:actor } end_scheme = yes }
+			}
+			else_if = {
+				limit = { is_female = no scope:actor = { any_courtier = { is_adult = yes has_trait = slave is_female = yes NOT = { has_trait = pregnant } } } }
 				scope:actor = {
 					random_courtier = {
-						limit = { is_adult = yes has_trait slave is_female = yes NOT = { has_trait = pregnant } }
+						limit = { is_adult = yes has_trait = slave is_female = yes NOT = { has_trait = pregnant } }
 						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 					}
 				}
-			}
-			else_if = {
-				limit = { any_scheme = { scheme_type = murder scheme_target_character = scope:actor } }
-				every_scheme = { limit = { scheme_type = murder scheme_target_character = scope:actor } end_scheme = yes }
 			}
 			else_if = {
 				limit = { any_secret = { NOT = { is_known_by = scope:actor } } }
@@ -236,7 +236,7 @@
 	ai_potential = { always = yes }
 	ai_frequency = 1
 	ai_will_do = {
-		base = 0
+		base = 50
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }
 		modifier = { scope:recipient = { is_ai = no } add = 50 }
 		modifier = {

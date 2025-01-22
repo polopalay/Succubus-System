@@ -79,9 +79,17 @@ sbs_ntr_event.0100 = {
 		trigger_event = sbs_ntr_event.0120
 	}
 	option = {
-		ai_chance = { base = 60 }
+		ai_chance = { base = 20 }
 		modifier = { has_trait = lustful add = -20 }
-		modifier = { has_trait = chaste add = 200 }
+		modifier = {
+			OR = {
+				has_trait = deviant
+				any_secret = { secret_type = secret_deviant }
+				has_trait = witch
+				any_secret = { secret_type = secret_witch }
+			}
+			add = -15
+		}
 		name = sbs_ntr_event.0100.c
 		custom_tooltip = sbs_ntr_event.0100.c.tt
 		if = {
@@ -707,6 +715,7 @@ sbs_ntr_event.0232 = {
 		add_opinion = { target = scope:ntr_character modifier = carn_wants_to_be_your_slave_opinion }
 		add_trait = gallivanter
 		every_courtier = {
+			limit = { NOT = { this = scope:ntr_character } }
 			add_opinion = {
 				target = root
 				modifier = disgusted_opinion
@@ -714,6 +723,7 @@ sbs_ntr_event.0232 = {
 			}
 		}
 		every_vassal = {
+			limit = { NOT = { this = scope:ntr_character } }
 			add_opinion = {
 				target = root
 				modifier = disgusted_opinion

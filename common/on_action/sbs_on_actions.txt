@@ -16,10 +16,12 @@ random_ntr_on_action = {
 			has_trait = saint
 		}
 		NOT = { has_global_variable = seal_the_gates_of_hell }
+		NOT = { faith.religion = religion:satanic_religion }
 		exists = primary_spouse
 		exists = primary_spouse.father
 		primary_spouse = {
 			NOT = {
+				faith.religion = religion:satanic_religion
 				has_trait = sbs_demon
 				has_trait = seed_of_destruction
 			}
@@ -27,36 +29,34 @@ random_ntr_on_action = {
 		primary_spouse.father = {
 			is_incapable = no
 			is_alive = yes
+			NOT = { faith.religion = religion:satanic_religion }
 			OR = {
 				has_trait = seducer
-				has_trait = ambitious
-				has_trait = deceitful
-				has_trait = callous
-				AND = {
-					has_trait = seed_of_destruction
-					any_courtier = {
-						is_female = yes
-						is_immortal = yes
-						count = 0
-					}
-				}
-			}
-			OR = {
-				has_trait = lustful
 				has_trait = deviant
+				has_trait = witch
 				any_secret = { secret_type = secret_deviant }
-				AND = {
-					has_trait = seed_of_destruction
-					any_courtier = {
-						is_female = yes
-						is_immortal = yes
-						count = 0
-					}
-				}
+				any_secret = { secret_type = secret_witch }
 				has_relation_lover = root
 				primary_spouse = { is_close_family_of = root }
+				AND = {
+					has_trait = seed_of_destruction
+					any_courtier = {
+						is_female = yes
+						is_immortal = yes
+						count = 0
+					}
+				}
+				root = {
+					OR = {
+						has_trait = witch
+						any_secret = { type = secret_witch }
+					}
+				}
 			}
-			NOT = { has_trait = chaste }
+			NOT = {
+				has_trait = chaste
+				has_trait = saint
+			}
 		}
 		is_ruler = yes
 		is_landed = yes
@@ -65,7 +65,7 @@ random_ntr_on_action = {
 		25 = sbs_ntr_event.0100
 		10 = sbs_ntr_event.0210
 		10 = sbs_ntr_event.0220
-		100 = sbs_ntr_event.0230
+		10 = sbs_ntr_event.0230
 		10 = sbs_ntr_event.0240
 		10 = sbs_ntr_event.0250
 	}

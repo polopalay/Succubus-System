@@ -43,6 +43,10 @@
 				is_courtier_of = scope:actor
 				scope:actor = scope:recipient
 				AND = {
+					is_ruler = yes
+					scope:actor = scope:recipient
+				}
+				AND = {
 					is_ruler = no
 					is_imprisoned_by = scope:actor
 				}
