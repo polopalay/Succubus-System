@@ -378,6 +378,12 @@ sbs_event.9993 = {
 			has_trait = measles
 			has_trait = dysentery
 			has_trait = ergotism
+
+			has_trait = drunkard
+			has_trait = comfort_eater
+			has_trait = inappetetic
+			has_trait = rakish
+			has_trait = flagellant
 		}
 	}
 	hidden = yes
@@ -418,6 +424,12 @@ sbs_event.9993 = {
 		recover_from_disease_effect = { DISEASE = bubonic_plague }
 		recover_from_disease_effect = { DISEASE = dysentery }
 		recover_from_disease_effect = { DISEASE = ergotism }
+		
+		remove_trait = drunkard
+		remove_trait = comfort_eater
+		remove_trait = inappetetic
+		remove_trait = rakish
+		remove_trait = flagellant
 	}
 }
 

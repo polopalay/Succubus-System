@@ -187,7 +187,7 @@
 						modifier = {
 							any_child = { OR = { father = scope:actor real_father = scope:actor } has_trait = slave has_relation_slave_owner = scope:actor }
 							scope:actor = { any_courtier = { is_adult = yes NOT = { this = scope:recipient is_child_of = scope:recipient } is_attracted_to_gender_of = scope:recipient } }
-							add = 25
+							add = 10
 						}
 						trigger_event = sbs_slavery_event.6400
 					}
@@ -247,8 +247,8 @@
 		modifier = { scope:recipient = { has_relation_friend = scope:actor } add = -25 }
 		modifier = { scope:recipient = { has_relation_lover = scope:actor } add = -25 }
 		modifier = { scope:recipient = { has_relation_soulmate = scope:actor } add = -25 }
-		modifier = { scope:recipient = { has_trait = wounded_1 } add = -25 }
-		modifier = { scope:recipient = { has_trait = wounded_2 } add = -50 }
-		modifier = { scope:recipient = { has_trait = wounded_3 } add = -100 }
+		modifier = { scope:recipient = { has_trait = wounded_1 } add = -50 }
+		modifier = { scope:recipient = { has_trait = wounded_2 } add = -100 }
+		modifier = { scope:recipient = { has_trait = wounded_3 } add = -200 }
 	}
 }

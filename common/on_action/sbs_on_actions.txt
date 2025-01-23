@@ -16,12 +16,11 @@ random_ntr_on_action = {
 			has_trait = saint
 		}
 		NOT = { has_global_variable = seal_the_gates_of_hell }
-		NOT = { faith.religion = religion:satanic_religion }
+		trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
 		exists = primary_spouse
 		exists = primary_spouse.father
 		primary_spouse = {
 			NOT = {
-				faith.religion = religion:satanic_religion
 				has_trait = sbs_demon
 				has_trait = seed_of_destruction
 			}
@@ -29,27 +28,19 @@ random_ntr_on_action = {
 		primary_spouse.father = {
 			is_incapable = no
 			is_alive = yes
-			NOT = { faith.religion = religion:satanic_religion }
+			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
 			OR = {
-				has_trait = seducer
-				has_trait = deviant
-				has_trait = witch
-				any_secret = { secret_type = secret_deviant }
-				any_secret = { secret_type = secret_witch }
-				has_relation_lover = root
+				is_vassal_of = root
 				primary_spouse = { is_close_family_of = root }
+				any_secret = { secret_type = secret_witch }
+				has_trait = witch
+				has_relation_lover = root
 				AND = {
 					has_trait = seed_of_destruction
 					any_courtier = {
 						is_female = yes
 						is_immortal = yes
 						count = 0
-					}
-				}
-				root = {
-					OR = {
-						has_trait = witch
-						any_secret = { type = secret_witch }
 					}
 				}
 			}

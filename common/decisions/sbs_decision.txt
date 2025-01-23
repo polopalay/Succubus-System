@@ -82,10 +82,12 @@ become_demon = {
 		add_trait = sbs_demon
 		if = {
 			limit = {
-				NOT = {
-					faith.religion = religion:satanic_religion
-					faith.religious_head = root
-					is_female = yes
+				OR = {
+					NOT = {
+						faith.religion = religion:satanic_religion
+						faith.religious_head = root
+					}
+					is_female = no
 				}
 			}
 			set_immortal_age = 40

@@ -80,15 +80,13 @@ sbs_ntr_event.0100 = {
 	}
 	option = {
 		ai_chance = { base = 20 }
-		modifier = { has_trait = lustful add = -20 }
+		modifier = { has_trait = lustful add = -10 }
 		modifier = {
 			OR = {
 				has_trait = deviant
 				any_secret = { secret_type = secret_deviant }
-				has_trait = witch
-				any_secret = { secret_type = secret_witch }
 			}
-			add = -15
+			add = -10
 		}
 		name = sbs_ntr_event.0100.c
 		custom_tooltip = sbs_ntr_event.0100.c.tt

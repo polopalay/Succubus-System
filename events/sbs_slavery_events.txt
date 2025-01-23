@@ -66,7 +66,7 @@ sbs_slavery_event.0100 = {
 		}
 	}
 	option = {
-		ai_chance = { base = 20 }
+		ai_chance = { base = 5 }
 		name = sbs_slavery_event.0100.b
 		custom_tooltip = sbs_slavery_event.0100.b.tt
 		duel = {
@@ -733,7 +733,29 @@ sbs_slavery_event.0200 = {
 		outfit_tags = { no_clothes }
 	}
 	option = {
-		ai_chance = { base = 80 }
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 200
+				OR = {
+					has_trait = leper
+					has_trait = lovers_pox
+					has_trait = early_great_pox
+					has_trait = disfigured
+					has_trait = great_pox
+					has_trait = blind
+					has_trait = one_eyed
+					has_trait = eunuch_1
+					has_trait = scarred
+					has_trait = one_legged
+					has_trait = cancer
+					has_trait = ill
+					current_weight >= 25
+					current_weight < -25
+					has_trait = lustful
+				}
+			}
+		}
 		name = sbs_slavery_event.0200.a
 		custom_tooltip = sbs_slavery_event.0200.a.tt
 			random_list = {
@@ -874,7 +896,7 @@ sbs_slavery_event.0200 = {
 		}
 	}
 	option = {
-		ai_chance = { base = 20 }
+		ai_chance = { base = 40 }
 		name = sbs_slavery_event.0200.b
 		custom_tooltip = sbs_slavery_event.0200.b.tt
 		if = {
