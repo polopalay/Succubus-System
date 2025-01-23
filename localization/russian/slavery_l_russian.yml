@@ -45,3 +45,16 @@
   set_relation_slave_owner_f: "[TARGET_CHARACTER.GetName] теперь мой владелец"
   remove_relation_slave_owner_g: "[TARGET_CHARACTER.GetName] больше не владелец"
   remove_relation_slave_owner_f: "[TARGET_CHARACTER.GetName] больше не мой владелец"
+
+  game_concept_slave: "Раб"
+  game_concept_slaves: "Рабы"
+  game_concept_slavery: "Рабство"
+  game_concept_slave_possessive: "Slave's"
+  game_concept_slaves_possessive: "Slaves'"
+  game_concept_slave_desc: "$game_concept_slave$ это [character|E] который был лишен своих прав и обращен в рабство. Они принадлежат [slave_owner|E], который имеет [strong_hook|E] над ним и может покупать или продавать их на [slave_market|E]. Кроме того, [extramarital_sex|E] между рабом и его владельцем является законным.\n\nРабы не могут иметь или наследовать [titles|E],  и любые дети, рожденные от матери-рабыни, также будут рабами.\n\nЕсли рабовладелец умирает, право собственности на рабов переходит к его  [primary_heir|E].\n\nЧтобы избежать рабства, раб должен быть освобожден своим владельцем через  $carn_free_slave_interaction$ [character_interaction|E]."
+
+  game_concept_slave_owner: "Владелец"
+  game_concept_slave_owners: "Владельцы"
+  game_concept_slave_owner_possessive: "Owner's"
+  game_concept_slave_owners_possessive: "Owners'"
+  game_concept_slave_owner_desc: "[character|E] может быть юридически признанным $game_concept_slave_owner$ одного или нескольких [slaves|E]. Рабовладельцы всегда имеют [strong_hook|E] на своих рабов и могут покупать или продавать их на [slave_market|E]. Кроме того, [extramarital_sex|E] между рабом и его владельцем является законным.\n\nЕсли рабовладелец умирает, право собственности на рабов переходит к его [primary_heir|E]."

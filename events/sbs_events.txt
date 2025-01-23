@@ -536,13 +536,14 @@ sbs_event.9998 = {
 	}
 	hidden = yes
 	immediate = {
+		remove_character_flag = carn_cannot_be_enslaved
 		remove_trait = saint
 		remove_trait = faith_warrior
 		remove_trait = populist_leader
 		set_character_faith_with_conversion = faith:abaddon
 		remove_trait = immortal
 		mind_break_personality = yes
-		set_trait = sbs_lesser_succubus
+		add_trait = sbs_lesser_succubus
 		remove_trait = loyal
 		add_trait = disloyal
 		give_nickname = nick_the_betrayer

@@ -363,6 +363,9 @@ succubus_outfit = {
 	}
 	sbs_demon = {
 		traits = { sbs_demon }
+		trigger = {
+			is_female = yes
+		}
 		dna_modifiers = {
 			human = {
 				morph = {

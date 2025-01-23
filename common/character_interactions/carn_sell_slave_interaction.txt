@@ -78,11 +78,9 @@
 		ai_recipients = liege
 		ai_recipients = vassals
 		ai_recipients = peer_vassals
-		ai_recipients = guests
-		ai_recipients = courtiers
 		ai_recipients = neighboring_rulers
 		ai_recipients = nearby_domicile_owners
-		max = 5
+		max = 10
 	}
 	ai_will_do = {
 		base = 0

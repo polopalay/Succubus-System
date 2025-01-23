@@ -1,71 +1,52 @@
-﻿create_succubus_interaction = {
-	icon = devil
-	desc = create_succubus_interaction.desc
+﻿create_lesser_succubus_interaction = {
+	icon = lesser_devil
+	desc = create_lesser_succubus_interaction.desc
 	category = interaction_category_diplomacy
 	use_diplomatic_range = yes
+	cooldown = { years = 25 }
 	common_interaction = yes
-	cooldown = { years = 50 }
 	is_shown = {
 		NOT = { has_global_variable = seal_the_gates_of_hell }
-		scope:recipient = { has_trait = sbs_lesser_succubus }
-		scope:actor = { has_trait = sbs_demon }
+		scope:recipient = {
+			is_female = yes
+			is_immortal = no
+		}
+		scope:actor = {
+			OR = {
+				has_trait = sbs_demon
+				AND = {
+					has_trait = sbs_succubus
+					is_valid_construction_alchemy3_trigger = yes
+				}
+			}
+		}
 	}
 	is_valid = {
 		scope:recipient = {
-			has_trait_xp = {
-				trait = sbs_lesser_succubus
-				value >= 100
+			has_trait = lustful
+			OR = {
+				has_trait = deviant
+				any_secret = { secret_type = secret_deviant }
 			}
-		}
-	}
-	populate_recipient_list = {
-		scope:recipient = {
-			is_ruler = yes
-			every_courtier = {
-				limit = {
-					OR = { NOT = { this = scope:recipient } }
-				}
-				add_to_list = characters
-			}
-		}
-		scope:actor = {
-			every_courtier = {
-				limit = {
-					scope:recipient = { is_ruler = no }
-					NOT = { this = scope:recipient }
-				}
-				add_to_list = characters
+			OR = {
+				has_trait = witch
+				any_secret = { secret_type = secret_witch }
 			}
 		}
 	}
 	on_accept = {
 		scope:recipient = {
-			remove_trait = sbs_lesser_succubus
-			add_trait = sbs_succubus
+			remove_character_modifier = succubus_buff
+			add_trait = sbs_lesser_succubus
 			set_immortal_age = 18
-			if = {
-				limit = { scope: secondary_recipient = { is_close_family_of = scope:recipient } }
-				add_trait_xp = { trait = sbs_succubus track = corruption value = 50 }
-			}
-		}
-		scope:secondary_recipient = {
-			death = {
-				death_reason = death_execution
-				killer = scope:recipient
-			}
 		}
 	}
 	ai_accept = {
-		base = 10
+		base = 20
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 0.5
-		}
-		opinion_modifier = {
-			opinion_target = scope:secondary_recipient
-			who = scope:recipient
-			multiplier = -0.2
 		}
 	}
 	ai_frequency = 12

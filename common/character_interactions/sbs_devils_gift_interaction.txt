@@ -33,9 +33,22 @@ sbs_devils_gift_interaction = {
 			random_list = {
 				0 = {
 					modifier = {
-						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
+						scope:actor = {
+							has_trait = sbs_demon
+							is_parent_of = scope:recipient
+						}
 						is_female = no
-						add = 100
+						add = 10
+					}
+					modifier = {
+						scope:actor = {
+							faith.religion = religion:satanic_religion
+							faith.religious_head = scope:actor
+							has_trait = sbs_demon
+							is_parent_of = scope:recipient
+						}
+						is_female = no
+						add = 90
 					}
 					modifier = { has_trait = seed_of_destruction add = -100 }
 					modifier = { has_trait = sbs_lesser_succubus add = -100 }
@@ -46,9 +59,22 @@ sbs_devils_gift_interaction = {
 				}
 				0 = {
 					modifier = {
-						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
+						scope:actor = {
+							has_trait = sbs_demon
+							is_parent_of = scope:recipient
+						}
 						is_female = yes
-						add = 100
+						add = 10
+					}
+					modifier = {
+						scope:actor = {
+							faith.religion = religion:satanic_religion
+							faith.religious_head = scope:actor
+							has_trait = sbs_demon
+							is_parent_of = scope:recipient
+						}
+						is_female = yes
+						add = 90
 					}
 					modifier = { has_trait = seed_of_destruction add = -100 }
 					modifier = { has_trait = sbs_lesser_succubus add = -100 }

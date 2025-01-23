@@ -817,8 +817,7 @@ sbs_slavery_event.0200 = {
 				}
 				5 = {
 					modifier = { has_trait = lustful add = -5 }
-					remove_trait = chaste
-					add_trait = lustful
+					mind_break_personality = yes
 				}
 				1 = {
 					modifier = { has_trait = fecund add = -1 }

@@ -4,13 +4,15 @@
 	common_interaction = yes
 	is_shown = {
 		scope:recipient = {
-			has_relation_slave_owner = scope:actor
 			has_trait = slave
 			OR = {
-				is_courtier_of = scope:actor
 				AND = {
 					this = scope:actor
 					is_ruler = yes
+				}
+				AND = {
+					has_relation_slave_owner = scope:actor
+					is_courtier_of = scope:actor
 				}
 			}
 		}
@@ -72,10 +74,7 @@
 	}
 	ai_targets = {
 		ai_recipients = self
-		ai_recipients = family
-		ai_recipients = children
 		ai_recipients = scripted_relations
-		max = 10
 	}
 	auto_accept = {
 		scope:recipient = scope:actor
@@ -142,6 +141,7 @@
 		base = 0
 		modifier = { add = 9999 scope:recipient = scope:actor }
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = -1000 }
+		modifier = { scope:recipient = { is_immortal = yes } add = -200 }
 		modifier = {
 			add = -40
 			scope:actor = {

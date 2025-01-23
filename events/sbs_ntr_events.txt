@@ -847,7 +847,11 @@ sbs_ntr_event.0232 = {
 		ai_chance = { base = 20 }
 		name = sbs_ntr_event.0232.d
 		custom_tooltip = sbs_ntr_event.0232.d.tt
-		add_trait = saint
+		if = {
+			limit = { faith.religion = religion:christianity_religion }
+			add_trait = saint
+			add_character_flag = carn_cannot_be_enslaved
+		}
 		every_secret = {
 			limit = {
 				OR = {
@@ -861,6 +865,8 @@ sbs_ntr_event.0232 = {
 		remove_trait = deviant
 		remove_trait = witch
 		remove_trait = lifestyle_prostitute
+		remove_trait = adulterer
+		remove_trait = fornicator
 		remove_character_modifier = diplomacy_majesty_4090_no_raiment_modifier
 		scope:ntr_character = {
 			death = {
