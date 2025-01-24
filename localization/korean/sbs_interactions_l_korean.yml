@@ -65,6 +65,7 @@
   deal_with_the_devil_interaction: "악마와 거래하기"
   deal_with_the_devil_interaction.desc: "악마와 거래하여 원하는 것을 \"작은\" 대가로 얻으세요."
   small_price: "작은 가격"
+  POWER_COST_OPINION: "에너지 필요 [gold_i]$POWER_COST|0$"
 
   ask_for_become_lesser_succubus_interaction: "하위 섹시한 악마가 되기를 요청하기"
   ask_for_become_lesser_succubus_interaction.desc: "악마에게 하위 섹시한 악마가 되기를 요청하세요."

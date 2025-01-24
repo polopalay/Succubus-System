@@ -480,13 +480,20 @@ sbs_event.9995 = {
 }
 
 sbs_event.9996 = {
-	trigger = { is_ruler = yes any_courtier = { has_trait = slave any_relation = { type = slave_owner is_ruler = yes count = 0 } } }
+	trigger = { is_ruler = yes any_courtier = { has_trait = slave any_relation = { type = slave_owner OR = { primary_title.tier > tier_barony is_ruler = yes } count = 0 } } }
 	hidden = yes
 	immediate = {
 		every_courtier = {
 			limit = {
 				has_trait = slave
-				any_relation = { type = slave_owner is_ruler = yes count = 0 }
+				any_relation = {
+					type = slave_owner
+					OR = {
+						primary_title.tier > tier_barony
+						is_ruler = yes
+					}
+					count = 0
+				}
 			}
 			every_relation = {
 				type = slave_owner
@@ -531,7 +538,7 @@ sbs_event.9998 = {
 			any_secret = { type = secret_witch }
 			has_trait = lifestyle_prostitute
 			any_secret = { type = secret_prostitute }
-			NOT = { religion = religion:christianity_religion }
+			NOT = { religion = { is_in_family = rf_abrahamic } }
 		}
 	}
 	hidden = yes

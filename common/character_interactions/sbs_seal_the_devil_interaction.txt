@@ -118,7 +118,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { scope:actor = { NOT = { has_trait = immortal } } }
 				add_trait = immortal
 			}
-			else_if = {
+			if = {
 				limit = { faith.religious_head = scope:recipient faith = faith:beelzebub }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {

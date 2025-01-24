@@ -345,6 +345,9 @@
 	localization_values = {
 		RANSOM_COST = scope:actor.deal_price_value
 	}
+	localization_values = {
+		POWER_COST = scope:recipient.succubus_cost_value
+	}
 	send_option = {
 		is_shown = {
 			scope:actor.deal_price_value > 0
@@ -771,15 +774,20 @@
 	}
 
 	ai_accept = {
-		base = {
-			value = 0
-			subtract = scope:actor.succubus_cost_value
-			multiply = 2
-		}
+		base = 0
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
 			multiplier = 0.05
+		}
+		modifier = {
+			desc = POWER_COST_OPINION
+			scope:actor.succubus_cost_value > 0
+			add = {
+				value = 0
+				subtract = scope:actor.succubus_cost_value
+				multiply = 2
+			}
 		}
 		modifier = { add = 25 scope:hook = yes }
 		modifier = { add = 20 scope:favor = yes scope:actor = {  primary_title.tier >= tier_county } }
