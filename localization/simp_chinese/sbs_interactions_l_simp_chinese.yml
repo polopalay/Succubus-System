@@ -31,7 +31,6 @@
  deal_with_the_devil_interaction: "与魔鬼交易"
  deal_with_the_devil_interaction.desc: "与魔鬼做交易，用 “小 ”代价换取你想要的"
  small_price: "小小的代价"
- POWER_COST_OPINION: "所需能量 [gold_i]$POWER_COST|0$"
  ask_for_become_lesser_succubus_interaction: "请求成为低等魅魔"
  ask_for_become_lesser_succubus_interaction.desc: "请求恶魔转变为低等魅魔"
  recipient_secondary_ask_for_become_lesser_succubus_interaction: "选一个"

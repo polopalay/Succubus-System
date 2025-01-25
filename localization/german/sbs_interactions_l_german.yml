@@ -66,7 +66,6 @@
   deal_with_the_devil_interaction: "Pakt mit dem Teufel"
   deal_with_the_devil_interaction.desc: "Schließe einen Pakt mit dem Teufel und erhalte, was immer du willst, zu einem \"kleinen\" Preis."
   small_price: "Kleiner Preis"
-  POWER_COST_OPINION: "Energie benötigt [gold_i]$POWER_COST|0$"
 
   ask_for_become_lesser_succubus_interaction: "Bitte um die Transformation zur geringeren Succubus"
   ask_for_become_lesser_succubus_interaction.desc: "Bitte den Teufel, um eine geringere Succubus zu werden."

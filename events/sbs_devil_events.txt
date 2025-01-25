@@ -45,6 +45,7 @@ sbs_devil.1410 = {
 	}
 	trigger = {
 		OR = {
+			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
@@ -55,10 +56,13 @@ sbs_devil.1410 = {
 	# pay gold
 	option = {
 		trigger = {
-			has_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value >= 100
+			OR = {
+				has_trait_xp = {
+					trait = sbs_succubus
+					track = corruption
+					value >= 100
+				}
+				has_trait = sbs_demon
 			}
 		}
 		ai_chance = { base = 5 }
@@ -1861,6 +1865,7 @@ sbs_devil.1300 = {
 	}
 	trigger = {
 		OR = {
+			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
@@ -2260,6 +2265,7 @@ sbs_devil.1319 = {
 		custom_tooltip = sbs_devil.1319.a.tt
 		random = {
 			chance = 50
+			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
 			modifier = { add = 50 has_character_flag = succubus_marking_5 }
 			modifier = { add = -25 have_devil_nicknames_trigger = yes }
 			modifier = { add = -100 OR = { has_personal_legend_seed = sexual promoted_legend.legend_type = legend_type:sexual NOT = { has_trait = sbs_succubus } } }
@@ -2295,6 +2301,7 @@ sbs_devil.1319 = {
 		}
 		random = {
 			chance = 10
+			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
 			modifier = { add = 15  has_character_flag = succubus_marking_6 }
 			modifier = { add = -100 is_landed = no }
 			modifier = {

@@ -338,7 +338,82 @@ sbs_event.0550 = {
 	}
 }
 
-sbs_event.9993 = {
+sbs_event.9990 = {
+	hidden = yes
+	trigger = {
+		OR = {
+			has_trait = sbs_demon
+			has_trait = sbs_succubus
+			has_trait = sbs_lesser_succubus
+			has_trait = seed_of_destruction
+		}
+		is_ruler = no
+		any_parent = {
+			OR = {
+				has_trait = sbs_demon
+				has_trait = sbs_succubus
+			}
+			count = 0
+		}
+		age > 50
+	}
+	immediate = {
+		create_landless_adventurer_title_effect = {
+			REASON = flag:voluntary
+			FLAVOR_CHAR = root
+		}
+	}
+}
+
+sbs_event.9991 = {
+	hidden = yes
+	trigger = {
+		has_trait = slave
+		any_relation = { type = slave_owner is_ruler = yes count = 0 }
+	}
+	immediate = {
+		random_living_character = {
+			limit = { is_ruler = yes }
+			add_courtier = root
+			weight = {
+				base = 1
+				modifier = {
+					is_female = no
+					primary_title.tier = tier_duchy
+					any_relation = { type = slave count = 0 }
+					add = 10
+				}
+				modifier = {
+					is_female = no
+					primary_title.tier = tier_kingdom
+					any_relation = { type = slave count = 0 }
+					add = 20
+				}
+				modifier = {
+					is_female = no
+					primary_title.tier = tier_empire
+					any_relation = { type = slave count = 0 }
+					add = 40
+				}
+				modifier = {
+					is_female = no
+					primary_spouse.primary_title.tier = tier_kingdom
+					any_relation = { type = slave count = 0 }
+					add = 20
+				}
+				modifier = {
+					is_female = no
+					primary_spouse.primary_title.tier = tier_empire
+					any_relation = { type = slave count = 0 }
+					add = 40
+				}
+			}
+		}
+	}
+}
+
+sbs_event.9992 = {
+	hidden = yes
 	trigger = { 
 		has_trait = saint
 		OR = {
@@ -386,7 +461,6 @@ sbs_event.9993 = {
 			has_trait = flagellant
 		}
 	}
-	hidden = yes
 	immediate = {
 		remove_trait = depressed_1
 		remove_trait = depressed_genetic
@@ -434,18 +508,10 @@ sbs_event.9993 = {
 }
 
 sbs_event.9993 = {
-	trigger = { is_ruler = yes has_trait = seed_of_destruction any_courtier = { has_trait = slave is_imprisoned_by = root is_immortal = yes is_female = yes } }
+	trigger = { has_trait = slave is_imprisoned = yes }
 	hidden = yes
 	immediate = {
-		every_courtier = {
-			limit = {
-				has_trait = slave
-				is_imprisoned_by = root
-				is_immortal = yes
-				is_female = yes
-			}
-			release_from_prison = yes
-		}
+		release_from_prison = yes
 	}
 }
 
@@ -469,18 +535,19 @@ sbs_event.9995 = {
 		every_courtier = {
 			limit = {
 				has_trait = slave
-				root = { OR = { has_imprisonment_reason = prev has_execute_reason = prev has_banish_reason = prev } }
+				OR = { has_imprisonment_reason = root has_execute_reason = root has_banish_reason = root }
 			}
-			save_scope_as = slave
-			root = { consume_imprisonment_reasons = scope:slave }
-			root = { consume_execute_reasons = scope:slave }
-			root = { consume_banish_reasons = scope:slave }
+			root = {
+				consume_imprisonment_reasons = prev
+				consume_execute_reasons = prev
+				consume_banish_reasons = prev
+			}
 		}
 	}
 }
 
 sbs_event.9996 = {
-	trigger = { is_ruler = yes any_courtier = { has_trait = slave any_relation = { type = slave_owner OR = { primary_title.tier > tier_barony is_ruler = yes } count = 0 } } }
+	trigger = { is_ruler = yes any_courtier = { has_trait = slave any_relation = { type = slave_owner is_ruler = yes count = 0 } } }
 	hidden = yes
 	immediate = {
 		every_courtier = {
@@ -488,10 +555,7 @@ sbs_event.9996 = {
 				has_trait = slave
 				any_relation = {
 					type = slave_owner
-					OR = {
-						primary_title.tier > tier_barony
-						is_ruler = yes
-					}
+					is_ruler = yes
 					count = 0
 				}
 			}
@@ -550,7 +614,13 @@ sbs_event.9998 = {
 		set_character_faith_with_conversion = faith:abaddon
 		remove_trait = immortal
 		mind_break_personality = yes
-		add_trait = sbs_lesser_succubus
+		if = {
+			limit = { is_female = yes }
+			add_trait = sbs_lesser_succubus
+		}
+		else = {
+			add_trait = seed_of_destruction
+		}
 		remove_trait = loyal
 		add_trait = disloyal
 		give_nickname = nick_the_betrayer

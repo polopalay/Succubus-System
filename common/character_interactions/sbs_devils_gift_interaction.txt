@@ -197,17 +197,17 @@ sbs_devils_gift_interaction = {
 				}
 				2 = {
 					modifier = { has_character_modifier = very_successful_fertility_treatment add = -50 }
-					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house  count = 0 } add = 198 }
+					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house count = 0 } add = 48 }
 					add_character_modifier = { modifier = very_successful_fertility_treatment years = 4 }
 				}
 				2 = {
 					modifier = { has_character_modifier = modifier_amazing_fertility_counsel add = -50 }
-					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house  count = 0 } add = 198 }
+					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house count = 0 } add = 48 }
 					add_character_modifier = { modifier = modifier_amazing_fertility_counsel years = 4 }
 				}
 				2 = {
 					modifier = { has_character_modifier = confident_lover add = -50 }
-					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house  count = 0} add = 198 }
+					modifier = { is_immortal = yes age > 100 any_child = { is_alive = yes house = scope:recipient.house count = 0} add = 48 }
 					add_character_modifier = { modifier = confident_lover years = 4 }
 				}
 				0 = {

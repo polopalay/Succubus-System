@@ -65,7 +65,6 @@
   deal_with_the_devil_interaction: "Сделка с дьяволом"
   deal_with_the_devil_interaction.desc: "Заключите сделку с дьяволом и получите все, что хотите, за \"небольшую\" цену."
   small_price: "Низкая цена"
-  POWER_COST_OPINION: "Требуемая энергия [gold_i]$POWER_COST|0$"
 
   ask_for_become_lesser_succubus_interaction: "Попросить стать меньшим суккубом"
   ask_for_become_lesser_succubus_interaction.desc: "Попросите дьявола стать меньшим суккубом."

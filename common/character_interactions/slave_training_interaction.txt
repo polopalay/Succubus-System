@@ -60,12 +60,19 @@
 								has_trait = cancer
 								has_trait = one_legged
 								has_trait = ill
+								has_trait = incapable
 							}
 							add = 40
 						}
 						trigger_event = sbs_slavery_event.0200
 					}
-					5 = { trigger_event = sbs_slavery_event.0300 }
+					0 = {
+						trigger_event = sbs_slavery_event.0300
+						modifier = {
+							scope:actor = { is_adult = yes is_attracted_to_gender_of = scope:recipient NOT = { this = scope:recipient } NOT = { has_trait = lovers_pox has_trait = great_pox has_trait = early_great_pox } }
+							add = 5
+						}
+					}
 					0 = {
 						modifier = {
 							scope:actor.liege = { is_adult = yes is_attracted_to_gender_of = scope:recipient }
@@ -220,10 +227,28 @@
 				limit = { is_female = yes NOT = { has_trait = pregnant } scope:actor = { any_courtier = { is_adult = yes has_trait = slave is_female = no } } }
 				scope:actor = {
 					random_courtier = {
-						limit = { is_adult = yes has_trait = slave is_female = no NOT = { has_trait = pregnant } }
+						limit = { is_adult = yes is_ruler = no is_female = no in_diplomatic_range = scope:actor }
 						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+						weight = {
+							base = 1
+							modifier = {
+								has_trait = slave
+								add = 1000
+							}
+							modifier = {
+								is_lowborn = yes
+								add = 200
+							}
+						}
 					}
 				}
+			}
+			else_if = {
+				limit = { is_female = yes NOT = { has_trait = pregnant } }
+					random_living_character = {
+						limit = { is_adult = yes has_trait = slave is_female = no can_have_children = yes }
+						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+					}
 			}
 			else_if = {
 				limit = {
@@ -287,15 +312,17 @@
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }
 		modifier = { scope:recipient = { is_ai = no } add = 1000 }
 		modifier = {
+			scope:recipient = { age > 45 is_immortal = no }
+			scope:actor = { has_trait = seed_of_destruction } 
+			add = -1000
+		}
+		modifier = {
 			scope:recipient = { is_female = yes OR = { AND = { age >= 16 age <= 45 } is_immortal = yes } is_female = yes is_lowborn = no }
 			scope:actor = { has_trait = seed_of_destruction } 
 			add = 1000
 		}
-		modifier = { scope:recipient = { has_relation_friend = scope:actor } add = -25 }
-		modifier = { scope:recipient = { has_relation_lover = scope:actor } add = -25 }
-		modifier = { scope:recipient = { has_relation_soulmate = scope:actor } add = -25 }
 		modifier = { scope:recipient = { has_trait = wounded_1 } add = -100 }
-		modifier = { scope:recipient = { has_trait = wounded_2 } add = -50 }
-		modifier = { scope:recipient = { has_trait = wounded_3 } add = -100 }
+		modifier = { scope:recipient = { has_trait = wounded_2 } add = -200 }
+		modifier = { scope:recipient = { has_trait = wounded_3 } add = -500 }
 	}
 }

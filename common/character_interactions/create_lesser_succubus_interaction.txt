@@ -23,6 +23,8 @@
 	}
 	is_valid = {
 		scope:recipient = {
+			faith = scope:recipient.faith
+			culture = scope:recipient.culture
 			has_trait = lustful
 			OR = {
 				has_trait = deviant

@@ -15,6 +15,7 @@ prostitute_clothes = {
 			base = 0
 			modifier = {
 				add = 100
+				is_female = yes
 				OR = {
 					has_character_modifier = carn_working_as_prostitute_1_modifier
 					has_character_modifier = carn_working_as_prostitute_2_modifier

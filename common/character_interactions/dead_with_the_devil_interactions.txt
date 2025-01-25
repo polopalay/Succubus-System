@@ -129,15 +129,9 @@
 				has_trait = bleeder
 				has_trait = weak
 				has_trait = dull
-				has_trait = beauty_bad_1
-				has_trait = beauty_bad_2
-				has_trait = beauty_bad_3
-				has_trait = intellect_bad_1
-				has_trait = intellect_bad_2
-				has_trait = intellect_bad_3
-				has_trait = physique_bad_1
-				has_trait = physique_bad_2
-				has_trait = physique_bad_3
+				has_trait = beauty_bad
+				has_trait = intellect_bad
+				has_trait = physique_bad
 				has_trait = inbred
 			}
 		}
@@ -344,9 +338,6 @@
 	}
 	localization_values = {
 		RANSOM_COST = scope:actor.deal_price_value
-	}
-	localization_values = {
-		POWER_COST = scope:recipient.succubus_cost_value
 	}
 	send_option = {
 		is_shown = {
@@ -781,8 +772,8 @@
 			multiplier = 0.05
 		}
 		modifier = {
-			desc = POWER_COST_OPINION
 			scope:actor.succubus_cost_value > 0
+			scope:actor = scope:actor
 			add = {
 				value = 0
 				subtract = scope:actor.succubus_cost_value

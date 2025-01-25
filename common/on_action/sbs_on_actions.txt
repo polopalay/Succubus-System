@@ -1,4 +1,4 @@
-quarterly_playable_pulse = {
+random_yearly_everyone_pulse = {
 	on_actions = {
 		random_ntr_on_action
 		sbs_devil_on_action
@@ -11,15 +11,16 @@ random_ntr_on_action = {
 		is_adult = yes
 		is_female = yes
 		NOT = {
+			has_trait = saint
 			has_trait = chaste
 			is_immortal = yes
-			has_trait = saint
 		}
 		NOT = { has_global_variable = seal_the_gates_of_hell }
-		trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+		NOT = { faith.religion = religion:satanic_religion }
 		exists = primary_spouse
 		exists = primary_spouse.father
 		primary_spouse = {
+			NOT = { faith.religion = religion:satanic_religion }
 			NOT = {
 				has_trait = sbs_demon
 				has_trait = seed_of_destruction
@@ -27,30 +28,57 @@ random_ntr_on_action = {
 		}
 		primary_spouse.father = {
 			is_incapable = no
+			is_immortal = no
+			is_ruler = yes
+			is_landed = yes
 			is_alive = yes
-			trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = witch }
+			OR = {
+				AND = {
+					is_vassal_of = root
+					root = { primary_title.tier >= tier_kingdom }
+				}
+				primary_title.tier >= tier_duchy
+			}
+			NOT = { faith.religion = religion:satanic_religion }
 			OR = {
 				is_vassal_of = root
-				primary_spouse = { is_close_family_of = root }
+				has_trait = lustful
+				has_trait = ambitious
+				has_trait = deceitful
+				has_trait = greedy
+				has_trait = gluttonous
+				has_trait = cynical
+				has_trait = callous
+				has_trait = sadistic
+				has_trait = seducer
+				has_trait = rakish
+				has_relation_lover = root
+				root = { is_ai = no }
+			}
+			OR = {
+				is_vassal_of = root
 				any_secret = { secret_type = secret_witch }
 				has_trait = witch
 				has_relation_lover = root
-				AND = {
-					has_trait = seed_of_destruction
-					any_courtier = {
-						is_female = yes
-						is_immortal = yes
-						count = 0
+				root.primary_spouse = {
+					OR = {
+						has_trait = albino
+						has_trait = dwarf
+						has_trait = infertile
+						has_trait = weak
+						has_trait = dull
+						has_trait = beauty_bad
+						has_trait = intellect_bad
+						has_trait = physique_bad
 					}
 				}
+				root = { is_ai = no }
 			}
 			NOT = {
 				has_trait = chaste
 				has_trait = saint
 			}
 		}
-		is_ruler = yes
-		is_landed = yes
 	}
 	random_events = {
 		25 = sbs_ntr_event.0100
@@ -64,6 +92,8 @@ random_ntr_on_action = {
 
 hidden_effect_on_action = {
 	events = {
+		sbs_event.9990
+		sbs_event.9991
 		sbs_event.9992
 		sbs_event.9993
 		sbs_event.9994
@@ -80,6 +110,7 @@ sbs_devil_on_action = {
 		is_adult = yes
 		is_female = yes
 		OR = {
+			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
@@ -93,20 +124,20 @@ sbs_devil_on_action = {
 	}
 }
 
-on_travel_plan_movement = {
-	trigger = {
-		is_adult = yes
-		is_female = yes
-		has_trait = sbs_succubus
-		is_ruler = yes
-		is_landed = no
-		age >= 18
-	}
-	on_actions = {
-		delay = { days = { 2 4 } }
-		sbs_travel_events
-	}
-}
+#on_travel_plan_movement = {
+#	trigger = {
+#		is_adult = yes
+#		is_female = yes
+#		has_trait = sbs_succubus
+#		is_ruler = yes
+#		is_landed = no
+#		age >= 18
+#	}
+#	on_actions = {
+#		delay = { days = { 2 4 } }
+#		sbs_travel_events
+#	}
+#}
 
 sbs_travel_events = {
 	random_events = {
