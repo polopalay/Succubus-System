@@ -147,9 +147,7 @@ sexual = {
 				}
 			}
 			ai_chance = {
-				create = {
-					value = legitimizing_legend_create_ai
-				}
+				create = 100
 
 				promote = {
 					value = base_legend_promote_ai
@@ -163,7 +161,7 @@ sexual = {
 
 				upgrade = { value = 1000 }
 
-				complete = { value = 0 }
+				complete = { value = base_legend_complete_ai }
 			}
 		}
 

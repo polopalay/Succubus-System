@@ -152,6 +152,7 @@
 		modifier = { add = -10 scope:recipient = { has_trait = chaste } }
 		modifier = { add = 15 scope:recipient = { has_trait = lustful } }
 		modifier = { add = 15 scope:recipient = { has_trait = rakish } }
+		modifier = { add = -100 scope:secondary_recipient = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
 		modifier = { add = -5 scope:secondary_recipient = { is_lowborn = yes } }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_good_1 } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_good_2 } }
@@ -250,6 +251,7 @@
 
 	ai_will_do = {
 		base = 20
+		modifier = { add = -100 scope:recipient = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
 		modifier = { add = 50 scope:actor = { OR = { has_trait = sbs_lesser_succubus has_trait = sbs_succubus } } }
 		modifier = { add = 25 scope:actor = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = tenet_polyamory } } scope:recipient = scope:actor }

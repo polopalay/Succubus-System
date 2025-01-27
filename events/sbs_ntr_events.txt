@@ -781,8 +781,9 @@ sbs_ntr_event.0232 = {
 	}
 	option = {
 		trigger = {
-			scope:ntr_character.primary_spouse = {
-				is_ruler = no
+			OR = {
+				scope:ntr_character.primary_spouse = { is_ruler = no }
+				NOT = { exists = scope:ntr_character.primary_spouse }
 			}
 		}
 		ai_chance = {

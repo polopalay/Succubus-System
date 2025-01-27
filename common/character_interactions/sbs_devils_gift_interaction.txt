@@ -46,9 +46,10 @@ sbs_devils_gift_interaction = {
 							faith.religious_head = scope:actor
 							has_trait = sbs_demon
 							is_parent_of = scope:recipient
+							any_child = { is_alive = yes OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } count < 3 }
 						}
 						is_female = no
-						add = 90
+						add = 50
 					}
 					modifier = { has_trait = seed_of_destruction add = -100 }
 					modifier = { has_trait = sbs_lesser_succubus add = -100 }
@@ -72,9 +73,10 @@ sbs_devils_gift_interaction = {
 							faith.religious_head = scope:actor
 							has_trait = sbs_demon
 							is_parent_of = scope:recipient
+							any_child = { is_alive = yes OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } count < 3 }
 						}
 						is_female = yes
-						add = 90
+						add = 40
 					}
 					modifier = { has_trait = seed_of_destruction add = -100 }
 					modifier = { has_trait = sbs_lesser_succubus add = -100 }
@@ -109,7 +111,10 @@ sbs_devils_gift_interaction = {
 					set_immortal_age = 18
 				}
 				0 = {
-					modifier = { OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 100 }
+					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } add = 20 }
+					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } age > 100 add = 10 }
+					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } has_character_modifier = succubus_generals add = 5 }
+					modifier = {  scope:actor = { faith.religion = religion:satanic_religion faith.religious_head = scope:actor } is_close_family_of = scope:recipient add = 5 }
 					modifier = { is_ruler = yes add = -100 }
 					modifier = { has_trait = slave add = -100 }
 					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier >= tier_duchy } add = -100 }
@@ -253,7 +258,8 @@ sbs_devils_gift_interaction = {
 					}
 					modifier = {
 						scope:actor = { has_trait = sbs_demon is_parent_of = scope:recipient }
-						add = 19
+						NOT = { has_character_modifier = succubus_generals }
+						add = 9
 					}
 					add_character_modifier = { modifier = succubus_generals years = 10 }
 				}

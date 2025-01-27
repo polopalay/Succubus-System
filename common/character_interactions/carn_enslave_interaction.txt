@@ -2,6 +2,7 @@
 	desc = carn_enslave_interaction.desc
 	category = interaction_category_prison
 	common_interaction = yes
+	cooldown_against_recipient = { years = 2 }
 	is_shown = {
 		scope:actor = {
 			OR = {
@@ -79,7 +80,7 @@
 		base = 0
 		opinion_modifier = { opinion_target = scope:recipient multiplier = -1 }
 		ai_value_modifier = { ai_compassion = -1 }
-		modifier = { scope:actor = { has_trait = seed_of_destruction } scope:recipient = { is_ruler = no } add = 2000 }
+		modifier = { scope:actor = { has_trait = seed_of_destruction } scope:recipient = { is_ruler = no is_ai = yes } add = 2000 }
 		modifier = { scope:recipient = { has_trait = peasant_leader } add = 100 }
 		modifier = { scope:recipient = { has_trait = populist_leader } add = 100 }
 		modifier = { add = -20 ai_compassion >= low_positive_ai_value scope:recipient = { is_adult = no } }

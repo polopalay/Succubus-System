@@ -44,7 +44,39 @@ sbs_seal_the_devil_interaction = {
 			}
 		}
 		scope:recipient = {
-			is_imprisoned_by = scope:actor
+			OR = {
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:beelzebub
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:lilith
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:abaddon
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:mammon
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:asmodeus
+					is_lowborn = yes
+				}
+				AND = {
+					faith.religious_head = scope:recipient
+					faith = faith:belial
+					is_lowborn = yes
+				}
+				is_imprisoned_by = scope:actor
+			}
 			OR = {
 				custom_description = {
 					text = NOT_I_AM_HEAD_OF_FAITH_TRIGGER

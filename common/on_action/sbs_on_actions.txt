@@ -32,24 +32,22 @@ random_ntr_on_action = {
 			is_ruler = yes
 			is_landed = yes
 			is_alive = yes
+			NOT = { faith.religion = religion:satanic_religion }
 			OR = {
 				AND = {
 					is_vassal_of = root
 					root = { primary_title.tier >= tier_kingdom }
 				}
-				primary_title.tier >= tier_duchy
+				primary_title.tier >= tier_kingdom
+				root = { is_ai = no }
 			}
-			NOT = { faith.religion = religion:satanic_religion }
 			OR = {
 				is_vassal_of = root
 				has_trait = lustful
 				has_trait = ambitious
 				has_trait = deceitful
 				has_trait = greedy
-				has_trait = gluttonous
 				has_trait = cynical
-				has_trait = callous
-				has_trait = sadistic
 				has_trait = seducer
 				has_trait = rakish
 				has_relation_lover = root
@@ -57,8 +55,6 @@ random_ntr_on_action = {
 			}
 			OR = {
 				is_vassal_of = root
-				any_secret = { secret_type = secret_witch }
-				has_trait = witch
 				has_relation_lover = root
 				root.primary_spouse = {
 					OR = {
@@ -74,9 +70,16 @@ random_ntr_on_action = {
 				}
 				root = { is_ai = no }
 			}
-			NOT = {
-				has_trait = chaste
-				has_trait = saint
+			OR = {
+				NOT = {
+					has_trait = chaste
+					has_trait = content
+					has_trait = honest
+					has_trait = brave
+					has_trait = zealous
+					has_trait = saint
+				}
+				root = { is_ai = no }
 			}
 		}
 	}
@@ -114,11 +117,10 @@ sbs_devil_on_action = {
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
-		is_ruler = yes
 		is_imprisoned = no
 	}
 	random_events = {
-		chance_to_happen = 10
+		chance_to_happen = 50
 		50 = sbs_devil.1410 # gremlin fuck
 		25 = sbs_devil.1300 # special dream
 	}

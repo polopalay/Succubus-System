@@ -52,8 +52,8 @@
 			multiplier = 1
 		}
 		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave count > 6 } } add = -50 }
-		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count > 15 } } add = -50 }
-		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count < 15 } } add = 200 }
+		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count > sbs_number_slaves_need_for_become_demon } } add = -50 }
+		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count < sbs_number_slaves_need_for_become_demon } } add = 200 }
 		modifier = { scope:recipient = { has_trait = seed_of_destruction } scope:secondary_recipient = { is_adult = yes } add = 50 }
 		modifier = { scope:secondary_recipient = { is_immortal = yes } scope:recipient = { has_trait = seed_of_destruction } add = 1000 }
 		modifier = { scope:secondary_recipient = { age >= 50 is_immortal = no } add = -50 }
@@ -95,7 +95,7 @@
 	}
 	ai_will_do = {
 		base = 0
-		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave > 6 } } add = 40 }
+		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave > 6 } } add = sbs_number_slaves_need_for_become_demon }
 		modifier = { scope:actor = { has_trait = seed_of_destruction any_courtier = { has_trait = slave count <= 15 } } add = 100 }
 		modifier = { scope:secondary_recipient = { age >= 50 is_immortal = no } add = -10 }
 		modifier = { scope:secondary_recipient = { is_child_of = scope:actor } add = 50 }

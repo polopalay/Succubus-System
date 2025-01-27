@@ -304,8 +304,8 @@ sbs_event.0550 = {
 		name = sbs_event.0550.b
 		custom_tooltip = sbs_event.0550.b.tt
 		stress_impact = {
-			base = massive_stress_impact_gain
-			lustful = massive_stress_impact_gain
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
 		}
 	}
 	# you can feel it, there is one nearby
@@ -315,14 +315,18 @@ sbs_event.0550 = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 1 }
+				has_trait_xp = { trait = sbs_lesser_succubus value >= 10 }
 			}
 		}
 		name = sbs_event.0550.c
 		custom_tooltip = sbs_event.0550.c.tt
-		add_trait_xp = {
-			trait = sbs_succubus
-			track = daring
-			value = -1
+		if = {
+			limit = { has_trait = sbs_succubus }
+			add_trait_xp = { trait = sbs_succubus track = daring value = -1 }
+		}
+		if = {
+			limit = { has_trait = sbs_lesser_succubus }
+			add_trait_xp = { trait = sbs_lesser_succubus value = -10 }
 		}
 		create_artifact = {
 			name = mistress_dildo
@@ -348,11 +352,13 @@ sbs_event.9990 = {
 			has_trait = seed_of_destruction
 		}
 		is_ruler = no
+		NOT = { has_trait = slave }
 		any_parent = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
 			}
+			is_alive = yes
 			count = 0
 		}
 		age > 50
@@ -621,6 +627,7 @@ sbs_event.9998 = {
 		else = {
 			add_trait = seed_of_destruction
 		}
+		set_immortal_age = 18
 		remove_trait = loyal
 		add_trait = disloyal
 		give_nickname = nick_the_betrayer

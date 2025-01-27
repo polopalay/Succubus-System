@@ -49,23 +49,15 @@ sbs_devil.1410 = {
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
-		is_ruler = yes
 		is_female = yes
 		age >= 18
 	}
 	# pay gold
 	option = {
-		trigger = {
-			OR = {
-				has_trait_xp = {
-					trait = sbs_succubus
-					track = corruption
-					value >= 100
-				}
-				has_trait = sbs_demon
-			}
-		}
 		ai_chance = { base = 5 }
+		trigger = {
+			gold >= massive_gold_value
+		}
 		name = sbs_devil.1410.a
 		custom_tooltip = sbs_devil.1410.a.tt
 		add_piety = medium_piety_loss
@@ -135,12 +127,17 @@ sbs_devil.1411 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
+				track = corruption
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
 				track = loyalty
-				value = 2
+				value = 5
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
+				value = 25
 			}
 		}
 	}
@@ -166,16 +163,16 @@ sbs_devil.1412 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 1
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 3
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
+				value = 25
 			}
 			add_character_flag = { flag = pussy_cum months = 1 }
 		}
@@ -200,17 +197,17 @@ sbs_devil.1413 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = power
-				value = 5
+				track = loyalty
+				value = 3
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = daring
-				value = 5
+				track = corruption
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 10
+				value = 25
 			}
 			add_character_flag = { flag = pussy_cum days = 10 }
 		}
@@ -506,11 +503,11 @@ sbs_devil.1420 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 4
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 20
+				value = 50
 			}
 			add_character_flag = { flag = face_cum months = 1 }
 		}
@@ -558,12 +555,12 @@ sbs_devil.1422 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = corruption
-				value = 4
+				track = loyalty
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 20
+				value = 50
 			}
 			add_character_flag = { flag = face_cum months = 1 }
 		}
@@ -1408,6 +1405,9 @@ sbs_devil.5501 = {
 			}
 		}
 	}
+	trigger = {
+		is_ruler = yes
+	}
 	theme = memory_intrigue
 	right_portrait = {
 		character = root
@@ -1489,6 +1489,9 @@ sbs_devil.5502 = {
 			}
 		}
 	}
+	trigger = {
+		is_ruler = yes
+	}
 	theme = memory_intrigue
 	right_portrait = {
 		character = root
@@ -1527,6 +1530,9 @@ sbs_devil.5700 = {
 	type = character_event
 	title = sbs_devil.5700.t
 	desc = sbs_devil.5700.a.desc
+	trigger = {
+		is_ruler = yes
+	}
 	theme = diplomacy
 	right_portrait = {
 		character = root
@@ -1869,7 +1875,6 @@ sbs_devil.1300 = {
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
-		is_ruler = yes
 		is_female = yes
 		age >= 18
 	}
@@ -2111,7 +2116,7 @@ sbs_devil.1310 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 1
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -2120,7 +2125,7 @@ sbs_devil.1310 = {
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 20
+				value = 25
 			}
 		}
 		trigger_event = sbs_devil.1315
@@ -2189,8 +2194,8 @@ sbs_devil.1315 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = corruption
-				value = 1
+				track = loyalty
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -2199,7 +2204,7 @@ sbs_devil.1315 = {
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 20
+				value = 25
 			}
 		}
 	}
@@ -2245,19 +2250,6 @@ sbs_devil.1319 = {
 		animation = throne_room_kneel_1
 		outfit_tags = { no_clothes }
 	}
-	immediate = {
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
-			}
-		}
-	}
 	# it is, what it is
 	option = {
 		ai_chance = { base = 100 }
@@ -2266,6 +2258,7 @@ sbs_devil.1319 = {
 		random = {
 			chance = 50
 			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
+			modifier = { add = -500 is_ruler = no }
 			modifier = { add = 50 has_character_flag = succubus_marking_5 }
 			modifier = { add = -25 have_devil_nicknames_trigger = yes }
 			modifier = { add = -100 OR = { has_personal_legend_seed = sexual promoted_legend.legend_type = legend_type:sexual NOT = { has_trait = sbs_succubus } } }
@@ -2302,6 +2295,7 @@ sbs_devil.1319 = {
 		random = {
 			chance = 10
 			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
+			modifier = { add = -500 is_ruler = no }
 			modifier = { add = 15  has_character_flag = succubus_marking_6 }
 			modifier = { add = -100 is_landed = no }
 			modifier = {

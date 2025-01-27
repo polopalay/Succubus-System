@@ -207,7 +207,7 @@
 			else_if = {
 				limit = {
 					is_female = yes
-					NOT = { has_trait = pregnant }
+					NOT = { has_trait = pregnant has_trait = lovers_pox has_trait = early_great_pox }
 					scope:actor = {
 						is_female = no
 						OR = {
@@ -220,7 +220,7 @@
 					}
 				}
 				scope:actor = {
-					had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+					prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 				}
 			}
 			else_if = {
@@ -228,7 +228,7 @@
 				scope:actor = {
 					random_courtier = {
 						limit = { is_adult = yes is_ruler = no is_female = no in_diplomatic_range = scope:actor }
-						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 						weight = {
 							base = 1
 							modifier = {
@@ -246,8 +246,19 @@
 			else_if = {
 				limit = { is_female = yes NOT = { has_trait = pregnant } }
 					random_living_character = {
-						limit = { is_adult = yes has_trait = slave is_female = no can_have_children = yes }
-						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+						limit = { is_adult = yes is_female = no can_have_children = yes }
+						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+						weight = {
+							base = 1
+							modifier = {
+								has_trait = slave
+								add = 1000
+							}
+							modifier = {
+								is_lowborn = yes
+								add = 200
+							}
+						}
 					}
 			}
 			else_if = {
@@ -255,7 +266,7 @@
 					is_female = no
 					scope:actor = {
 						is_female = yes
-						NOT = { has_trait = pregnant }
+						NOT = { has_trait = pregnant has_trait = lovers_pox has_trait = early_great_pox }
 						OR = {
 							NOT = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer } }
 							has_trait = lustful
@@ -266,15 +277,26 @@
 					}
 				}
 				scope:actor = {
-					had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+					prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 				}
 			}
 			else_if = {
 				limit = { is_female = no scope:actor = { any_courtier = { is_adult = yes has_trait = slave is_female = yes NOT = { has_trait = pregnant } } } }
 				scope:actor = {
 					random_courtier = {
-						limit = { is_adult = yes has_trait = slave is_female = yes NOT = { has_trait = pregnant } }
-						had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+						limit = { is_adult = yes is_female = yes NOT = { has_trait = pregnant } }
+						prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
+						weight = {
+							base = 1
+							modifier = {
+								has_trait = slave
+								add = 1000
+							}
+							modifier = {
+								is_lowborn = yes
+								add = 200
+							}
+						}
 					}
 				}
 			}

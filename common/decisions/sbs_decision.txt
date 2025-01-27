@@ -24,12 +24,11 @@ become_demon = {
 				has_trait = sbs_succubus
 				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
-				any_prisoner = { count >= 6 is_ai = yes is_adult = yes is_immortal = no }
 			}
 			AND = {
 				has_trait = seed_of_destruction
 				has_trait_xp = { trait = seed_of_destruction value >= 100 }
-				any_courtier = { has_trait = slave is_ai = yes count >= 13 is_immortal = no is_adult = yes }
+				any_courtier = { has_trait = slave is_ai = yes count >= sbs_number_slaves_need_for_become_demon is_immortal = no is_adult = yes }
 				any_courtier = { has_trait = slave is_female = yes is_immortal = yes }
 			}
 			AND = {
@@ -40,23 +39,191 @@ become_demon = {
 	}
 	effect = {
 		if = {
-			limit = {
-				NOT = {
-					faith.religion = religion:satanic_religion
-					faith.religious_head = root
-				}
-			}
+			limit = { faith = faith:beelzebub faith.religious_head = root }
 			if = {
-				limit = { has_trait = sbs_succubus }
-				every_prisoner = {
-					limit = { is_ai = yes is_adult = yes is_immortal = no }
-					death = {
-						death_reason = death_execution
-						killer = root
+				limit = { NOT = { dynasty = dynasty:888888 } }
+				random_living_character = {
+					limit = { faith = faith:beelzebub is_ruler = no }
+					copy_inheritable_appearance_from = character:beelzebub_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = no add = 1 }
+						modifier = { dynasty = dynasty:888888 add = 10000 }
 					}
 				}
+				random_held_title = {
+					limit = { this = title:k_beelzebub }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
 			}
-			else_if = {
+		}
+		else_if = {
+			limit = { faith = faith:lilith faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:666666 } }
+				random_living_character = {
+					limit = { faith = faith:lilith is_ruler = no }
+					copy_inheritable_appearance_from = character:lilith_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:666666 add = 10000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_lilith }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:abaddon faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:777777 } }
+				random_living_character = {
+					limit = { faith = faith:abaddon is_ruler = no }
+					copy_inheritable_appearance_from = character:abaddon_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:777777 add = 10000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_abandon }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:mammon faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:999999 } }
+				random_living_character = {
+					limit = { faith = faith:mammon is_ruler = no }
+					copy_inheritable_appearance_from = character:mammon_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:999999 add = 10000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_mammon }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:asmodeus faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:13131313 } }
+				random_living_character = {
+					limit = { faith = faith:asmodeus is_ruler = no }
+					copy_inheritable_appearance_from = character:asmodeus_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:13131313 add = 10000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_asmodeus }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		else_if = {
+			limit = { faith = faith:belial faith.religious_head = root }
+			if = {
+				limit = { NOT = { dynasty = dynasty:14814813 } }
+				random_living_character = {
+					limit = { faith = faith:belial is_ruler = no }
+					copy_inheritable_appearance_from = character:belial_character
+					save_scope_as = demon_child
+					weight = {
+						base = 0
+						modifier = { is_lowborn = yes add = 1 }
+						modifier = { dynasty = dynasty:14814813 add = 10000 }
+					}
+				}
+				random_held_title = {
+					limit = { this = title:k_belial }
+					create_title_and_vassal_change = {
+						type = usurped
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+					change_title_holder_include_vassals = {
+						holder = scope:demon_child
+						change = scope:change
+						take_baronies = no
+					}
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+		}
+		if = {
+			limit = { NOT = { exists = scope:demon_child } }
+			save_scope_as = demon_child
+		}
+		scope:demon_child = {
+			if = {
 				limit = { has_trait = seed_of_destruction }
 				every_courtier = {
 					limit = { is_ai = yes has_trait = slave is_immortal = no is_adult = yes }
@@ -65,96 +232,40 @@ become_demon = {
 						killer = root
 					}
 				}
-			}
-		}
-		if = {
-			limit = { has_trait = seed_of_destruction }
-			remove_trait = seed_of_destruction
-		}
-		if = {
-			limit = { has_trait = sbs_succubus }
-			remove_trait = sbs_succubus
-		}
-		if = {
-			limit = { has_trait = sbs_lesser_succubus }
-			remove_trait = sbs_lesser_succubus
-		}
-		add_trait = sbs_demon
-		set_immortal_age = 18
-
-		if = {
-			limit = {
-				faith.religion = religion:satanic_religion
-				faith.religious_head = root
-				culture = {
-					NOT = {
-						has_same_culture_heritage = culture:sbs_demonic
-						has_same_culture_language = culture:sbs_demonic
-					}
+				remove_trait = seed_of_destruction
+				every_relation = {
+					type = slave
+					limit = { is_female = yes is_immortal = yes }
+					trigger_event = sbs_slavery_event.4000
 				}
 			}
-			set_culture = culture:sbs_demonic
-		}
-		if = {
-			limit = { is_female = yes }
-			give_nickname = nickname_the_demon_queen
-		}
-		else = {
-			give_nickname = nickname_the_demon_king
-		}
-		if = {
-			limit = { faith = faith:beelzebub faith.religious_head = root }
-			copy_inheritable_appearance_from = character:beelzebub_character
 			if = {
-				limit = { NOT = { mother = character:beelzebub_character } }
-				set_mother = character:beelzebub_character
+				limit = { has_trait = sbs_succubus }
+				remove_trait = sbs_succubus
 			}
-			set_house = character:beelzebub_character.house
-		}
-		else_if = {
-			limit = { faith = faith:lilith faith.religious_head = root }
-			copy_inheritable_appearance_from = character:lilith_character
+			add_trait = sbs_demon
+			set_immortal_age = 18
+	
 			if = {
-				limit = { NOT = { father = character:lilith_character } }
-				set_mother = character:lilith_character
+				limit = {
+					faith.religion = religion:satanic_religion
+					faith.religious_head = root
+					culture = {
+						NOT = {
+							has_same_culture_heritage = culture:sbs_demonic
+							has_same_culture_language = culture:sbs_demonic
+						}
+					}
+				}
+				set_culture = culture:sbs_demonic
 			}
-			set_house = character:lilith_character.house
-		}
-		else_if = {
-			limit = { faith = faith:abaddon faith.religious_head = root }
-			copy_inheritable_appearance_from = character:abaddon_character
 			if = {
-				limit = { NOT = { father = character:abaddon_character } }
-				set_father = character:abaddon_character
+				limit = { is_female = yes }
+				give_nickname = nickname_the_demon_queen
 			}
-			set_house = character:abaddon_character.house
-		}
-		else_if = {
-			limit = { faith = faith:mammon faith.religious_head = root }
-			copy_inheritable_appearance_from = character:mammon_character
-			if = {
-				limit = { NOT = { father = character:mammon_character } }
-				set_father = character:mammon_character
+			else = {
+				give_nickname = nickname_the_demon_king
 			}
-			set_house = character:mammon_character.house
-		}
-		else_if = {
-			limit = { faith = faith:asmodeus faith.religious_head = root }
-			copy_inheritable_appearance_from = character:asmodeus_character
-			if = {
-				limit = { NOT = { father = character:asmodeus_character } }
-				set_father = character:asmodeus_character
-			}
-			set_house = character:asmodeus_character.house
-		}
-		else_if = {
-			limit = { faith = faith:belial faith.religious_head = root }
-			copy_inheritable_appearance_from = character:belial_character
-			if = {
-				limit = { NOT = { father = character:belial_character } }
-				set_mother = character:belial_character
-			}
-			set_house = character:belial_character.house
 		}
 		if = {
 			limit = { NOT = { faith.religion = religion:satanic_religion } }
@@ -166,11 +277,6 @@ become_demon = {
 				100 = { set_character_faith_with_conversion = faith:asmodeus }
 				100 = { set_character_faith_with_conversion = faith:belial }
 			}
-		}
-		every_relation = {
-			type = slave
-			limit = { is_female = yes is_immortal = yes }
-			trigger_event = sbs_slavery_event.4000
 		}
 	}
 	ai_potential = { always = yes }

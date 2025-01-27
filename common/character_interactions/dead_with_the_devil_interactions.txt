@@ -5,8 +5,8 @@
 	use_diplomatic_range = {
 		scope:actor = { is_ai = yes }
 	}
-	cooldown = { years = 1 }
-	cooldown_against_recipient = { years = 10 }
+	cooldown = { months = 1 }
+	cooldown_against_recipient = { years = 5 }
 
 	is_shown = {
 		NOT = { scope:actor = scope:recipient }
@@ -794,6 +794,9 @@
 		modifier = { add = -10 scope:actor = {  primary_title.tier = tier_duchy is_ai = yes } }
 	}
 
+	auto_accept = {
+		scope:recipient = { is_courtier_of = scope:actor }
+	}
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_targets = {
@@ -808,6 +811,7 @@
 
 	ai_will_do = {
 		base = 1
+		modifier = { add = 25 scope:recipient = { is_courtier_of = scope:actor } }
 		modifier = { add = 1 scope:actor = { stress_level = 1 } }
 		modifier = { add = 2 scope:actor = { stress_level = 2 } }
 		modifier = { add = 3 scope:actor = { stress_level = 3 } }
