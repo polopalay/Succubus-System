@@ -35,7 +35,7 @@ random_ntr_on_action = {
 			NOT = { faith.religion = religion:satanic_religion }
 			OR = {
 				AND = {
-					is_vassal_of = root
+					is_vassal_or_below_of = root
 					root = { primary_title.tier >= tier_kingdom }
 				}
 				primary_title.tier >= tier_kingdom
@@ -95,12 +95,12 @@ random_ntr_on_action = {
 
 hidden_effect_on_action = {
 	events = {
-		sbs_event.9990
+		#sbs_event.9990
 		sbs_event.9991
 		sbs_event.9992
-		sbs_event.9993
-		sbs_event.9994
-		sbs_event.9995
+		#sbs_event.9993
+		#sbs_event.9994
+		#sbs_event.9995
 		sbs_event.9996
 		sbs_event.9997
 		sbs_event.9998
@@ -113,7 +113,6 @@ sbs_devil_on_action = {
 		is_adult = yes
 		is_female = yes
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}

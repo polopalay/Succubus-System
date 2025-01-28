@@ -8,11 +8,7 @@ sbs_devil.1410 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					has_trait_xp = {
-						trait = sbs_succubus
-						track = corruption
-						value >= 100
-					}
+					has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
 				}
 				desc = sbs_devil.1410.a.desc
 			}
@@ -28,10 +24,9 @@ sbs_devil.1410 = {
 			}
 			triggered_desc = {
 				trigger = {
-					has_trait_xp = {
-						trait = sbs_succubus
-						track = corruption
-						value >= 50
+					OR = {
+						has_trait_xp = { trait = sbs_succubus track = corruption value >= 50 }
+						has_trait = sbs_lesser_succubus
 					}
 				}
 				desc = sbs_devil.1410.c.desc
@@ -45,7 +40,6 @@ sbs_devil.1410 = {
 	}
 	trigger = {
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
@@ -69,7 +63,13 @@ sbs_devil.1410 = {
 		trigger = {
 			has_trait = lustful
 		}
-		ai_chance = { base = 5 }
+		ai_chance = {
+			base = 5
+			modifier = {
+				subtract = 5
+				has_trait_xp = { trait = sbs_succubus track = corruption value >= 100 }
+			}
+		}
 		name = sbs_devil.1410.b
 		custom_tooltip = sbs_devil.1410.b.tt
 		add_piety = medium_piety_loss
@@ -77,7 +77,13 @@ sbs_devil.1410 = {
 	}
 	# stay still
 	option = {
-		ai_chance = { base = 5 }
+		ai_chance = {
+			base = 5
+			modifier = {
+				subtract = 5
+				has_trait_xp = { trait = sbs_succubus track = loyalty value >= 100 }
+			}
+		}
 		name = sbs_devil.1410.c
 		custom_tooltip = sbs_devil.1410.c.tt
 		add_piety = minor_piety_loss
@@ -128,16 +134,16 @@ sbs_devil.1411 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 5
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 5
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 25
+				value = 30
 			}
 		}
 	}
@@ -162,13 +168,8 @@ sbs_devil.1412 = {
 		hidden_effect = {
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = loyalty
-				value = 2
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
 				track = corruption
-				value = 3
+				value = 2
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -198,11 +199,6 @@ sbs_devil.1413 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 3
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
 				value = 2
 			}
 			add_trait_xp = {
@@ -1313,22 +1309,25 @@ sbs_devil.5500 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5500.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5500.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5500.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5500.d.desc
 			}
 		}
+	}
+	trigger = {
+		is_ruler = yes
 	}
 	theme = memory_intrigue
 	right_portrait = {
@@ -1388,19 +1387,19 @@ sbs_devil.5501 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5501.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5501.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5501.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5501.d.desc
 			}
 		}
@@ -1472,19 +1471,19 @@ sbs_devil.5502 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5502.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5502.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5502.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.5502.d.desc
 			}
 		}
@@ -1842,23 +1841,23 @@ sbs_devil.1300 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1300.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1300.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1300.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1300.d.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1300.e.desc
 			}
 		}
@@ -1871,7 +1870,6 @@ sbs_devil.1300 = {
 	}
 	trigger = {
 		OR = {
-			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_lesser_succubus
 		}
@@ -1981,11 +1979,11 @@ sbs_devil.1301 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 20
+				value = 10
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
-				value = 40
+				value = 20
 			}
 		}
 	}
@@ -1997,23 +1995,23 @@ sbs_devil.1302 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1302.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1302.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1302.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1302.d.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1302.e.desc
 			}
 		}
@@ -2079,23 +2077,23 @@ sbs_devil.1310 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1310.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1310.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1310.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1310.d.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1310.e.desc
 			}
 		}
@@ -2116,7 +2114,7 @@ sbs_devil.1310 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 2
+				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -2147,23 +2145,23 @@ sbs_devil.1315 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1315.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1315.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1315.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1315.d.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1315.e.desc
 			}
 		}
@@ -2195,7 +2193,7 @@ sbs_devil.1315 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = loyalty
-				value = 2
+				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
@@ -2223,23 +2221,23 @@ sbs_devil.1319 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1319.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1319.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1319.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1319.d.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1319.e.desc
 			}
 		}
@@ -2344,23 +2342,23 @@ sbs_devil.1320 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1320.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1320.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1320.c.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1320.d.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1320.e.desc
 			}
 		}
@@ -2384,18 +2382,18 @@ sbs_devil.1320 = {
 			add_character_flag = { flag = ass_cum months = 1 }
 			add_trait_xp = {
 				trait = sbs_succubus
-				track = corruption
+				track = loyalty
 				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 5
+				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = power
-				value = 5
+				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus
@@ -2428,15 +2426,15 @@ sbs_devil.1325 = {
 	desc = {
 		random_valid = {
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1325.a.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1325.b.desc
 			}
 			triggered_desc = {
-				trigger = { is_ruler = yes }
+				trigger = { is_alive = yes }
 				desc = sbs_devil.1325.c.desc
 			}
 		}
@@ -2465,12 +2463,12 @@ sbs_devil.1325 = {
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = daring
-				value = 5
+				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_succubus
 				track = corruption
-				value = 5
+				value = 1
 			}
 			add_trait_xp = {
 				trait = sbs_lesser_succubus

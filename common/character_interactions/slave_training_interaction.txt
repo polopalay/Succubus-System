@@ -2,7 +2,7 @@
 	category = interaction_category_prison
 	desc = slave_training_interaction.desc
 	common_interaction = no
-	cooldown = { months = 1 }
+	cooldown = { months = 6 }
 	cooldown_against_recipient = { months = 12 }
 	is_shown = {
 		scope:actor = {
@@ -37,7 +37,7 @@
 					is_lowborn = no
 				}
 				random_list = {
-					20 = {
+					40 = {
 						trigger_event = sbs_slavery_event.0100
 					}
 					10 = {
@@ -328,7 +328,7 @@
 	}
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
-	ai_frequency = 1
+	ai_frequency = 6
 	ai_will_do = {
 		base = 50
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }

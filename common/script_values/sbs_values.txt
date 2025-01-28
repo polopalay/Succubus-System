@@ -1,4 +1,9 @@
-sbs_number_slaves_need_for_become_demon = 40
+sbs_number_slaves_need_for_become_demon = 13
+sbs_number_slaves_normal_need = 3
+sbs_number_slaves_seed_of_destruction_need = {
+	value = sbs_number_slaves_need_for_become_demon
+	add = 1
+}
 succubus_cost_value = {
 	value = 0
 	if = {

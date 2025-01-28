@@ -28,6 +28,7 @@ become_demon = {
 			AND = {
 				has_trait = seed_of_destruction
 				has_trait_xp = { trait = seed_of_destruction value >= 100 }
+				primary_title.tier >= tier_kingdom
 				any_courtier = { has_trait = slave is_ai = yes count >= sbs_number_slaves_need_for_become_demon is_immortal = no is_adult = yes }
 				any_courtier = { has_trait = slave is_female = yes is_immortal = yes }
 			}
@@ -50,6 +51,7 @@ become_demon = {
 						base = 0
 						modifier = { is_lowborn = no add = 1 }
 						modifier = { dynasty = dynasty:888888 add = 10000 }
+						modifier = { dynasty = dynasty:888888 is_adult = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -80,6 +82,7 @@ become_demon = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:666666 add = 10000 }
+						modifier = { dynasty = dynasty:666666 is_adult = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -110,6 +113,7 @@ become_demon = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:777777 add = 10000 }
+						modifier = { dynasty = dynasty:777777 is_adult = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -140,6 +144,7 @@ become_demon = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:999999 add = 10000 }
+						modifier = { dynasty = dynasty:999999 is_adult = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -170,6 +175,7 @@ become_demon = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:13131313 add = 10000 }
+						modifier = { dynasty = dynasty:13131313 is_adult = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -200,6 +206,7 @@ become_demon = {
 						base = 0
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:14814813 add = 10000 }
+						modifier = { dynasty = dynasty:14814813 is_adult = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -238,6 +245,10 @@ become_demon = {
 					limit = { is_female = yes is_immortal = yes }
 					trigger_event = sbs_slavery_event.4000
 				}
+			}
+			if = {
+				limit = { has_trait = sbs_lesser_succubus }
+				remove_trait = sbs_lesser_succubus
 			}
 			if = {
 				limit = { has_trait = sbs_succubus }

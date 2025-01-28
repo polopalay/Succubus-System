@@ -51,8 +51,8 @@
 			opinion_target = scope:actor
 			multiplier = 1
 		}
-		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave count > 6 } } add = -50 }
-		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count > sbs_number_slaves_need_for_become_demon } } add = -50 }
+		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave count > sbs_number_slaves_normal_need } } add = -50 }
+		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count > sbs_number_slaves_seed_of_destruction_need } } add = -50 }
 		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count < sbs_number_slaves_need_for_become_demon } } add = 200 }
 		modifier = { scope:recipient = { has_trait = seed_of_destruction } scope:secondary_recipient = { is_adult = yes } add = 50 }
 		modifier = { scope:secondary_recipient = { is_immortal = yes } scope:recipient = { has_trait = seed_of_destruction } add = 1000 }

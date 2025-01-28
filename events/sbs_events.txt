@@ -357,6 +357,7 @@ sbs_event.9990 = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
+				has_trait = saint
 			}
 			is_alive = yes
 			count = 0
@@ -590,9 +591,7 @@ sbs_event.9997 = {
 				is_ruler = no
 				NOT = { is_courtier_of = root }
 			}
-			root = {
-				add_courtier = prev
-			}
+			root = { add_courtier = prev }
 		}
 	}
 }
