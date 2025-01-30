@@ -639,6 +639,7 @@ sbs_event.9999 = {
 		faith.religious_head = root
 		any_spouse = { count = 0 }
 		can_marry_common_trigger = yes
+		is_adult = yes
 	}
 	hidden = yes
 	immediate = {

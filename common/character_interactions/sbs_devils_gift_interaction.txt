@@ -46,15 +46,15 @@ sbs_devils_gift_interaction = {
 							faith.religious_head = scope:actor
 							has_trait = sbs_demon
 							is_parent_of = scope:recipient
-							any_child = { is_alive = yes OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } count < 3 }
 						}
 						is_female = no
 						add = 50
 					}
-					modifier = { has_trait = seed_of_destruction add = -100 }
-					modifier = { has_trait = sbs_lesser_succubus add = -100 }
-					modifier = { has_trait = sbs_succubus add = -100 }
-					modifier = { has_trait = sbs_demon add = -100 }
+					modifier = { is_immortal = yes add = -100 }
+					modifier = {
+						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
+						add = -100
+					}
 					add_trait = seed_of_destruction
 					set_immortal_age = 18
 				}
@@ -73,15 +73,15 @@ sbs_devils_gift_interaction = {
 							faith.religious_head = scope:actor
 							has_trait = sbs_demon
 							is_parent_of = scope:recipient
-							any_child = { is_alive = yes OR = { has_trait = seed_of_destruction has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = sbs_demon } count < 3 }
 						}
 						is_female = yes
 						add = 40
 					}
-					modifier = { has_trait = seed_of_destruction add = -100 }
-					modifier = { has_trait = sbs_lesser_succubus add = -100 }
-					modifier = { has_trait = sbs_succubus add = -100 }
-					modifier = { has_trait = sbs_demon add = -100 }
+					modifier = { is_immortal = yes add = -100 }
+					modifier = {
+						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_immortal = yes count > 3 } }
+						add = -100
+					}
 					mind_break_personality = yes
 					if = {
 						limit = {
@@ -118,6 +118,10 @@ sbs_devils_gift_interaction = {
 					modifier = { is_ruler = yes add = -100 }
 					modifier = { has_trait = slave add = -100 }
 					modifier = { liege = { is_close_family_of = scope:recipient is_landed = yes primary_title.tier >= tier_duchy } add = -100 }
+					modifier = {
+						scope:recipient.dynasty = { any_dynasty_member = { is_alive = yes is_ruler = yes count > 5 } }
+						add = -100
+					}
 					create_landless_adventurer_title_effect = {
 						REASON = flag:voluntary
 						FLAVOR_CHAR = scope:recipient

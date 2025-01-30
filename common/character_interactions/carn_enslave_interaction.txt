@@ -9,7 +9,7 @@
 				culture = {
 					cultural_acceptance = {
 						target = scope:recipient.culture
-						value < 50
+						value < 10
 					}
 				}
 				faith = {
@@ -19,6 +19,7 @@
 					}
 				}
 				has_trait = seed_of_destruction
+				faith.religion = religion:satanic_religion
 				scope:recipient = { is_lowborn = yes }
 			}
 		}
@@ -81,6 +82,7 @@
 		opinion_modifier = { opinion_target = scope:recipient multiplier = -1 }
 		ai_value_modifier = { ai_compassion = -1 }
 		modifier = { scope:actor = { has_trait = seed_of_destruction } scope:recipient = { is_ruler = no is_ai = yes } add = 2000 }
+		modifier = { scope:actor = { faith.religion = religion:satanic_religion } add = 20 }
 		modifier = { scope:recipient = { has_trait = peasant_leader } add = 100 }
 		modifier = { scope:recipient = { has_trait = populist_leader } add = 100 }
 		modifier = { add = -20 ai_compassion >= low_positive_ai_value scope:recipient = { is_adult = no } }

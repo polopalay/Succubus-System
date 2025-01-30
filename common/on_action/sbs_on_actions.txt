@@ -40,6 +40,8 @@ random_ntr_on_action = {
 				}
 				primary_title.tier >= tier_kingdom
 				root = { is_ai = no }
+				root = character:7757
+				root = character:223522
 			}
 			OR = {
 				is_vassal_of = root
@@ -52,6 +54,8 @@ random_ntr_on_action = {
 				has_trait = rakish
 				has_relation_lover = root
 				root = { is_ai = no }
+				root = character:7757
+				root = character:223522
 			}
 			OR = {
 				is_vassal_of = root
@@ -69,6 +73,8 @@ random_ntr_on_action = {
 					}
 				}
 				root = { is_ai = no }
+				root = character:7757
+				root = character:223522
 			}
 			OR = {
 				NOT = {
@@ -80,6 +86,8 @@ random_ntr_on_action = {
 					has_trait = saint
 				}
 				root = { is_ai = no }
+				root = character:7757
+				root = character:223522
 			}
 		}
 	}

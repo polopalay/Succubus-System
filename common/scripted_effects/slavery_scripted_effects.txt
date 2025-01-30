@@ -23,15 +23,15 @@
 				else = { remove_participant = scope:new_slave }
 			}
 			if = {
-				limit = { is_vassal_or_below_of = scope:new_owner }
+				limit = { is_vassal_or_below_of = scope:new_owner primary_title.tier > tier_barony }
 				scope:owner = { save_scope_as = transfer_title_target }
 			}
 			else_if = {
-				limit = { exists = primary_heir }
+				limit = { exists = primary_heir primary_title.tier > tier_barony }
 				primary_heir = { save_scope_as = transfer_title_target }
 			}
 			else_if = {
-				limit = { any_close_family_member = { is_ruler = no NOT = { has_trait = slave } } }
+				limit = { any_close_family_member = { is_ruler = no NOT = { has_trait = slave } } primary_title.tier > tier_barony }
 				random_close_family_member = {
 					save_scope_as = transfer_title_target
 					weight = {
