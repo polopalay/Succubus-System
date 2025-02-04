@@ -58,8 +58,13 @@
  nickname_the_devil_creation: "Demonic Creatures"
  nickname_the_devil_creation_desc: "Children born from the power of demons, destined to bring chaos and destruction to the world."
 
+ nickname_the_antichrist: "The Antichrist"
+ nickname_the_antichrist_desc: "The one who betrayed God to follow [CHARACTER.GetHerHis|U] own desires."
+
  d_laamp_saint: "Purification of the Saints"
+ d_laamp_missionary: "The Missionaries of Jesus"
  d_darc: "D'Arc"
+ benincasa: "Benincasa"
  d_laamp_satan: "Satan's Devils"
  k_lilith: "Lilith's Whore"
  k_abandon: "Abaddon's Warhorses"

@@ -10,3 +10,4 @@ nickname_the_exhibitionist = { is_bad = yes }
 nickname_the_demon_queen = {}
 nickname_the_demon_king = {}
 nickname_the_devil_creation = {}
+nickname_the_antichrist = { is_bad = yes }

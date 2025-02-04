@@ -342,7 +342,7 @@ sbs_event.0550 = {
 	}
 }
 
-sbs_event.9995 = {
+sbs_event.9996 = {
 	hidden = yes
 	trigger = { 
 		has_trait = saint
@@ -437,7 +437,7 @@ sbs_event.9995 = {
 	}
 }
 
-sbs_event.9996 = {
+sbs_event.9997 = {
 	trigger = { is_ruler = yes any_courtier = { has_trait = slave any_relation = { type = slave_owner is_ruler = yes count = 0 } } }
 	hidden = yes
 	immediate = {
@@ -465,7 +465,7 @@ sbs_event.9996 = {
 	}
 }
 
-sbs_event.9997 = {
+sbs_event.9998 = {
 	trigger = { is_ruler = yes any_relation = { type = slave is_ruler = no NOT = { is_courtier_of = root } } }
 	hidden = yes
 	immediate = {
@@ -477,42 +477,6 @@ sbs_event.9997 = {
 			}
 			root = { add_courtier = prev }
 		}
-	}
-}
-
-sbs_event.9998 = {
-	trigger = { 
-		has_trait = saint
-		is_ruler = yes
-		OR = {
-			has_trait = rakish
-			has_trait = deviant
-			any_secret = { type = secret_deviant }
-			has_trait = witch
-			any_secret = { type = secret_witch }
-			NOT = { religion = { is_in_family = rf_abrahamic } }
-		}
-	}
-	hidden = yes
-	immediate = {
-		remove_character_flag = carn_cannot_be_enslaved
-		remove_trait = saint
-		remove_trait = faith_warrior
-		remove_trait = populist_leader
-		set_character_faith_with_conversion = faith:abaddon
-		remove_trait = immortal
-		mind_break_personality = yes
-		if = {
-			limit = { is_female = yes }
-			add_trait = sbs_lesser_succubus
-		}
-		else = {
-			add_trait = seed_of_destruction
-		}
-		set_immortal_age = 18
-		remove_trait = loyal
-		add_trait = disloyal
-		give_nickname = nick_the_betrayer
 	}
 }
 

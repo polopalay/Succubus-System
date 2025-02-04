@@ -32,3 +32,8 @@
 	name = "d_darc"
 	culture = "french"
 }
+
+42424242 = {
+	name = "benincasa"
+	culture = "italian"
+}

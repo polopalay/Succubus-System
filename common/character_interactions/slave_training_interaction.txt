@@ -31,6 +31,7 @@
 					is_female = yes
 					is_lowborn = no
 				}
+				scope:actor = { add_trait_xp = { trait = seed_of_destruction value = 4 } }
 				random_list = {
 					40 = {
 						trigger_event = sbs_slavery_event.0100
