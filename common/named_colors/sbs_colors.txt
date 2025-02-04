@@ -1,3 +1,0 @@
-colors = {
-	demonic = { 0.5 0 0 }
-}

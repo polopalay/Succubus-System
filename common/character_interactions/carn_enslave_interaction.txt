@@ -33,6 +33,7 @@
 				text = "carn_slavery_is_illegal"
 				OR = {
 					scope:actor = { has_trait = seed_of_destruction }
+					scope:recipient = { is_lowborn = yes }
 					AND = {
 						NOT = {
 							scope:actor.faith = {

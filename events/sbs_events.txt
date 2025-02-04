@@ -342,84 +342,7 @@ sbs_event.0550 = {
 	}
 }
 
-sbs_event.9990 = {
-	hidden = yes
-	trigger = {
-		OR = {
-			has_trait = sbs_demon
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-			has_trait = seed_of_destruction
-		}
-		is_ruler = no
-		NOT = { has_trait = slave }
-		any_parent = {
-			OR = {
-				has_trait = sbs_demon
-				has_trait = sbs_succubus
-				has_trait = saint
-			}
-			is_alive = yes
-			count = 0
-		}
-		age > 50
-	}
-	immediate = {
-		create_landless_adventurer_title_effect = {
-			REASON = flag:voluntary
-			FLAVOR_CHAR = root
-		}
-	}
-}
-
-sbs_event.9991 = {
-	hidden = yes
-	trigger = {
-		has_trait = slave
-		any_relation = { type = slave_owner is_ruler = yes count = 0 }
-	}
-	immediate = {
-		random_living_character = {
-			limit = { is_ruler = yes }
-			add_courtier = root
-			weight = {
-				base = 1
-				modifier = {
-					is_female = no
-					primary_title.tier = tier_duchy
-					any_relation = { type = slave count = 0 }
-					add = 10
-				}
-				modifier = {
-					is_female = no
-					primary_title.tier = tier_kingdom
-					any_relation = { type = slave count = 0 }
-					add = 20
-				}
-				modifier = {
-					is_female = no
-					primary_title.tier = tier_empire
-					any_relation = { type = slave count = 0 }
-					add = 40
-				}
-				modifier = {
-					is_female = no
-					primary_spouse.primary_title.tier = tier_kingdom
-					any_relation = { type = slave count = 0 }
-					add = 20
-				}
-				modifier = {
-					is_female = no
-					primary_spouse.primary_title.tier = tier_empire
-					any_relation = { type = slave count = 0 }
-					add = 40
-				}
-			}
-		}
-	}
-}
-
-sbs_event.9992 = {
+sbs_event.9995 = {
 	hidden = yes
 	trigger = { 
 		has_trait = saint
@@ -511,45 +434,6 @@ sbs_event.9992 = {
 		remove_trait = inappetetic
 		remove_trait = rakish
 		remove_trait = flagellant
-	}
-}
-
-sbs_event.9993 = {
-	trigger = { has_trait = slave is_imprisoned = yes }
-	hidden = yes
-	immediate = {
-		release_from_prison = yes
-	}
-}
-
-sbs_event.9994 = {
-	trigger = { is_ruler = yes OR = { has_trait = slave any_relation = { type = slave_owner } } }
-	hidden = yes
-	immediate = {
-		every_relation = {
-			remove_relation_slave_owner = root
-			root = { remove_relation_slave = prev }
-		}
-		remove_trait = slave
-		add_trait = former_slave
-	}
-}
-
-sbs_event.9995 = {
-	trigger = { is_ruler = yes any_courtier = { has_trait = slave OR = { has_imprisonment_reason = root has_execute_reason = root has_banish_reason = root } } }
-	hidden = yes
-	immediate = {
-		every_courtier = {
-			limit = {
-				has_trait = slave
-				OR = { has_imprisonment_reason = root has_execute_reason = root has_banish_reason = root }
-			}
-			root = {
-				consume_imprisonment_reasons = prev
-				consume_execute_reasons = prev
-				consume_banish_reasons = prev
-			}
-		}
 	}
 }
 
