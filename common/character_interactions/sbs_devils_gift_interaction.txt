@@ -10,6 +10,7 @@ sbs_devils_gift_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait = sbs_succubus
+				has_trait = seed_of_destruction
 			}
 		}
 	}
@@ -18,6 +19,7 @@ sbs_devils_gift_interaction = {
 			OR = {
 				has_trait = sbs_demon
 				has_trait_xp = { trait = sbs_succubus track = daring value >= 10 }
+				has_trait_xp = { trait = seed_of_destruction value >= 2 }
 			}
 		}
 	}
@@ -26,6 +28,10 @@ sbs_devils_gift_interaction = {
 			if = {
 				limit = { has_trait = sbs_succubus }
 				add_trait_xp = { trait = sbs_succubus track = daring value = -10 }
+			}
+			if = {
+				limit = { has_trait = seed_of_destruction }
+				add_trait_xp = { trait = seed_of_destruction value = -2 }
 			}
 		}
 		scope:recipient = {

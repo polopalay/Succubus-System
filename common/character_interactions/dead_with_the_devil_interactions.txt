@@ -777,18 +777,18 @@
 			add = {
 				value = 0
 				subtract = scope:actor.succubus_cost_value
-				multiply = 2
+				multiply = 10
 			}
 		}
-		modifier = { add = 25 scope:hook = yes }
-		modifier = { add = 20 scope:favor = yes scope:actor = {  primary_title.tier >= tier_county } }
-		modifier = { add = 20 scope:gold = yes }
-		modifier = { add = 10 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_county } }
-		modifier = { add = 25 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_duchy } }
-		modifier = { add = 50 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_kingdom } }
-		modifier = { add = 100 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_empire } }
-		modifier = { add = 25 scope:small_price = yes scope:actor = {  primary_title.tier >= tier_county } }
-		modifier = { add = 10 scope:expose_secret = yes scope:actor = {  primary_title.tier >= tier_county } }
+		modifier = { add = 30 scope:hook = yes }
+		modifier = { add = 10 scope:favor = yes scope:actor = {  primary_title.tier >= tier_county } }
+		modifier = { add = 25 scope:gold = yes }
+		modifier = { add = 5 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_county } }
+		modifier = { add = 10 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_duchy } }
+		modifier = { add = 25 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_kingdom } }
+		modifier = { add = 50 scope:demand_conversion = yes scope:recipient = { primary_title.tier = tier_empire } }
+		modifier = { add = 30 scope:small_price = yes scope:actor = {  primary_title.tier >= tier_county } }
+		modifier = { add = 25 scope:expose_secret = yes scope:actor = {  primary_title.tier >= tier_county } }
 		modifier = { add = -50 scope:actor = {  primary_title.tier < tier_county is_ai = yes } }
 		modifier = { add = -25 scope:actor = {  primary_title.tier = tier_county is_ai = yes } }
 		modifier = { add = -10 scope:actor = {  primary_title.tier = tier_duchy is_ai = yes } }

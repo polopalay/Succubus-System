@@ -104,7 +104,7 @@ random_ntr_on_action = {
 hidden_effect_on_action = {
 	events = {
 		#sbs_event.9990
-		sbs_event.9991
+		#sbs_event.9991
 		sbs_event.9992
 		#sbs_event.9993
 		#sbs_event.9994

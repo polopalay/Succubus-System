@@ -114,6 +114,7 @@ become_demon = {
 						modifier = { is_lowborn = yes add = 1 }
 						modifier = { dynasty = dynasty:777777 add = 10000 }
 						modifier = { dynasty = dynasty:777777 is_adult = yes add = 20000 }
+						modifier = { dynasty = dynasty:777777 is_female = yes add = 20000 }
 					}
 				}
 				random_held_title = {
@@ -345,6 +346,7 @@ seal_the_gates_of_hell = {
 	is_shown = {
 		is_ruler = yes
 		has_trait = saint
+		NOT = { has_global_variable = seal_the_gates_of_hell }
 	}
 	is_valid = {
 		province:2065.religion = religion:christianity_religion
@@ -359,10 +361,22 @@ seal_the_gates_of_hell = {
 		custom_description = { text = mammon_is_seal has_global_variable = seal_mammon }
 		custom_description = { text = asmodeus_is_seal has_global_variable = seal_asmodeus }
 		custom_description = { text = belial_is_seal has_global_variable = seal_belial }
-		NOT = { has_global_variable = seal_the_gates_of_hell }
 	}
 	effect = {
-		add_piety = 10000
+		faith:beelzebub.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:lilith.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:abaddon.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:mammon.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:asmodeus.religious_head = { death = { death_reason = death_execution killer = root } }
+		faith:belial.religious_head = { death = { death_reason = death_execution killer = root } }
+
+		destroy_title = title:k_beelzebub
+		destroy_title = title:k_lilith
+		destroy_title = title:k_abaddon
+		destroy_title = title:k_mammon
+		destroy_title = title:k_asmodeus
+		destroy_title = title:k_belial
+
 		custom_description = {
 			text = seal_the_gates_of_hell
 			set_global_variable = { name = seal_the_gates_of_hell value = yes }

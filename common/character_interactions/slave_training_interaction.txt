@@ -1,8 +1,8 @@
 ﻿slave_training_interaction = {
 	category = interaction_category_prison
 	desc = slave_training_interaction.desc
-	common_interaction = no
-	cooldown = { months = 6 }
+	common_interaction = yes
+	cooldown = { months = 1 }
 	cooldown_against_recipient = { months = 12 }
 	is_shown = {
 		scope:actor = {
@@ -26,13 +26,8 @@
 		scope:recipient = {
 			if = {
 				limit = {
-					OR = {
-						AND = {
-							age >= 16
-							age <= 45
-						}
-						is_immortal = yes
-					}
+					scope:actor = { has_trait = seed_of_destruction }
+					OR = { AND = { age >= 16 age <= 45 } is_immortal = yes }
 					is_female = yes
 					is_lowborn = no
 				}
@@ -328,7 +323,7 @@
 	}
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
-	ai_frequency = 6
+	ai_frequency = 1
 	ai_will_do = {
 		base = 50
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = 50 }

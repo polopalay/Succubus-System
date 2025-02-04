@@ -3,7 +3,8 @@
 	desc = carn_buy_slave_on_market_interaction_desc
 	common_interaction = yes
 	needs_recipient_to_open = yes
-	cooldown_against_recipient = { years = 2 }
+	cooldown_against_recipient = { years = 3 }
+	send_options_exclusive = no
 	is_shown = {
 		scope:actor = {
 			is_ruler = yes
@@ -94,7 +95,7 @@
 	ai_will_do = {
 		base = 0
 		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave count > sbs_number_slaves_normal_need } } add = 10 }
-		modifier = { scope:actor = { has_trait = seed_of_destruction any_courtier = { has_trait = slave count <= sbs_number_slaves_seed_of_destruction_need } } add = 10 }
+		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave count > sbs_number_slaves_seed_of_destruction_need } } add = 10 }
 		modifier = { scope:secondary_recipient = { is_immortal = yes } scope:actor = { has_trait = seed_of_destruction } add = 1000 }
 		modifier = { scope:secondary_recipient = { is_child_of = scope:actor } add = 50 }
 		modifier = { scope:secondary_recipient = { is_close_family_of = scope:actor } add = 30 }

@@ -23,7 +23,7 @@
 			NOT = { has_character_modifier = recently_had_sex }
 			NOT = { has_trait = celibate }
 			OR = {
-				stress >= 1
+				stress_level >= 1
 				has_trait = rakish
 				has_trait = lustful
 				has_trait = deviant

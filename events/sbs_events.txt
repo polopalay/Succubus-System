@@ -599,14 +599,13 @@ sbs_event.9997 = {
 sbs_event.9998 = {
 	trigger = { 
 		has_trait = saint
+		is_ruler = yes
 		OR = {
 			has_trait = rakish
 			has_trait = deviant
 			any_secret = { type = secret_deviant }
 			has_trait = witch
 			any_secret = { type = secret_witch }
-			has_trait = lifestyle_prostitute
-			any_secret = { type = secret_prostitute }
 			NOT = { religion = { is_in_family = rf_abrahamic } }
 		}
 	}

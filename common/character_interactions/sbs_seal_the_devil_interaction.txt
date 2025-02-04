@@ -154,14 +154,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:beelzebub }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					if = {
-						limit = { NOT = { has_trait = education_learning } }
-						add_trait = education_learning_5
-					}
-					else_if = {
-						limit = { has_trait_rank = { trait = education_learning rank < 5 } }
-						set_trait_rank = { trait = education_learning rank = 5 }
-					}
+					set_trait_rank = { trait = education_learning rank = 5 }
 				}
 				custom_description = {
 					text = seal_beelzebub
@@ -172,14 +165,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:lilith }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					if = {
-						limit = { NOT = { has_trait = education_intrigue } }
-						add_trait = education_intrigue_5
-					}
-					else_if = {
-						limit = { has_trait_rank = { trait = education_intrigue rank < 5 } }
-						set_trait_rank = { trait = education_intrigue rank = 5 }
-					}
+					set_trait_rank = { trait = education_intrigue rank = 5 }
 				}
 				custom_description = {
 					text = "seal_lilith"
@@ -218,14 +204,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:mammon }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					if = {
-						limit = { NOT = { has_trait = education_martial } }
-						add_trait = education_martial_5
-					}
-					else_if = {
-						limit = { has_trait_rank = { trait = education_martial rank < 5 } }
-						set_trait_rank = { trait = education_martial rank = 5 }
-					}
+					set_trait_rank = { trait = education_martial rank = 5 }
 				}
 				custom_description = {
 					text = "seal_mammon"
@@ -236,14 +215,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:asmodeus }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					if = {
-						limit = { NOT = { has_trait = education_intrigue } }
-						add_trait = education_intrigue_5
-					}
-					else_if = {
-						limit = { has_trait_rank = { trait = education_intrigue rank < 5 } }
-						set_trait_rank = { trait = education_intrigue rank = 5 }
-					}
+					set_trait_rank = { trait = education_diplomacy rank = 5 }
 				}
 				custom_description = {
 					text = "seal_asmodeus"
@@ -254,14 +226,7 @@ sbs_seal_the_devil_interaction = {
 				limit = { faith.religious_head = scope:recipient faith = faith:belial }
 				death = { death_reason = death_execution killer = scope:actor }
 				scope:actor = {
-					if = {
-						limit = { NOT = { has_trait = education_intrigue } }
-						add_trait = education_intrigue_5
-					}
-					else_if = {
-						limit = { has_trait_rank = { trait = education_intrigue rank < 5 } }
-						set_trait_rank = { trait = education_intrigue rank = 5 }
-					}
+					set_trait_rank = { trait = education_stewardship rank = 5 }
 				}
 				custom_description = {
 					text = "seal_belial"

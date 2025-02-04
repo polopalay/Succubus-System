@@ -3,6 +3,8 @@
 	desc = carn_sell_slave_interaction.desc
 	common_interaction = yes
 	needs_recipient_to_open = yes
+	cooldown_against_recipient = { years = 3 }
+	send_options_exclusive = no
 	is_shown = {
 		scope:actor = {
 			is_ruler = yes

@@ -22,47 +22,7 @@
 				}
 				else = { remove_participant = scope:new_slave }
 			}
-			if = {
-				limit = { is_vassal_or_below_of = scope:new_owner primary_title.tier > tier_barony }
-				scope:owner = { save_scope_as = transfer_title_target }
-			}
-			else_if = {
-				limit = { exists = primary_heir primary_title.tier > tier_barony }
-				primary_heir = { save_scope_as = transfer_title_target }
-			}
-			else_if = {
-				limit = { any_close_family_member = { is_ruler = no NOT = { has_trait = slave } } primary_title.tier > tier_barony }
-				random_close_family_member = {
-					save_scope_as = transfer_title_target
-					weight = {
-						base = 1
-						modifier = {
-							is_child_of = scope:new_owner
-							add = 100
-						}
-						modifier = {
-							is_child_of = scope:new_slave
-							add = 100
-						}
-					}
-				}
-			}
-			else = {
-				depose = yes
-			}
-			every_held_title = {
-				create_title_and_vassal_change = {
-					type = usurped
-					save_scope_as = change
-					add_claim_on_loss = no
-				}
-				change_title_holder_include_vassals = {
-					holder = scope:transfer_title_target
-					change = scope:change
-					take_baronies = no
-				}
-				resolve_title_and_vassal_change = scope:change
-			}
+			depose = yes
 		}
 		every_claim = { scope:new_slave = { remove_claim = prev } }
 		remove_trait = former_slave
