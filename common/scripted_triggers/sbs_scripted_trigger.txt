@@ -67,5 +67,16 @@ have_devil_building_trigger = {
 }
 
 trait_is_shunned_or_criminal_in_faith_or_liege_trigger = {
-	trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = $TRAIT$ GENDER_CHARACTER = this }
+	OR = {
+		trait_is_shunned_or_criminal_in_my_or_lieges_faith_trigger = { TRAIT = $TRAIT$ GENDER_CHARACTER = this }
+		AND = {
+			$TRAIT$ = lifestyle_prostitute
+			OR = {
+				faith = { has_doctrine_parameter = carn_prostitution_illegal } 
+				faith = { has_doctrine_parameter = carn_prostitution_shunned } 
+				liege.faith = { has_doctrine_parameter = carn_prostitution_shunned } 
+				liege.faith = { has_doctrine_parameter = carn_prostitution_shunned } 
+			}
+		}
+	}
 }

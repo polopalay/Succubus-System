@@ -23,6 +23,9 @@ satanic_religion = {
 	doctrine = doctrine_kinslaying_accepted
 	doctrine = doctrine_deviancy_accepted
 	doctrine = doctrine_witchcraft_accepted
+	doctrine = same_slavery_accepted
+	doctrine = other_slavery_accepted
+	doctrine = carn_prostitution_accepted
 
 	#Clerical Functions
 	doctrine = doctrine_clerical_function_recruitment
@@ -214,6 +217,7 @@ satanic_religion = {
 			doctrine = tenet_sanctity_of_nature
 			doctrine = tenet_megaliths
 
+			doctrine = carn_doctrine_prostitution_virtuous
 			doctrine = doctrine_funeral_sky_burial
 		}
 		lilith = {
@@ -232,6 +236,7 @@ satanic_religion = {
 			doctrine = tenet_polyamory
 
 			doctrine = doctrine_deviancy_virtuous
+			doctrine = carn_doctrine_prostitution_virtuous
 			doctrine = special_doctrine_naked_priests
 		}
 		abaddon = {

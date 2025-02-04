@@ -1,9 +1,10 @@
 carn_prostitution_crime_opinion = {
-	opinion = -10
+	opinion = -15
 	imprisonment_reason = yes
+	revoke_title_reason = yes
 }
 
 carn_prostitution_shunned_opinion = {
-	opinion = -5
+	opinion = -15
 }
 

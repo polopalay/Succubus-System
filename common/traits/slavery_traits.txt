@@ -73,32 +73,14 @@ lifestyle_prostitute = {
 	ai_honor = low_negative_ai_value
 	ai_zeal = low_negative_ai_value
 
-	culture_modifier = {
-		parameter = adulterer_fornicator_penalties
-		same_culture_opinion = -15
+	triggered_opinion = {
+		parameter = carn_prostitution_illegal
+		opinion_modifier = carn_prostitution_crime_opinion
+		ignore_opinion_value_if_same_trait = yes
 	}
 
 	triggered_opinion = {
-		parameter = adultery_male_crime
-		male_only = yes
-		opinion_modifier = carn_prostitution_crime_opinion
-		ignore_opinion_value_if_same_trait = yes
-	}
-	triggered_opinion = {
-		parameter = adultery_male_shunned
-		male_only = yes
-		opinion_modifier = carn_prostitution_shunned_opinion
-		ignore_opinion_value_if_same_trait = yes
-	}
-	triggered_opinion = {
-		parameter = adultery_female_crime
-		female_only = yes
-		opinion_modifier = carn_prostitution_crime_opinion
-		ignore_opinion_value_if_same_trait = yes
-	}
-	triggered_opinion = {
-		parameter = adultery_female_shunned
-		female_only = yes
+		parameter = carn_prostitution_shunned
 		opinion_modifier = carn_prostitution_shunned_opinion
 		ignore_opinion_value_if_same_trait = yes
 	}
