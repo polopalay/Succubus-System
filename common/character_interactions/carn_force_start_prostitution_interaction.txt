@@ -15,7 +15,7 @@
 					has_trait = deviant
 					any_secret = { secret_type = secret_deviant }
 					any_secret = { secret_type = secret_prostitute }
-					faith = { has_doctrine = carn_prostitution_accepted }
+					NOT = { faith = { has_doctrine_parameter = carn_prostitution_illegal } }
 				}
 			}
 			scope:recipient = {

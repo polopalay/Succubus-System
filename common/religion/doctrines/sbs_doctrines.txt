@@ -136,6 +136,16 @@ carn_doctrine_prostitution = {
 		}
 	}
 	carn_doctrine_prostitution_accepted = {
+		can_pick = {
+			custom_description = {
+				text = incompatible_with_crimes_trigger
+				NOR = {
+					doctrine:doctrine_adultery_women_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_homosexuality_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_adultery_men_crime = { is_in_list = selected_doctrines }
+				}
+			}
+		}
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
@@ -152,6 +162,17 @@ carn_doctrine_prostitution = {
 		}
 	}
 	carn_doctrine_prostitution_virtuous = {
+		can_pick = {
+			custom_description = {
+				text = incompatible_with_crimes_trigger
+				NOR = {
+					doctrine:doctrine_adultery_women_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_homosexuality_crime = { is_in_list = selected_doctrines }
+					doctrine:doctrine_adultery_men_crime = { is_in_list = selected_doctrines }
+				}
+				doctrine_deviancy_virtuous = { is_in_list = selected_doctrines }
+			}
+		}
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
@@ -173,7 +194,7 @@ carn_doctrine_prostitution = {
 			sins = { chaste celibate }
 		}
 		parameters = {
-			witchcraft_accepted = yes
+			carn_prostitution_accepted = yes
 		}
 	}
 }
