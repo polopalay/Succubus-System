@@ -23,14 +23,17 @@
 	ai_potential = { always = yes }
 	ai_frequency = 12
 	ai_will_do = {
-		base = 25
+		base = 0
+		ai_value_modifier = {
+			ai_greed = 1
+			ai_vengefulness = 0.1
+			ai_compassion = -0.5
+			ai_honor = -0.25
+			ai_rationality = -0.1
+		}
 		modifier = { add = -25 scope:actor.dynasty = scope:recipient.dynasty }
 		modifier = { add = -25 is_close_or_extended_family_of = scope:recipient }
 		modifier = { add = -25 is_close_family_of = scope:recipient }
 		modifier = { add = 50 has_execute_reason = scope:recipient }
-		modifier = { add = -25 ai_greed < 0 }
-		modifier = { add = 10 ai_greed >= 0 ai_greed < 26 }
-		modifier = { add = 25 ai_greed >= 26 ai_greed < 51 }
-		modifier = { add = 50 ai_greed >= 51 }
 	}
 }

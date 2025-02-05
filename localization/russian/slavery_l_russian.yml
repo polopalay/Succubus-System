@@ -102,3 +102,7 @@
  doctrine_parameter_carn_prostitution_accepted: "Персонажи с любой [prostitute|E] [trait|E] полностью приняты".
 
  carn_slavery_is_illegal: "Ваша вера не позволяет брать [CHARACTER.GetFaith.GetAdherentNamePluralNoTooltip|U] в рабство"
+
+ carn_slave.0001.t: "Порабощенный"
+ carn_slave.0001.desc: "Меня ведут во двор, где у меня отбирают обувь и надевают кандалы на запястья. Я смиряюсь со своей ужасной участью, пока усмехающийся [actor.GetShortUIName] объявляет меня рабом."
+ carn_slave.0001.a: "С этого дня я не более чем чья-то собственность".

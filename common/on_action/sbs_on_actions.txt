@@ -3,6 +3,7 @@ random_yearly_everyone_pulse = {
 		random_ntr_on_action
 		sbs_devil_on_action
 		hidden_effect_on_action
+		sbs_seed_of_destruction_on_action
 	}
 }
 
@@ -103,15 +104,11 @@ random_ntr_on_action = {
 
 hidden_effect_on_action = {
 	events = {
-		# saint is always protected by god
-		sbs_event.9995
 		# return slave to the owner
-		sbs_event.9996
-		# enslave the salve don't have owner
-		sbs_event.9997
-		# if a saint betrayed the god, she will be punished
+		carn_slave.004
+		# saint is always protected by god
 		sbs_event.9998
-		# head of faith of demonic religion always needs spouse
+		# hof of satanic religion is always need spouse
 		sbs_event.9999
 	}
 }
@@ -133,3 +130,19 @@ sbs_devil_on_action = {
 	}
 }
 
+sbs_seed_of_destruction_on_action = {
+	trigger = {
+		is_adult = yes
+		is_female = yes
+		is_lowborn = no
+		has_trait = slave
+		liege = { is_adult = yes }
+		OR = {
+			is_ai = no
+			liege = { has_trait = seed_of_destruction }
+		}
+	}
+	events = {
+		sbs_slavery_event.0000
+	}
+}

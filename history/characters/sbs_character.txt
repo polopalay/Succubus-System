@@ -25,11 +25,6 @@
 		birth = "1049.6.1"
 		set_relation_friend = character:catarina_character
 		set_relation_best_friend = character:catarina_character
-		create_alliance = {
-			target = character:catarina_character
-			allied_through_owner = this
-			allied_through_target = character:catarina_character
-		}
 	}
 	1065.1.1 = {
 		effect = {
@@ -117,13 +112,47 @@ catarina_character = {
 			add_character_flag = do_not_generate_starting_family
 			add_character_flag = carn_cannot_be_enslaved
 			set_landless_government_effect = yes
-			add_trait_xp = { trait = lifestyle_physician value = 100 }
-			add_trait_xp = { trait = lifestyle_mystic value = 100 }
 			add_piety_level = 6
 			add_prestige_level = 6
 			give_nickname = nick_the_saint
 			add_trait = immortal
 			set_immortal_age = 18
+			spawn_army = {
+				name = event_troop_default_name
+				location = province:2333
+				origin = province:2333
+				men_at_arms = {
+					type = teutonic_knights
+					stacks = 10
+				}
+				men_at_arms = {
+					type = trebuchet
+					stacks = 5
+				}
+				inheritable = no
+			}
+		}
+	}
+	1177.1.1 = {
+		effect = {
+			spawn_army = {
+				name = event_troop_default_name
+				location = province:2333
+				origin = province:2333
+				men_at_arms = {
+					type = teutonic_knights
+					stacks = 10
+				}
+				men_at_arms = {
+					type = crossbowmen
+					stacks = 5
+				}
+				men_at_arms = {
+					type = bombard
+					stacks = 5
+				}
+				inheritable = no
+			}
 		}
 	}
 }
@@ -149,6 +178,8 @@ lilim_character = {
 	trait = education_martial_3
 	trait = education_intrigue_3
 	trait = sbs_lesser_succubus
+	trait = deviant
+	trait = witch
 	666.1.1 = {
 		birth = "666.6.13"
 		effect = {
@@ -156,8 +187,6 @@ lilim_character = {
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
 			add_character_flag = carn_cannot_be_enslaved
-			add_secret = { type = secret_deviant }
-			add_secret = { type = secret_witch }
 			set_immortal_age = 18
 		}
 	}
@@ -220,6 +249,8 @@ lilith_character = {
 	trait = lustful
 	trait = education_intrigue_5
 	trait = sbs_demon
+	trait = deviant
+	trait = witch
 	1.1.1 = {
 		birth = "1.1.1"
 		effect = {
@@ -228,8 +259,6 @@ lilith_character = {
 			add_character_flag = do_not_generate_starting_family
 			add_piety_level = 6
 			add_prestige_level = 6
-			add_secret = { type = secret_deviant }
-			add_secret = { type = secret_witch }
 			set_immortal_age = 18
 		}
 	}
@@ -306,6 +335,9 @@ abaddon_character = {
 	trait = organizer
 	trait = winter_soldier
 	trait = conqueror
+	trait = deviant
+	trait = witch
+	trait = cannibal
 	1.1.1 = {
 		birth = "1.1.1"
 		effect = {
@@ -408,11 +440,13 @@ beelzebub_character = {
 	female = yes
 	religion = "beelzebub"
 	culture = "sbs_demonic"
-	trait = patient
-	trait = content
+	trait = callous
 	trait = greedy
+	trait = lustful
 	trait = education_learning_5
 	trait = sbs_demon
+	trait = deviant
+	trait = witch
 	1.1.1 = {
 		birth = "1.1.1"
 		effect = {
@@ -469,11 +503,13 @@ mammon_character = {
 	prowess = 40
 	religion = "mammon"
 	culture = "sbs_demonic"
-	trait = just
+	trait = vengeful
 	trait = diligent
-	trait = brave
+	trait = deceitful
 	trait = education_martial_5
 	trait = sbs_demon
+	trait = deviant
+	trait = witch
 	1.1.1 = {
 		birth = "1.1.1"
 		effect = {
@@ -529,11 +565,13 @@ asmodeus_character = {
 	prowess = 13
 	religion = "asmodeus"
 	culture = "sbs_demonic"
-	trait = calm
-	trait = just
+	trait = greedy
+	trait = diligent
 	trait = lustful
 	trait = education_diplomacy_5
 	trait = sbs_demon
+	trait = deviant
+	trait = witch
 	1.1.1 = {
 		birth = "1.1.1"
 		effect = {
@@ -594,6 +632,8 @@ belial_character = {
 	trait = greedy
 	trait = education_stewardship_5
 	trait = sbs_demon
+	trait = deviant
+	trait = witch
 	1.1.1 = {
 		birth = "1.1.1"
 		effect = {

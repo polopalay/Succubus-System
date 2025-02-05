@@ -1864,16 +1864,14 @@ sbs_devil.1300 = {
 		outfit_tags = { no_clothes }
 	}
 	trigger = {
-		OR = {
-			has_trait = sbs_succubus
-			has_trait = sbs_lesser_succubus
-		}
 		is_female = yes
-		age >= 18
+		is_adult = yes
 	}
 	# submit
 	option = {
-		ai_chance = { base = 100 }
+		ai_chance = {
+			base = 10
+		}
 		name = sbs_devil.1300.a
 		custom_tooltip = sbs_devil.1300.a.tt
 		hidden_effect = {
@@ -2318,6 +2316,7 @@ sbs_devil.1319 = {
 		random_living_character = {
 			limit = { has_trait = sbs_demon is_female = no is_adult = yes }
 			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 100 }
+			add_character_flag = mother_of_demon_child
 		}
 	}
 	# this is wrong, go repent

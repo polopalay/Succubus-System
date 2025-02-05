@@ -10,9 +10,12 @@
 				is_courtier_of = scope:actor
 				is_imprisoned_by = scope:actor
 			}
-			NOR = {
-				has_trait = slave
-				has_relation_slave = scope:actor
+			OR = {
+				NOT = { has_trait = slave }
+				AND = {
+					has_trait = slave
+					any_relation = { type = slave_owner count = 0 }
+				}
 			}
 		}
 	}
@@ -27,8 +30,11 @@
 		scope:recipient = {
 			custom_description = {
 				text = "carn_slavery_is_illegal"
+				NOT = {
+					has_character_flag = carn_cannot_be_enslaved
+					has_trait_with_flag = carn_cannot_be_enslaved
+				}
 				OR = {
-					scope:actor = { has_trait = seed_of_destruction }
 					scope:recipient = { is_lowborn = yes }
 					AND = {
 						NOT = {
@@ -55,22 +61,8 @@
 		}
 	}
 	ai_accept = {
-		base = -50
+		base = 0
 		opinion_modifier = { opinion_target = scope:actor who = scope:recipient multiplier = 1 }
-		modifier = {
-			add = 1000
-			desc = carn_wants_to_be_your_slave
-			scope:recipient = {
-				OR = {
-					has_character_flag = carn_wants_to_be_a_slave
-					has_trait_with_flag = carn_wants_to_be_a_slave
-					has_opinion_modifier = {
-						target = scope:actor
-						modifier = carn_wants_to_be_your_slave_opinion
-					}
-				}
-			}
-		}
 		modifier = { add = { value = scope:actor.diplomacy } }
 		modifier = { add = 50 scope:recipient = { has_trait = contrite } }
 		modifier = { add = 20 scope:recipient = { has_trait = humble } }
@@ -83,10 +75,28 @@
 		modifier = { desc = COWED_REASON add = 20 scope:recipient = { has_dread_level_towards = { target = scope:actor level = 2 } } }
 	}
 	auto_accept = {
-		scope:recipient = { is_imprisoned_by = scope:actor }
+		scope:recipient = {
+			OR = {
+				is_imprisoned_by = scope:actor
+				has_trait = slave
+				has_character_flag = carn_wants_to_be_a_slave
+				has_trait_with_flag = carn_wants_to_be_a_slave
+				has_opinion_modifier = {
+					target = scope:actor
+					modifier = carn_wants_to_be_your_slave_opinion
+				}
+			}
+		}
 	}
 	on_accept = {
-		carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
+		scope:recipient = { trigger_event = carn_slave.0001 }
+		if = {
+			limit = { scope:recipient = { has_trait = slave } }
+			carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = no }
+		}
+		else = {
+			carn_enslave_effect = { SLAVE = scope:recipient OWNER = scope:actor DRAMA = yes }
+		}
 	}
 	ai_targets = {
 		ai_recipients = prisoners
@@ -98,11 +108,17 @@
 	ai_will_do = {
 		base = 0
 		opinion_modifier = { opinion_target = scope:recipient multiplier = -1 }
-		ai_value_modifier = { ai_compassion = -1 }
-		modifier = { scope:actor = { has_trait = seed_of_destruction } scope:recipient = { is_ruler = no is_ai = yes } add = 2000 }
+		ai_value_modifier = {
+			ai_vengefulness = 1
+			ai_greed = 0.5
+			ai_compassion = -1
+			ai_honor = -0.5
+			ai_rationality = -0.1
+		}
 		modifier = { scope:actor = { faith.religion = religion:satanic_religion } add = 20 }
 		modifier = { scope:recipient = { has_trait = peasant_leader } add = 100 }
 		modifier = { scope:recipient = { has_trait = populist_leader } add = 100 }
+		modifier = { scope:recipient = { has_trait = slave } add = 1000 }
 		modifier = { add = -20 ai_compassion >= low_positive_ai_value scope:recipient = { is_adult = no } }
 		modifier = { add = -20 scope:actor.dynasty = scope:recipient.dynasty }
 		modifier = { add = -20 is_close_or_extended_family_of = scope:recipient }

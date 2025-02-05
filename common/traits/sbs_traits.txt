@@ -13,8 +13,6 @@ sbs_demon = {
 	flag = immortal_incapability
 	flag = carn_cannot_be_enslaved
 
-	ai_zeal = dominant_positive_ai_value
-
 	desc = {
 		first_valid = {
 			triggered_desc = {

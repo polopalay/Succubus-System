@@ -8,6 +8,7 @@ carn_seed_prostitution_doctrines_effect = {
 				has_doctrine = carn_doctrine_prostitution_crime
 				has_doctrine = carn_doctrine_prostitution_shunned
 				has_doctrine = carn_doctrine_prostitution_accepted
+				has_doctrine = carn_doctrine_prostitution_virtuous
 			}
 		}
 		add_doctrine = carn_doctrine_prostitution_crime

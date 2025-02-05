@@ -800,7 +800,6 @@
 					}
 				}
 			}
-			remove_character_flag = antichrist
 		}
 	}
 	auto_accept = { scope:actor = scope:recipient }

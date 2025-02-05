@@ -183,54 +183,31 @@ k_asmodeus={
 	color1=white
 	color2=white
 	colored_emblem={
-		color1=yellow
-		color2=white
+		color1=red
+		color2=grey
 		color3=black
-		texture="ce_religion_iconoclasm.dds"
+		texture="ce_warrior_angel.dds"
 		instance={
 			position={ 0.500000 0.480000 }
 			scale={ 0.950000 0.950000 }
 		}
+
 	}
 }
 
 42424242={
 	pattern="pattern_solid.dds"
-	color1=red
+	color1=white
 	color2=white
 	colored_emblem={
 		color1=yellow
-		color2=yellow
-		texture="ce_key_st_peter.dds"
+		color2=grey
+		color3=black
+		texture="ce_angel.dds"
 		instance={
-			position={ 0.542000 0.400000 }
-			scale={ 0.900000 0.900000 }
-			rotation=-40
+			position={ 0.500000 0.480000 }
+			scale={ 0.950000 0.950000 }
 		}
 
 	}
-
-	colored_emblem={
-		color1=white
-		color2=white
-		texture="ce_key_st_peter.dds"
-		instance={
-			position={ 0.458000 0.400000 }
-			scale={ -0.900000 0.900000 }
-			rotation=40
-		}
-
-	}
-
-	colored_emblem={
-		color1=blue_light
-		color2=blue
-		texture="ce_keys_st_peter_knot.dds"
-		instance={
-			position={ 0.500000 0.454000 }
-			scale={ 0.900000 0.900000 }
-		}
-
-	}
-
 }

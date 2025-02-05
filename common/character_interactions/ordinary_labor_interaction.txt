@@ -21,13 +21,16 @@
 	ai_frequency = 12
 	ai_will_do = {
 		base = 0
+		ai_value_modifier = {
+			ai_vengefulness = -1
+			ai_greed = -0.5
+			ai_compassion = 1
+			ai_honor = 0.5
+			ai_rationality = 0.1
+		}
 		modifier = { scope:actor = { has_trait = seed_of_destruction } add = -50 }
 		modifier = { scope:recipient = { has_relation_friend = scope:actor } add = 50 }
 		modifier = { scope:recipient = { has_relation_lover = scope:actor } add = 50 }
 		modifier = {  scope:recipient = { has_relation_soulmate = scope:actor } add = 100 }
-		modifier = { add = 25 ai_vengefulness < 0 }
-		modifier = { add = -25 ai_vengefulness >= 0 ai_greed < 26 }
-		modifier = { add = -50 ai_vengefulness >= 26 ai_greed < 51 }
-		modifier = { add = -100 ai_vengefulness >= 51 }
 	}
 }

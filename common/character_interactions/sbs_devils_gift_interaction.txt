@@ -35,7 +35,6 @@ sbs_devils_gift_interaction = {
 			}
 		}
 		scope:recipient = {
-			remove_character_flag = antichrist
 			random_list = {
 				0 = {
 					modifier = {
@@ -138,32 +137,32 @@ sbs_devils_gift_interaction = {
 						scope:recipient = { is_adult = yes is_attracted_to_gender_of = scope:actor }
 						scope:actor = { is_adult = yes }
 						NOT = { scope:recipient = scope:actor }
-						add = 10
+						add = 50
 					}
 					prostitute_effect = { PROSTITUTE = scope:actor PREGNANCY_CHANCE = pregnancy_chance }
 				}
 				0 = {
-					modifier = { has_trait = sbs_lesser_succubus scope:actor = { has_trait = sbs_demon } add = 20 }
+					modifier = { has_trait = sbs_lesser_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 25 }
 				}
 				0 = {
-					modifier = { has_trait = seed_of_destruction  scope:actor = { has_trait = sbs_demon } add = 20 }
+					modifier = { has_trait = seed_of_destruction  scope:actor = { has_trait = sbs_demon } add = 50 }
 					add_trait_xp = { trait = seed_of_destruction value = 25 }
 				}
 				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 10 }
+					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 25 }
 					add_trait_xp = { trait = sbs_succubus track = corruption value = 10 }
 				}
 				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 10 }
+					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 25 }
 					add_trait_xp = { trait = sbs_succubus track = loyalty value = 10 }
 				}
 				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 20 }
+					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
 					add_trait_xp = { trait = sbs_succubus track = power value = 20 }
 				}
 				0 = {
-					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 20 }
+					modifier = { has_trait = sbs_succubus scope:actor = { has_trait = sbs_demon } add = 50 }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 20 }
 				}
 				10 = {

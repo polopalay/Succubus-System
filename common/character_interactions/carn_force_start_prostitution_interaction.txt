@@ -16,13 +16,7 @@
 					any_secret = { secret_type = secret_deviant }
 					any_secret = { secret_type = secret_prostitute }
 					NOT = { faith = { has_doctrine_parameter = carn_prostitution_illegal } }
-				}
-			}
-			scope:recipient = {
-				OR = {
-					has_trait = sbs_succubus
-					has_trait = sbs_lesser_succubus
-					has_trait = slave
+					scope:recipient = { has_trait = slave }
 				}
 			}
 		}
@@ -31,10 +25,6 @@
 		}
 		scope:recipient = {
 			is_adult = yes
-			OR = {
-				age < carn_prostitution_age_cutoff
-				is_immortal = yes
-			}
 			NOT = {
 				has_character_modifier = carn_working_as_prostitute_1_modifier
 				has_character_modifier = carn_working_as_prostitute_2_modifier
@@ -240,7 +230,6 @@
 			who = scope:recipient
 			multiplier = 0.2
 		}
-		modifier = { add = 100 scope:recipient = { OR = {  has_trait = sbs_lesser_succubus has_trait = sbs_succubus } } }
 		modifier = { add = 25 scope:recipient = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = { add = 20 scope:recipient = { has_trait = lustful } }
 		modifier = { add = 20 scope:recipient = { OR = { has_trait = deviant any_secret = { secret_type = secret_deviant } } } }
@@ -259,7 +248,6 @@
 	ai_potential = { always = yes }
 	ai_will_do = {
 		base = 0
-		modifier = { add = 100 scope:recipient = { OR = { has_trait = sbs_lesser_succubus has_trait = sbs_succubus has_trait = slave } } }
 		modifier = { add = 40 scope:actor = { has_trait = lustful } scope:recipient = scope:actor }
 		modifier = { add = 20 scope:actor = { faith = { has_doctrine = tenet_polyamory } } scope:recipient = scope:actor }
 		modifier = { add = 5 scope:actor = { has_trait = rakish } scope:recipient = scope:actor }

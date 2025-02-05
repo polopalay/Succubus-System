@@ -102,3 +102,8 @@
  doctrine_parameter_carn_prostitution_accepted: "Characters with any [prostitute|E] [trait|E] are fully accepted"
 
  carn_slavery_is_illegal: "Your faith does not permit the taking of [CHARACTER.GetFaith.GetAdherentNamePluralNoTooltip|U] as slaves"
+
+ carn_slave.0001.t: "Enslaved"
+ carn_slave.0001.desc: "I am led into the courtyard, where my shoes are taken from me and manacles are placed around my wrists. I am resigned to my terrible fate as the sneering [actor.GetShortUIName] pronounces me a slave."
+ carn_slave.0001.a: "From this day onward, I am little more than property."
+

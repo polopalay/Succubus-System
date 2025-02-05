@@ -729,7 +729,6 @@
 					reveal_to = scope:recipient
 				}
 			}
-			remove_character_flag = antichrist
 		}
 		scope:recipient = {
 			if = {

@@ -53,8 +53,7 @@
 			opinion_target = scope:actor
 			multiplier = 1
 		}
-		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave is_immortal = no is_adult = yes count < sbs_number_slaves_seed_of_destruction_need } } add = -100 }
-		modifier = { scope:secondary_recipient = { is_immortal = yes } scope:recipient = { has_trait = seed_of_destruction } add = -100 }
+		modifier = { scope:secondary_recipient = { is_immortal = yes } add = -100 }
 		modifier = { scope:secondary_recipient = { age >= 50 is_immortal = no } add = -50 }
 		modifier = { add = 5 scope:secondary_recipient = { has_trait = beauty_bad_1 } }
 		modifier = { add = 10 scope:secondary_recipient = { has_trait = beauty_bad_2 } }
@@ -94,9 +93,7 @@
 	}
 	ai_will_do = {
 		base = 0
-		modifier = { scope:recipient = { NOT = { has_trait = seed_of_destruction } any_courtier = { has_trait = slave count > sbs_number_slaves_normal_need } } add = 10 }
-		modifier = { scope:recipient = { has_trait = seed_of_destruction any_courtier = { has_trait = slave count > sbs_number_slaves_seed_of_destruction_need } } add = 10 }
-		modifier = { scope:secondary_recipient = { is_immortal = yes } scope:actor = { has_trait = seed_of_destruction } add = 1000 }
+		modifier = { scope:recipient = { any_courtier = { has_trait = slave count > number_slaves_normal_need } } add = 10 }
 		modifier = { scope:secondary_recipient = { is_child_of = scope:actor } add = 50 }
 		modifier = { scope:secondary_recipient = { is_close_family_of = scope:actor } add = 30 }
 		modifier = { scope:secondary_recipient = { has_relation_friend = scope:actor } add = 10 }

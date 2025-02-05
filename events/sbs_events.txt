@@ -342,7 +342,7 @@ sbs_event.0550 = {
 	}
 }
 
-sbs_event.9996 = {
+sbs_event.9998 = {
 	hidden = yes
 	trigger = { 
 		has_trait = saint
@@ -434,49 +434,6 @@ sbs_event.9996 = {
 		remove_trait = inappetetic
 		remove_trait = rakish
 		remove_trait = flagellant
-	}
-}
-
-sbs_event.9997 = {
-	trigger = { is_ruler = yes any_courtier = { has_trait = slave any_relation = { type = slave_owner is_ruler = yes count = 0 } } }
-	hidden = yes
-	immediate = {
-		every_courtier = {
-			limit = {
-				has_trait = slave
-				any_relation = {
-					type = slave_owner
-					is_ruler = yes
-					count = 0
-				}
-			}
-			every_relation = {
-				type = slave_owner
-				remove_relation_slave = prev
-				prev = { remove_relation_slave_owner = prev }
-			}
-			set_relation_slave_owner = { target = root }
-			save_scope_as = slave
-			if = {
-				limit = { NOT = { root = { has_relation_slave = scope:slave } } }
-				root = { set_relation_slave = { target = scope:slave } }
-			}
-		}
-	}
-}
-
-sbs_event.9998 = {
-	trigger = { is_ruler = yes any_relation = { type = slave is_ruler = no NOT = { is_courtier_of = root } } }
-	hidden = yes
-	immediate = {
-		every_relation = {
-			type = slave
-			limit = {
-				is_ruler = no
-				NOT = { is_courtier_of = root }
-			}
-			root = { add_courtier = prev }
-		}
 	}
 }
 
