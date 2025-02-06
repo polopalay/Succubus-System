@@ -1,5 +1,758 @@
 namespace = sbs_devil
 
+#0550 if has no dildo at max addiction...
+sbs_devil.0550 = {
+	type = character_event
+	title = sbs_devil.0550.t
+	desc = sbs_devil.0550.desc
+	cooldown = { years = 10 }
+	trigger = {
+		stress >= 25
+		NOT = {
+			any_character_artifact = { has_artifact_modifier = master_dildo_modifier }
+			any_character_artifact = { has_artifact_modifier = mistress_dildo_modifier }
+		}
+	}
+	theme = bloody_wedding_night
+	override_background = { reference = bedchamber }
+	right_portrait = {
+		character = root
+		animation = lunatic
+	}
+	# find one, at any cost
+	option = {
+		ai_chance = { base = 50 }
+		trigger = {
+			gold >= major_gold_value
+			OR = {
+				has_trait = sbs_succubus
+				has_trait = sbs_lesser_succubus
+				has_trait = sbs_demon
+			}
+		}
+		name = sbs_devil.0550.a
+		custom_tooltip = sbs_devil.0550.a.tt
+		remove_short_term_gold = medium_gold_value
+		create_artifact = {
+			name = master_dildo
+			rarity = masterwork
+			description = master_dildo_desc
+			type = magic_creation
+			modifier = master_dildo_modifier
+			visuals = master_dildo
+			template = master_dildo_template
+			max_durability = 20
+			wealth = 10
+			quality = 10
+		}
+	}
+	# try to endure
+	option = {
+		name = sbs_devil.0550.b
+		custom_tooltip = sbs_devil.0550.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+			lustful = medium_stress_impact_gain
+		}
+	}
+	# you can feel it, there is one nearby
+	option = {
+		ai_chance = { base = 50 }
+		trigger = {
+			OR = {
+				has_trait = sbs_demon
+				has_trait_xp = { trait = sbs_succubus track = daring value >= 1 }
+				has_trait_xp = { trait = sbs_lesser_succubus value >= 10 }
+			}
+		}
+		name = sbs_devil.0550.c
+		custom_tooltip = sbs_devil.0550.c.tt
+		if = {
+			limit = { has_trait = sbs_succubus }
+			add_trait_xp = { trait = sbs_succubus track = daring value = -1 }
+		}
+		if = {
+			limit = { has_trait = sbs_lesser_succubus }
+			add_trait_xp = { trait = sbs_lesser_succubus value = -10 }
+		}
+		create_artifact = {
+			name = mistress_dildo
+			description = mistress_dildo_desc
+			type = magic_creation
+			modifier = mistress_dildo_modifier
+			visuals = mistress_dildo
+			template = mistress_dildo_template
+			max_durability = 20
+			wealth = 10
+			quality = 10
+		}
+	}
+}
+
+#1300 initial thing comes to you, manifests in different ways, varinants
+sbs_devil.1300 = {
+	type = character_event
+	title = sbs_devil.1300.t
+	cooldown = { years = 5 }
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1300.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1300.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1300.c.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1300.d.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1300.e.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = shock
+		outfit_tags = { no_clothes }
+	}
+	trigger = {
+		is_female = yes
+		is_adult = yes
+	}
+	# submit
+	option = {
+		ai_chance = {
+			base = 10
+		}
+		name = sbs_devil.1300.a
+		custom_tooltip = sbs_devil.1300.a.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 5
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 10
+			}
+		}
+		trigger_event = sbs_devil.1303
+	}
+	# fight it
+	option = {
+		name = sbs_devil.1300.b
+		custom_tooltip = sbs_devil.1300.b.tt
+		duel = {
+			skill = prowess
+			value = high_skill_rating
+			# Success: win
+			20 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_devil.1300.bwin.tt
+				}
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}
+				trigger_event = sbs_devil.1301
+			}
+			# Failure, lose
+			80 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				custom_tooltip = {
+					text = sbs_devil.1300.blose.tt
+				}
+				stress_impact = {
+					base = massive_stress_impact_gain
+				}
+				hidden_effect = {
+					add_trait_xp = {
+						trait = sbs_succubus
+						track = power
+						value = -10
+					}
+				}
+				trigger_event = sbs_devil.1302
+			}
+		}
+	}
+	# escape, by any means
+	option = {
+		name = sbs_devil.1300.c
+		custom_tooltip = sbs_devil.1300.c.tt
+		add_piety = minor_piety_gain
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = -1
+			}
+		}
+	}
+}
+#1301 win the fight
+sbs_devil.1301 = {
+	type = character_event
+	title = sbs_devil.1301.t
+	desc = sbs_devil.1301.a.desc
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = ecstasy
+		outfit_tags = { no_clothes }
+	}
+	#
+	option = {
+		name = sbs_devil.1301.a
+		custom_tooltip = sbs_devil.1301.a.tt
+		stress_impact = {
+			base = massive_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 20
+			}
+		}
+	}
+}
+#1302 lose fight, variant on being humiliated
+sbs_devil.1302 = {
+	type = character_event
+	title = sbs_devil.1302.t
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1302.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1302.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1302.c.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1302.d.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1302.e.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	#submit
+	option = {
+		name = sbs_devil.1302.a
+		custom_tooltip = sbs_devil.1302.a.tt
+		trigger_event = sbs_devil.1303
+	}
+	#resist
+	option = {
+		name = sbs_devil.1302.b
+		custom_tooltip = sbs_devil.1302.b.tt
+		stress_impact = {
+			base = massive_stress_impact_gain
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = -2
+			}
+		}
+	}
+}
+#1303 you submitting before the demon
+sbs_devil.1303 = {
+	type = character_event
+	title = sbs_devil.1303.t
+	desc = sbs_devil.1303.a.desc
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# offer ass
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1303.a
+		custom_tooltip = sbs_devil.1303.a.tt
+		trigger_event = sbs_devil.1320
+	}
+	# willingly mount with pussy
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1303.b
+		custom_tooltip = sbs_devil.1303.b.tt
+		trigger_event = sbs_devil.1310
+	}
+}
+#1310 serve with your pussy
+sbs_devil.1310 = {
+	type = character_event
+	title = sbs_devil.1310.t
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1310.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1310.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1310.c.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1310.d.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1310.e.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# accept seed
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1310.a
+		custom_tooltip = sbs_devil.1310.a.tt
+		hidden_effect = {
+			add_character_flag = { flag = pussy_cum months = 1 }
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 25
+			}
+		}
+		trigger_event = sbs_devil.1315
+	}
+	# pull out
+	option = {
+		name = sbs_devil.1310.b
+		custom_tooltip = sbs_devil.1310.b.tt
+		hidden_effect = {
+			add_character_flag = { flag = pussy_cum months = 1 }
+			add_character_flag = { flag = body_cum months = 1 }
+		}
+	}
+}
+#1315 come to your senses, vaginal fucking random servant on top, using the dildo as a condom.
+sbs_devil.1315 = {
+	type = character_event
+	title = sbs_devil.1315.t
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1315.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1315.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1315.c.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1315.d.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1315.e.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = shock
+		outfit_tags = { no_clothes }
+	}
+	# escape, before he comes to his senses
+	option = {
+		name = sbs_devil.1315.a
+		custom_tooltip = sbs_devil.1315.a.tt
+		stress_impact = {
+			lustful = medium_stress_impact_gain
+		}
+	}
+	# keep going, the man seems docile enough to let you cum... but he will definately tell others about it
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1315.b
+		custom_tooltip = sbs_devil.1315.b.tt
+		add_piety = minor_piety_loss
+		stress_impact = {
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 10
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 25
+			}
+		}
+	}
+	after =	{
+		trigger_event = {
+			id = sbs_devil.1319
+			days = 1
+		}
+	}
+}
+
+#1319 half-dream event about birthing things
+sbs_devil.1319 = {
+	type = character_event
+	title = sbs_devil.1319.t
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1319.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1319.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1319.c.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1319.d.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1319.e.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# it is, what it is
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1319.a
+		custom_tooltip = sbs_devil.1319.a.tt
+		random = {
+			chance = 50
+			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
+			modifier = { add = -500 is_ruler = no }
+			modifier = { add = 50 has_character_flag = succubus_marking_5 }
+			modifier = { add = -25 have_devil_nicknames_trigger = yes }
+			modifier = { add = -100 OR = { has_personal_legend_seed = sexual promoted_legend.legend_type = legend_type:sexual NOT = { has_trait = sbs_succubus } } }
+			random_list = {
+				20 = {
+					modifier = { add = 40 has_character_flag = succubus_horn1 }
+					modifier = { add = 40 has_character_flag = succubus_marking_1 }
+					modifier = { add = -1000 any_vassal = { count = 0 } }
+					create_legend_seed = { type = sexual quality = famed chronicle = semen_tank }
+				}
+				20 = {
+					modifier = { add = 40 has_character_flag = succubus_horn2 }
+					modifier = { add = 40 has_character_flag = succubus_marking_2 }
+					create_legend_seed = { type = sexual quality = famed chronicle = sex_machine }
+				}
+				20 = {
+					modifier = { add = 40 has_character_flag = succubus_horn3 }
+					modifier = { add = 40 has_character_flag = succubus_marking_3 }
+					create_legend_seed = { type = sexual quality = famed chronicle = ladycow }
+				}
+				20 = {
+					modifier = { add = 30 has_character_flag = succubus_horn4 }
+					modifier = { add = 30 has_character_flag = succubus_marking_4 }
+					modifier = { add = 20 has_trait = lifestyle_prostitute }
+					modifier = { add = -1000 liege = { any_vassal = { count < 10 } } }
+					create_legend_seed = { type = sexual quality = famed chronicle = penis_guillotine }
+				}
+				20 = {
+					modifier = { add = 20 should_be_naked_trigger = yes }
+					create_legend_seed = { type = sexual quality = famed chronicle = exhibitionist }
+				}
+			}
+		}
+		random = {
+			chance = 10
+			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
+			modifier = { add = -500 is_ruler = no }
+			modifier = { add = 15  has_character_flag = succubus_marking_6 }
+			modifier = { add = -100 is_landed = no }
+			modifier = {
+				add = -100
+				OR = {
+					has_personal_legend_seed = witchcraft
+					promoted_legend.legend_type = legend_type:witchcraft
+					NOT = { has_trait = sbs_succubus }
+					any_artifact = { has_artifact_modifier = philosopher_stone_modifier count > 0 }
+				}
+			}
+
+			create_legend_seed = {
+				type = witchcraft
+				quality = famed
+				chronicle = philosopher_stone
+				properties = {
+					ritual_start = flag:false
+					tensoul = flag:false
+					vassal = flag:false
+					homologus = flag:false
+					family = flag:false
+					rital_complete = flag:false
+				}
+			}
+		}
+		random_living_character = {
+			limit = { has_trait = sbs_demon is_female = no is_adult = yes }
+			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 100 }
+			add_character_flag = mother_of_demon_child
+		}
+	}
+	# this is wrong, go repent
+	option = {
+		name = sbs_devil.1319.b
+		custom_tooltip = sbs_devil.1319.b.tt
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+		trigger_event = sbs_event.0800
+	}
+}
+#1320 they fuck your ass
+sbs_devil.1320 = {
+	type = character_event
+	title = sbs_devil.1320.t
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1320.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1320.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1320.c.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1320.d.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1320.e.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = throne_room_kneel_1
+		outfit_tags = { no_clothes }
+	}
+	# embrace
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1320.a
+		custom_tooltip = sbs_devil.1320.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_character_flag = { flag = ass_cum months = 1 }
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = loyalty
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 20
+			}
+		}
+		trigger_event = sbs_devil.1325
+	}
+	# endure
+	option = {
+		name = sbs_devil.1320.b
+		custom_tooltip = sbs_devil.1320.b.tt
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 10
+			}
+		}
+	}
+}
+#1325 come to your senses, anal fucked by random servant against the floor
+sbs_devil.1325 = {
+	type = character_event
+	title = sbs_devil.1325.t
+	desc = {
+		random_valid = {
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1325.a.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1325.b.desc
+			}
+			triggered_desc = {
+				trigger = { is_alive = yes }
+				desc = sbs_devil.1325.c.desc
+			}
+		}
+	}
+	theme = bloody_wedding_night
+	right_portrait = {
+		character = root
+		animation = shame
+		outfit_tags = { no_clothes }
+	}
+	# embrace
+	option = {
+		ai_chance = { base = 100 }
+		name = sbs_devil.1325.a
+		custom_tooltip = sbs_devil.1325.a.tt
+		stress_impact = {
+			base = medium_stress_impact_loss
+			lustful = medium_stress_impact_loss
+		}
+		hidden_effect = {
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = power
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = daring
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_succubus
+				track = corruption
+				value = 1
+			}
+			add_trait_xp = {
+				trait = sbs_lesser_succubus
+				value = 20
+			}
+		}
+	}
+	# resist
+	option = {
+		name = sbs_devil.1325.b
+		custom_tooltip = sbs_devil.1325.b.tt
+		add_piety = minor_piety_loss
+		stress_impact = {
+			base = medium_stress_impact_gain
+		}
+	}
+	# lay still...
+	option = {
+		name = sbs_devil.1325.c
+		custom_tooltip = sbs_devil.1325.c.tt
+	}
+	# repent later
+	option = {
+		name = sbs_devil.1325.d
+		custom_tooltip = sbs_devil.1325.d.tt
+		trigger_event = sbs_event.0800
+	}
+}
+
 sbs_devil.1410 = {
 	type = character_event
 	title = sbs_devil.1410.t
@@ -1827,668 +2580,3 @@ sbs_devil.5703 = {
 		add_prestige = major_prestige_loss
 	}
 }
-
-#1300 initial thing comes to you, manifests in different ways, varinants
-sbs_devil.1300 = {
-	type = character_event
-	title = sbs_devil.1300.t
-	cooldown = { years = 5 }
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1300.e.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = shock
-		outfit_tags = { no_clothes }
-	}
-	trigger = {
-		is_female = yes
-		is_adult = yes
-	}
-	# submit
-	option = {
-		ai_chance = {
-			base = 10
-		}
-		name = sbs_devil.1300.a
-		custom_tooltip = sbs_devil.1300.a.tt
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 5
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
-			}
-		}
-		trigger_event = sbs_devil.1303
-	}
-	# fight it
-	option = {
-		name = sbs_devil.1300.b
-		custom_tooltip = sbs_devil.1300.b.tt
-		duel = {
-			skill = prowess
-			value = high_skill_rating
-			# Success: win
-			20 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = 3.5
-					min = -49
-				}
-				custom_tooltip = {
-					text = sbs_devil.1300.bwin.tt
-				}
-				stress_impact = {
-					base = medium_stress_impact_loss
-				}
-				trigger_event = sbs_devil.1301
-			}
-			# Failure, lose
-			80 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -3.5
-					min = -49
-				}
-				custom_tooltip = {
-					text = sbs_devil.1300.blose.tt
-				}
-				stress_impact = {
-					base = massive_stress_impact_gain
-				}
-				hidden_effect = {
-					add_trait_xp = {
-						trait = sbs_succubus
-						track = power
-						value = -10
-					}
-				}
-				trigger_event = sbs_devil.1302
-			}
-		}
-	}
-	# escape, by any means
-	option = {
-		name = sbs_devil.1300.c
-		custom_tooltip = sbs_devil.1300.c.tt
-		add_piety = minor_piety_gain
-		stress_impact = {
-			base = minor_stress_impact_gain
-		}
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value = -1
-			}
-		}
-	}
-}
-#1301 win the fight
-sbs_devil.1301 = {
-	type = character_event
-	title = sbs_devil.1301.t
-	desc = sbs_devil.1301.a.desc
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = ecstasy
-		outfit_tags = { no_clothes }
-	}
-	#
-	option = {
-		name = sbs_devil.1301.a
-		custom_tooltip = sbs_devil.1301.a.tt
-		stress_impact = {
-			base = massive_stress_impact_loss
-		}
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
-			}
-		}
-	}
-}
-#1302 lose fight, variant on being humiliated
-sbs_devil.1302 = {
-	type = character_event
-	title = sbs_devil.1302.t
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1302.e.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = shame
-		outfit_tags = { no_clothes }
-	}
-	#submit
-	option = {
-		name = sbs_devil.1302.a
-		custom_tooltip = sbs_devil.1302.a.tt
-		trigger_event = sbs_devil.1303
-	}
-	#resist
-	option = {
-		name = sbs_devil.1302.b
-		custom_tooltip = sbs_devil.1302.b.tt
-		stress_impact = {
-			base = massive_stress_impact_gain
-		}
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value = -2
-			}
-		}
-	}
-}
-#1303 you submitting before the demon
-sbs_devil.1303 = {
-	type = character_event
-	title = sbs_devil.1303.t
-	desc = sbs_devil.1303.a.desc
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = throne_room_kneel_1
-		outfit_tags = { no_clothes }
-	}
-	# offer ass
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1303.a
-		custom_tooltip = sbs_devil.1303.a.tt
-		trigger_event = sbs_devil.1320
-	}
-	# willingly mount with pussy
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1303.b
-		custom_tooltip = sbs_devil.1303.b.tt
-		trigger_event = sbs_devil.1310
-	}
-}
-#1310 serve with your pussy
-sbs_devil.1310 = {
-	type = character_event
-	title = sbs_devil.1310.t
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1310.e.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = throne_room_kneel_1
-		outfit_tags = { no_clothes }
-	}
-	# accept seed
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1310.a
-		custom_tooltip = sbs_devil.1310.a.tt
-		hidden_effect = {
-			add_character_flag = { flag = pussy_cum months = 1 }
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
-			}
-		}
-		trigger_event = sbs_devil.1315
-	}
-	# pull out
-	option = {
-		name = sbs_devil.1310.b
-		custom_tooltip = sbs_devil.1310.b.tt
-		hidden_effect = {
-			add_character_flag = { flag = pussy_cum months = 1 }
-			add_character_flag = { flag = body_cum months = 1 }
-		}
-	}
-}
-#1315 come to your senses, vaginal fucking random servant on top, using the dildo as a condom.
-sbs_devil.1315 = {
-	type = character_event
-	title = sbs_devil.1315.t
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1315.e.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = shock
-		outfit_tags = { no_clothes }
-	}
-	# escape, before he comes to his senses
-	option = {
-		name = sbs_devil.1315.a
-		custom_tooltip = sbs_devil.1315.a.tt
-		stress_impact = {
-			lustful = medium_stress_impact_gain
-		}
-	}
-	# keep going, the man seems docile enough to let you cum... but he will definately tell others about it
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1315.b
-		custom_tooltip = sbs_devil.1315.b.tt
-		add_piety = minor_piety_loss
-		stress_impact = {
-			lustful = medium_stress_impact_loss
-		}
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = loyalty
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 10
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 25
-			}
-		}
-	}
-	after =	{
-		trigger_event = {
-			id = sbs_devil.1319
-			days = 1
-		}
-	}
-}
-
-#1319 half-dream event about birthing things
-sbs_devil.1319 = {
-	type = character_event
-	title = sbs_devil.1319.t
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1319.e.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = throne_room_kneel_1
-		outfit_tags = { no_clothes }
-	}
-	# it is, what it is
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1319.a
-		custom_tooltip = sbs_devil.1319.a.tt
-		random = {
-			chance = 50
-			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
-			modifier = { add = -500 is_ruler = no }
-			modifier = { add = 50 has_character_flag = succubus_marking_5 }
-			modifier = { add = -25 have_devil_nicknames_trigger = yes }
-			modifier = { add = -100 OR = { has_personal_legend_seed = sexual promoted_legend.legend_type = legend_type:sexual NOT = { has_trait = sbs_succubus } } }
-			random_list = {
-				20 = {
-					modifier = { add = 40 has_character_flag = succubus_horn1 }
-					modifier = { add = 40 has_character_flag = succubus_marking_1 }
-					modifier = { add = -1000 any_vassal = { count = 0 } }
-					create_legend_seed = { type = sexual quality = famed chronicle = semen_tank }
-				}
-				20 = {
-					modifier = { add = 40 has_character_flag = succubus_horn2 }
-					modifier = { add = 40 has_character_flag = succubus_marking_2 }
-					create_legend_seed = { type = sexual quality = famed chronicle = sex_machine }
-				}
-				20 = {
-					modifier = { add = 40 has_character_flag = succubus_horn3 }
-					modifier = { add = 40 has_character_flag = succubus_marking_3 }
-					create_legend_seed = { type = sexual quality = famed chronicle = ladycow }
-				}
-				20 = {
-					modifier = { add = 30 has_character_flag = succubus_horn4 }
-					modifier = { add = 30 has_character_flag = succubus_marking_4 }
-					modifier = { add = 20 has_trait = lifestyle_prostitute }
-					modifier = { add = -1000 liege = { any_vassal = { count < 10 } } }
-					create_legend_seed = { type = sexual quality = famed chronicle = penis_guillotine }
-				}
-				20 = {
-					modifier = { add = 20 should_be_naked_trigger = yes }
-					create_legend_seed = { type = sexual quality = famed chronicle = exhibitionist }
-				}
-			}
-		}
-		random = {
-			chance = 10
-			modifier = { add = -500 NOT = { has_trait = sbs_succubus } }
-			modifier = { add = -500 is_ruler = no }
-			modifier = { add = 15  has_character_flag = succubus_marking_6 }
-			modifier = { add = -100 is_landed = no }
-			modifier = {
-				add = -100
-				OR = {
-					has_personal_legend_seed = witchcraft
-					promoted_legend.legend_type = legend_type:witchcraft
-					NOT = { has_trait = sbs_succubus }
-					any_artifact = { has_artifact_modifier = philosopher_stone_modifier count > 0 }
-				}
-			}
-
-			create_legend_seed = {
-				type = witchcraft
-				quality = famed
-				chronicle = philosopher_stone
-				properties = {
-					ritual_start = flag:false
-					tensoul = flag:false
-					vassal = flag:false
-					homologus = flag:false
-					family = flag:false
-					rital_complete = flag:false
-				}
-			}
-		}
-		random_living_character = {
-			limit = { has_trait = sbs_demon is_female = no is_adult = yes }
-			prostitute_effect = { PROSTITUTE = root PREGNANCY_CHANCE = 100 }
-			add_character_flag = mother_of_demon_child
-		}
-	}
-	# this is wrong, go repent
-	option = {
-		name = sbs_devil.1319.b
-		custom_tooltip = sbs_devil.1319.b.tt
-		stress_impact = {
-			base = medium_stress_impact_gain
-		}
-		trigger_event = sbs_event.0800
-	}
-}
-#1320 they fuck your ass
-sbs_devil.1320 = {
-	type = character_event
-	title = sbs_devil.1320.t
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.c.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.d.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1320.e.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = throne_room_kneel_1
-		outfit_tags = { no_clothes }
-	}
-	# embrace
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1320.a
-		custom_tooltip = sbs_devil.1320.a.tt
-		stress_impact = {
-			base = medium_stress_impact_loss
-			lustful = medium_stress_impact_loss
-		}
-		hidden_effect = {
-			add_character_flag = { flag = ass_cum months = 1 }
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = loyalty
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = daring
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
-			}
-		}
-		trigger_event = sbs_devil.1325
-	}
-	# endure
-	option = {
-		name = sbs_devil.1320.b
-		custom_tooltip = sbs_devil.1320.b.tt
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 10
-			}
-		}
-	}
-}
-#1325 come to your senses, anal fucked by random servant against the floor
-sbs_devil.1325 = {
-	type = character_event
-	title = sbs_devil.1325.t
-	desc = {
-		random_valid = {
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1325.a.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1325.b.desc
-			}
-			triggered_desc = {
-				trigger = { is_alive = yes }
-				desc = sbs_devil.1325.c.desc
-			}
-		}
-	}
-	theme = bloody_wedding_night
-	right_portrait = {
-		character = root
-		animation = shame
-		outfit_tags = { no_clothes }
-	}
-	# embrace
-	option = {
-		ai_chance = { base = 100 }
-		name = sbs_devil.1325.a
-		custom_tooltip = sbs_devil.1325.a.tt
-		stress_impact = {
-			base = medium_stress_impact_loss
-			lustful = medium_stress_impact_loss
-		}
-		hidden_effect = {
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = power
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = daring
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_succubus
-				track = corruption
-				value = 1
-			}
-			add_trait_xp = {
-				trait = sbs_lesser_succubus
-				value = 20
-			}
-		}
-	}
-	# resist
-	option = {
-		name = sbs_devil.1325.b
-		custom_tooltip = sbs_devil.1325.b.tt
-		add_piety = minor_piety_loss
-		stress_impact = {
-			base = medium_stress_impact_gain
-		}
-	}
-	# lay still...
-	option = {
-		name = sbs_devil.1325.c
-		custom_tooltip = sbs_devil.1325.c.tt
-	}
-	# repent later
-	option = {
-		name = sbs_devil.1325.d
-		custom_tooltip = sbs_devil.1325.d.tt
-		trigger_event = sbs_event.0800
-	}
-}
-
