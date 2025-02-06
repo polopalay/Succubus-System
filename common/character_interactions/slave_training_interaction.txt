@@ -68,6 +68,13 @@
 				}
 			}
 			else_if = {
+				limit = { scope:recipient.gold > 0 }
+				scope:recipient = {
+					pay_short_term_gold = { target = scope:actor gold = gold }
+					add_opinion = { target = scope:actor modifier = extortion_opinion }
+				}
+			}
+			else_if = {
 				limit = { any_secret = { NOT = { is_known_by = scope:actor } } }
 				random_secret = { limit = { NOT = { is_known_by = scope:actor } } reveal_to = scope:actor }
 			}

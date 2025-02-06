@@ -444,6 +444,7 @@ sbs_event.9999 = {
 		any_spouse = { count = 0 }
 		can_marry_common_trigger = yes
 		is_adult = yes
+		is_ai = yes
 	}
 	hidden = yes
 	immediate = {

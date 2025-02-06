@@ -192,6 +192,8 @@ lilim_character = {
 	}
 	666.12.13 = {
 		effect = {
+           	set_relation_lover = character:abaddon_character
+			set_relation_soulmate = character:abaddon_character
 			set_landless_government_effect = yes
 			add_trait_xp = { trait = sbs_lesser_succubus value = 50 }
 		}
@@ -273,9 +275,10 @@ lilith_character = {
     }
     666.1.1 = {
 		effect = {
-           	set_relation_lover = { reason = lover_history target = character:abaddon_character }
+           	set_relation_lover = character:abaddon_character
 			set_relation_soulmate = character:abaddon_character
 			marry = character:abaddon_character
+			marry_matrilineal = character:mammon
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {
@@ -467,6 +470,10 @@ beelzebub_character = {
     }
 	666.1.1 = {
 		effect = {
+           	set_relation_lover = character:mammon_character
+			set_relation_soulmate = character:mammon_character
+			marry = character:mammon_character
+			marry_matrilineal = character:asmodeus
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {
@@ -647,6 +654,10 @@ belial_character = {
 	}
 	666.1.1 = {
 		effect = {
+           	set_relation_lover = character:asmodeus_character
+			set_relation_soulmate = character:asmodeus_character
+			marry = character:asmodeus_character
+			marry_matrilineal = character:abaddon_character
 			spawn_army = {
 				name = event_troop_default_name
 				men_at_arms = {

@@ -27,7 +27,6 @@ sbs_demon = {
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
 
-	fertility = -0.5
 	general_opinion = 66
 	character_travel_speed = 66
 	character_travel_safety = 66
@@ -88,7 +87,7 @@ sbs_succubus = {
 
 	opposites = { sbs_demon sbs_lesser_succubus seed_of_destruction chaste incapable }
 
-	fertility = -1
+	fertility = -0.5
 	general_opinion = 5
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
@@ -230,7 +229,7 @@ sbs_lesser_succubus = {
 		}
 	}
 
-	fertility = -2
+	fertility = -1
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
 	stewardship = 1
@@ -295,6 +294,7 @@ seed_of_destruction = {
 	valid_sex = male
 	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus incapable }
 
+	ai_greed = dominant_positive_ai_value
 	ai_vengefulness = dominant_positive_ai_value
 
 	desc = {
