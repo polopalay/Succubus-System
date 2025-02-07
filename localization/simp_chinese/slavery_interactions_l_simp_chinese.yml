@@ -27,3 +27,6 @@
  carn_buy_slave_on_market_interaction: "购买奴隶"
  carn_buy_slave_on_market_interaction_desc: "用[gold|E]购买奴隶"
  recipient_secondary_carn_buy_slave_on_market_interaction: "奴隶"
+ have_sex: "发生性关系"
+ extort_gold: "敲诈金币"
+ forced_labor: "强迫劳动"

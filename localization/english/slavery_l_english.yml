@@ -7,6 +7,20 @@
   relation_slave_owner: "owner"
   relation_slave_owner_possessive: "owner's"
 
+  trait_slave: "Slave"
+  trait_slave_desc: "This character is the property of another person, recognized by law to be less than a human being."
+  trait_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] is the property of another person, recognized by law to be less than a human being."
+
+  trait_former_slave: "Former Slave"
+  trait_former_slave_desc: "This character is a former slave who has escaped bondage and become a free person."
+  trait_former_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] is a former slave who has escaped bondage and become a free person."
+
+  trait_lifestyle_prostitute: "Prostitute"
+  trait_lifestyle_prostitute_desc: "This character sells their body for money."
+  trait_lifestyle_prostitute_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] is in the business of sexually serving clients for coin."
+  trait_track_lifestyle_prostitute: "Prostitute"
+  trait_track_lifestyle_prostitute_desc: "A life of selling sex"
+
   carn_working_as_prostitute_1_modifier: "Working as a $trait_lifestyle_prostitute$"
   carn_working_as_prostitute_1_modifier_desc: "This character is shamelessly selling their body to anyone with coin."
   carn_working_as_prostitute_2_modifier: "Working as an $trait_lifestyle_prostitute$"
@@ -32,10 +46,44 @@
   forced_labor_opinion: "Forced labor"
   ordinary_labor_opinion: "Ordinary labor"
 
-  enslave_war: "Enslavement War"
-  enslave_war_victory_desc: "All female [courtier|E] of [defender.GetName] will be [imprisoned|E] by [attacker.GetName]"
-  enslave_war_white_peace_desc: "The war is fruitless"
-  enslave_war_defeat_desc: "[attacker.GetName] must pay [defender.GetName] a war reparations"
+  carn_enslave_interaction: "Enslave"
+  carn_enslave_interaction.desc: "Turn [recipient.GetShortUINameNoTooltip] into your slave"
+  carn_wants_to_be_your_slave: "Wants you as their Owner: $VALUE|=+0$"
+  carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U] is a [noble|E]: $VALUE|=+0$"
+  carn_enslave_you_have_no_reason: "You do not have an [execute_reason|E]: $VALUE|=+0$"
+
+  carn_buy_slave_on_market_interaction: "Buy Slave"
+  carn_buy_slave_on_market_interaction_desc: "Buy a slave for [gold|E]"
+  recipient_secondary_carn_buy_slave_on_market_interaction: "Slave"
+
+  carn_sell_slave_interaction: "Sell Slave"
+  carn_sell_slave_interaction.desc: "Sell [recipient.GetShortUINameNoTooltip] on the slave_market for #high [gold_i]#!"
+  recipient_secondary_carn_sell_slave_interaction: "Buyer"
+  carn_buyer_not_enough_gold_for_slave_price_tooltip: "Pays #high [gold_i]#!"
+  carn_secondary_recipient_is_my_knight_reason: "[secondary_recipient.GetShortUIName|U] is my [recipient.Custom('KnightCulture')]: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_councillor_reason: "[secondary_recipient.GetShortUIName|U] is my [councillor|E]: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_friend_reason: "[secondary_recipient.GetShortUIName|U] is my [friend|E]: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_lover_reason: "[secondary_recipient.GetShortUIName|U] is my [lover|E]: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_crush_reason: "[secondary_recipient.GetShortUIName|U] is my [crush|E]: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_soulmate_reason: "[secondary_recipient.GetShortUIName|U] is my [soulmate|E]: $VALUE|=+0$"
+
+  carn_free_slave_interaction: "Free Slave"
+  carn_free_slave_interaction.desc: "Free [recipient.GetShortUINameNoTooltip] from slavery"
+
+  forced_labor_interaction: "Forced Labor"
+  forced_labor_interaction.desc: "[recipient.GetShortUINameNoTooltip] was forced to work too hard"
+
+  ordinary_labor_interaction: "Ordinary Labor"
+  ordinary_labor_interaction.desc: "[recipient.GetShortUIName] is working in a moderate manner suitable for health"
+
+  extortion_interaction: "Extort"
+  extortion_interaction.desc: "Extort [recipient.GetShortUINameNoTooltip] for [gold|E]"
+
+  slave_training_interaction: "Train Slave"
+  slave_training_interaction.desc: "Train [recipient.GetShortUINameNoTooltip] to be a docile slave"
+  have_sex: "Have Sex"
+  extort_gold: "Extort Gold"
+  forced_labor: "Forced Labor"
 
   set_relation_slave_g: "[TARGET_CHARACTER.GetName] become slave"
   set_relation_slave_f: "[TARGET_CHARACTER.GetName] become my slave"

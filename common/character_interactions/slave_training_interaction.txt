@@ -14,97 +14,84 @@
 			is_courtier_of = scope:actor
 		}
 	}
-	auto_accept = yes
+	send_option = {
+		flag = have_sex	
+		localization = have_sex
+		is_shown = {
+			scope:actor = {
+				is_adult = yes
+				is_attracted_to_gender_of = scope:recipient
+				NOT = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer } }
+			}
+			scope:recipient = {
+				is_adult = yes
+			}
+		}
+	}
+	send_option = {
+		flag = extort_gold
+		localization = extort_gold
+		is_shown = {
+			scope:recipient.gold > 0
+		}
+	}
+	send_option = {
+		flag = forced_labor
+		localization = forced_labor
+		is_shown = {
+			scope:recipient = {
+				NOT = { has_character_modifier = forced_labor }
+			}
+		}
+	}
+	send_options_exclusive = no
 	on_accept = {
 		scope:recipient = {
 			if = {
-				limit = { any_scheme = { scheme_type = murder scheme_target_character = scope:actor } }
-				every_scheme = { limit = { scheme_type = murder scheme_target_character = scope:actor } end_scheme = yes }
-			}
-			else_if = {
-				limit = {
-					is_female = yes
-					scope:actor = {
-						is_female = no
-						NOT = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer } }
-					}
-				}
-				scope:actor = {
-					prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-				}
-			}
-			else_if = {
-				limit = {
-					is_female = no
-					scope:actor = {
-						is_female = yes
-						NOT = { trait_is_shunned_or_criminal_in_faith_or_liege_trigger = { TRAIT = adulterer } }
-					}
-				}
-				scope:actor = {
-					prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-				}
-			}
-			else_if = {
-				limit = { is_female = yes NOT = { has_trait = pregnant } }
-				random_living_character = {
-					limit = { is_adult = yes is_female = no can_have_children = yes }
-					prostitute_effect = { PROSTITUTE = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
-					weight = {
-						base = 0
-						modifier = {
-							is_lowborn = yes
-							add = 1
-						}
-						modifier = {
-							is_courtier_of = scope:actor
-							add = 10000
-						}
-						modifier = {
-							has_trait = slave
-							add = 1000
-						}
-					}
-				}
-			}
-			else_if = {
 				limit = { scope:recipient.gold > 0 }
-				scope:recipient = {
-					pay_short_term_gold = { target = scope:actor gold = gold }
-					add_opinion = { target = scope:actor modifier = extortion_opinion }
+				pay_short_term_gold = { target = scope:actor gold = gold }
+				add_opinion = { target = scope:actor modifier = extortion_opinion }
+			}
+			if = {
+				limit = { scope:have_sex = yes }
+				scope:actor = {
+					had_sex_with_effect = { CHARACTER = scope:recipient PREGNANCY_CHANCE = pregnancy_chance }
 				}
 			}
-			else_if = {
-				limit = { any_secret = { NOT = { is_known_by = scope:actor } } }
-				random_secret = { limit = { NOT = { is_known_by = scope:actor } } reveal_to = scope:actor }
+			if = {
+				limit = { scope:forced_labor = yes }
+				add_character_modifier = { modifier = forced_labor years = 2 }
 			}
-			else_if = {
-				limit = { NOT = { has_trait = wounded_1 has_trait = wounded_2 has_trait = wounded_3 } }
-				add_trait = wounded_1
-			}
-			else_if = {
-				limit = { NOT = { has_trait = wounded_2 has_trait = wounded_3 } }
-				remove_trait = wounded_1
-				add_trait = wounded_2
-			}
-			else_if = {
-				limit = { NOT = { has_trait = wounded_3 } }
-				remove_trait = wounded_2
-				add_trait = wounded_3
-			}
-			else = {
-				death = {
-					death_reason = death_execution
-					killer = scope:actor
+
+			if = {
+				limit = { scope:extort_gold = no scope:have_sex = no scope:forced_labor = no }
+				if = {
+					limit = { any_scheme = { scheme_type = murder scheme_target_character = scope:actor } }
+					every_scheme = { limit = { scheme_type = murder scheme_target_character = scope:actor } end_scheme = yes }
+				}
+				else_if = {
+					limit = { any_secret = { NOT = { is_known_by = scope:actor } } }
+					random_secret = { limit = { NOT = { is_known_by = scope:actor } } reveal_to = scope:actor }
+				}
+				else_if = {
+					limit = { has_trait_rank = { trait = wounded rank <= 3 } }
+					change_trait_rank = { trait = wounded rank = 1 }
+				}
+				else = {
+					death = {
+						death_reason = death_execution
+						killer = scope:actor
+					}
 				}
 			}
 		}
 	}
+	auto_accept = yes
 	ai_targets = { ai_recipients = courtiers }
 	ai_potential = { always = yes }
 	ai_frequency = 6
 	ai_will_do = {
-		base = 50
+		base = 0
 		ai_value_modifier = {
 			ai_vengefulness = 1
 			ai_greed = 0.5
@@ -113,8 +100,11 @@
 			ai_rationality = -0.1
 		}
 		modifier = { scope:recipient = { is_immortal = yes is_female = yes } add = 100 }
-		modifier = { scope:recipient = { has_trait = wounded_1 } add = -100 }
-		modifier = { scope:recipient = { has_trait = wounded_2 } add = -200 }
-		modifier = { scope:recipient = { has_trait = wounded_3 } add = -500 }
+		modifier = { scope:recipient = { has_trait = wounded_1 } add = -200 }
+		modifier = { scope:recipient = { has_trait = wounded_2 } add = -500 }
+		modifier = { scope:recipient = { has_trait = wounded_3 } add = -1000 }
+		modifier = { scope:recipient = { has_relation_friend = scope:actor } add = -50 }
+		modifier = { scope:recipient = { has_relation_lover = scope:actor } add = -50 }
+		modifier = { scope:recipient = { has_relation_soulmate = scope:actor } add = -100 }
 	}
 }

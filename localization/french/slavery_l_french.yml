@@ -7,6 +7,20 @@
   relation_slave_owner: "Maître"
   relation_slave_owner_possessive: "du maître"
 
+  trait_slave: "Esclave"
+  trait_slave_desc: "Ce personnage est la propriété d'une autre personne, reconnu(e) par la loi comme étant moins qu'un être humain."
+  trait_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] est la propriété d'une autre personne, reconnu(e) par la loi comme étant moins qu'un être humain."
+
+  trait_former_slave: "Ancien Esclave"
+  trait_former_slave_desc: "Ce personnage est un ancien esclave qui a échappé à la servitude et est devenu(e) une personne libre."
+  trait_former_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] est un ancien esclave qui a échappé à la servitude et est devenu(e) une personne libre."
+
+  trait_lifestyle_prostitute: "Prostitué(e)"
+  trait_lifestyle_prostitute_desc: "Ce personnage vend son corps pour de l'argent."
+  trait_lifestyle_prostitute_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] est dans le métier de servir sexuellement des clients contre de la monnaie."
+  trait_track_lifestyle_prostitute: "Prostitué(e)"
+  trait_track_lifestyle_prostitute_desc: "Une vie de vente de services sexuels"
+
   carn_working_as_prostitute_1_modifier: "Travaille comme $trait_lifestyle_prostitute$"
   carn_working_as_prostitute_1_modifier_desc: "Ce personnage vend sans honte son corps à quiconque a de l'argent."
   carn_working_as_prostitute_2_modifier: "Travaille comme $trait_lifestyle_prostitute$"
@@ -32,10 +46,44 @@
   forced_labor_opinion: "Travail forcé"
   ordinary_labor_opinion: "Travail ordinaire"
 
-  enslave_war: "Guerre d'Esclavage"
-  enslave_war_victory_desc: "Toutes les [courtisanes|E] de [defender.GetName] seront [emprisonnées|E] par [attacker.GetName]"
-  enslave_war_white_peace_desc: "La guerre est vaine"
-  enslave_war_defeat_desc: "[attacker.GetName] doit payer des réparations de guerre à [defender.GetName]"
+  carn_enslave_interaction: "Asservir"
+  carn_enslave_interaction.desc: "Transformer [recipient.GetShortUINameNoTooltip] en votre esclave"
+  carn_wants_to_be_your_slave: "Veut que vous soyez leur Maître : $VALUE|=+0$"
+  carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U] est un [noble|E] : $VALUE|=+0$"
+  carn_enslave_you_have_no_reason: "Vous n'avez pas de [execute_reason|E] : $VALUE|=+0$"
+
+  carn_buy_slave_on_market_interaction: "Acheter un Esclave"
+  carn_buy_slave_on_market_interaction_desc: "Acheter un esclave pour [gold|E]"
+  recipient_secondary_carn_buy_slave_on_market_interaction: "Esclave"
+
+  carn_sell_slave_interaction: "Vendre un Esclave"
+  carn_sell_slave_interaction.desc: "Vendre [recipient.GetShortUINameNoTooltip] sur le marché des esclaves pour #high [gold_i]#!"
+  recipient_secondary_carn_sell_slave_interaction: "Acheteur"
+  carn_buyer_not_enough_gold_for_slave_price_tooltip: "Paie #high [gold_i]#!"
+  carn_secondary_recipient_is_my_knight_reason: "[secondary_recipient.GetShortUIName|U] est mon [recipient.Custom('KnightCulture')] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_councillor_reason: "[secondary_recipient.GetShortUIName|U] est mon [councillor|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_friend_reason: "[secondary_recipient.GetShortUIName|U] est mon [friend|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_lover_reason: "[secondary_recipient.GetShortUIName|U] est mon [lover|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_crush_reason: "[secondary_recipient.GetShortUIName|U] est mon [crush|E] : $VALUE|=+0$"
+  carn_secondary_recipient_is_my_soulmate_reason: "[secondary_recipient.GetShortUIName|U] est mon [soulmate|E] : $VALUE|=+0$"
+
+  carn_free_slave_interaction: "Libérer un Esclave"
+  carn_free_slave_interaction.desc: "Libérer [recipient.GetShortUINameNoTooltip] de l'esclavage"
+
+  forced_labor_interaction: "Travail Forcé"
+  forced_labor_interaction.desc: "[recipient.GetShortUINameNoTooltip] a été forcé de travailler trop dur"
+
+  ordinary_labor_interaction: "Travail Ordinaire"
+  ordinary_labor_interaction.desc: "[recipient.GetShortUIName] travaille de manière modérée, convenable pour la santé"
+
+  extortion_interaction: "Extorquer"
+  extortion_interaction.desc: "Extorquer [recipient.GetShortUINameNoTooltip] pour [gold|E]"
+
+  slave_training_interaction: "Entraîner"
+  slave_training_interaction.desc: "Entraîner [recipient.GetShortUINameNoTooltip] pour être un esclave docile"
+  have_sex: "Avoir des relations sexuelles"
+  extort_gold: "Extorquer de l'Or"
+  forced_labor: "Travail Forcé"
 
   set_relation_slave_g: "[TARGET_CHARACTER.GetName] devient esclave"
   set_relation_slave_f: "[TARGET_CHARACTER.GetName] devient mon esclave"

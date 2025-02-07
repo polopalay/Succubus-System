@@ -34,3 +34,6 @@
 
   slave_training_interaction: "노예 훈련"
   slave_training_interaction.desc: "[recipient.GetShortUINameNoTooltip]을 온순한 노예로 훈련"
+  have_sex: "성관계"
+  extort_gold: "금을 갈취"
+  forced_labor: "강제 노동"

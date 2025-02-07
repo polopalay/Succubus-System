@@ -34,3 +34,6 @@
 
   slave_training_interaction: "Обучение раба"
   slave_training_interaction.desc: "Обучение [recipient.GetShortUINameNoTooltip] быть послушным рабом"
+  have_sex: "Заниматься сексом"
+  extort_gold: "Вымогать золото"
+  forced_labor: "Принудительный труд"

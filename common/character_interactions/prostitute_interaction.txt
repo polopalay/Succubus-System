@@ -229,7 +229,7 @@
 			add = 25
 			scope:recipient = { any_child = { primary_title = { tier = tier_empire } } }
 		}
-		modifier = { add = 10 scope:actor = { faith = { has_doctrine = tenet_polyamory } } scope:recipient = scope:actor }
+		modifier = { add = 10 scope:actor.faith = { has_doctrine = tenet_polyamory } }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
 		modifier = { add = -10 scope:actor = { has_trait = chaste } }
 		modifier = { add = 5 scope:actor = { has_trait = lustful } }

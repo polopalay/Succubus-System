@@ -34,3 +34,6 @@
 
   slave_training_interaction: "Entrena al esclavo"
   slave_training_interaction.desc: "Entrena a [recipient.GetShortUINameNoTooltip] para que sea un esclavo dócil"
+  have_sex: "Tener Sexo"
+  extort_gold: "Extorsionar Oro"
+  forced_labor: "Trabajo Forzado"

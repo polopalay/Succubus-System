@@ -7,6 +7,20 @@
   relation_slave_owner: "주인"
   relation_slave_owner_possessive: "주인의"
 
+  trait_slave: "노예"
+  trait_slave_desc: "이 캐릭터는 다른 사람의 재산이며, 법적으로 인간 이하로 인정됩니다."
+  trait_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip]는 다른 사람의 재산이며, 법적으로 인간 이하로 인정됩니다."
+
+  trait_former_slave: "전 노예"
+  trait_former_slave_desc: "이 캐릭터는 노예에서 탈출하여 자유인이 된 전 노예입니다."
+  trait_former_slave_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip]는 노예에서 탈출하여 자유인이 된 전 노예입니다."
+
+  trait_lifestyle_prostitute: "프로스티튜트"
+  trait_lifestyle_prostitute_desc: "이 캐릭터는 돈을 위해 자신의 몸을 팔고 있습니다."
+  trait_lifestyle_prostitute_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip]는 돈을 위해 고객에게 성적으로 서비스를 제공하는 사업을 하고 있습니다."
+  trait_track_lifestyle_prostitute: "프로스티튜트"
+  trait_track_lifestyle_prostitute_desc: "성 판매의 삶"
+
   carn_working_as_prostitute_1_modifier: "$trait_lifestyle_prostitute$로 일하는 중"
   carn_working_as_prostitute_1_modifier_desc: "이 인물은 돈이 있다면 아무에게나 하룻밤을 팔고 있습니다."
   carn_working_as_prostitute_2_modifier: "$trait_lifestyle_prostitute$로 일하는 중"
@@ -32,10 +46,44 @@
   forced_labor_opinion: "강제 노동"
   ordinary_labor_opinion: "일반 노동"
 
-  enslave_war: "노예 전쟁"
-  enslave_war_victory_desc: "[defender.GetName]의 모든 여성 [courtier|E]는 [attacker.GetName]에 의해 [구금될|E] 것입니다"
-  enslave_war_white_peace_desc: "전쟁은 무의미합니다"
-  enslave_war_defeat_desc: "[attacker.GetName]는 [defender.GetName]에게 전쟁 배상금을 지불해야 합니다"
+  carn_enslave_interaction: "노예화"
+  carn_enslave_interaction.desc: "[recipient.GetShortUINameNoTooltip]를 당신의 노예로 만듭니다."
+  carn_wants_to_be_your_slave: "당신을 주인으로 원합니다: $VALUE|=+0$"
+  carn_enslave_recipient_is_noble: "[recipient.GetShortUIName|U]는 [noble|E]입니다: $VALUE|=+0$"
+  carn_enslave_you_have_no_reason: "당신은 [execute_reason|E]이 없습니다: $VALUE|=+0$"
+
+  carn_buy_slave_on_market_interaction: "노예 구매"
+  carn_buy_slave_on_market_interaction_desc: "[gold|E]로 노예를 구매합니다."
+  recipient_secondary_carn_buy_slave_on_market_interaction: "노예"
+
+  carn_sell_slave_interaction: "노예 판매"
+  carn_sell_slave_interaction.desc: "[recipient.GetShortUINameNoTooltip]를 노예 시장에서 #high [gold_i]#!에 판매합니다."
+  recipient_secondary_carn_sell_slave_interaction: "구매자"
+  carn_buyer_not_enough_gold_for_slave_price_tooltip: "지불 #high [gold_i]#!"
+  carn_secondary_recipient_is_my_knight_reason: "[secondary_recipient.GetShortUIName|U]는 내 [recipient.Custom('KnightCulture')]입니다: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_councillor_reason: "[secondary_recipient.GetShortUIName|U]는 내 [councillor|E]입니다: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_friend_reason: "[secondary_recipient.GetShortUIName|U]는 내 [friend|E]입니다: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_lover_reason: "[secondary_recipient.GetShortUIName|U]는 내 [lover|E]입니다: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_crush_reason: "[secondary_recipient.GetShortUIName|U]는 내 [crush|E]입니다: $VALUE|=+0$"
+  carn_secondary_recipient_is_my_soulmate_reason: "[secondary_recipient.GetShortUIName|U]는 내 [soulmate|E]입니다: $VALUE|=+0$"
+
+  carn_free_slave_interaction: "노예 해방"
+  carn_free_slave_interaction.desc: "[recipient.GetShortUINameNoTooltip]를 노예에서 해방합니다."
+
+  forced_labor_interaction: "강제 노동"
+  forced_labor_interaction.desc: "[recipient.GetShortUINameNoTooltip]가 과도하게 일을 하도록 강요받았습니다."
+
+  ordinary_labor_interaction: "일반 노동"
+  ordinary_labor_interaction.desc: "[recipient.GetShortUIName]가 건강에 적합한 보통의 방식으로 일하고 있습니다."
+
+  extortion_interaction: "갈취"
+  extortion_interaction.desc: "[recipient.GetShortUINameNoTooltip]에게서 [gold|E]를 갈취합니다."
+
+  slave_training_interaction: "노예 훈련"
+  slave_training_interaction.desc: "[recipient.GetShortUINameNoTooltip]을 온순한 노예로 훈련"
+  have_sex: "성관계"
+  extort_gold: "금을 갈취"
+  forced_labor: "강제 노동"
 
   set_relation_slave_g: "[TARGET_CHARACTER.GetName]가 노예가 됨"
   set_relation_slave_f: "[TARGET_CHARACTER.GetName]가 내 노예가 됨"

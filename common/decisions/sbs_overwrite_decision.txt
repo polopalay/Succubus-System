@@ -35,33 +35,17 @@ stress_loss_rakish_decision = {
 
 	effect = {
 		random_living_character = {
-			limit = { is_attracted_to_gender_of = root NOT = { this = root } carn_is_working_as_prostitute_trigger = yes }
+			limit = { root = { is_attracted_to_gender_of = prev } NOT = { this = root } carn_is_working_as_prostitute_trigger = yes }
 			save_scope_as = prostitute
 			weight = {
 				base = 1
 				modifier = {
 					is_spouse_of = root
-					add = -10
+					add = -20
 				}
 				modifier = {
-					primary_title.tier = tier_duchy
+					has_trait = slave
 					add = 10
-				}
-				modifier = {
-					primary_title.tier = tier_kingdom
-					add = 20
-				}
-				modifier = {
-					primary_title.tier = tier_empire
-					add = 40
-				}
-				modifier = {
-					primary_spouse.primary_title.tier = tier_kingdom
-					add = 20
-				}
-				modifier = {
-					primary_spouse.primary_title.tier = tier_empire
-					add = 40
 				}
 			}
 		}
