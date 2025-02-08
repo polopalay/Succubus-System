@@ -107,15 +107,14 @@
 	ai_potential = { is_at_war = no }
 	ai_will_do = {
 		base = 0
-		opinion_modifier = { opinion_target = scope:recipient multiplier = -1 }
+		opinion_modifier = { opinion_target = scope:recipient multiplier = -0.25 }
 		ai_value_modifier = {
-			ai_vengefulness = 1
-			ai_greed = 0.5
-			ai_compassion = -1
-			ai_honor = -0.5
+			ai_vengefulness = 0.25
+			ai_greed = 0.2
+			ai_compassion = -0.25
+			ai_honor = -0.1
 			ai_rationality = -0.1
 		}
-		modifier = { scope:actor = { faith.religion = religion:satanic_religion } add = 20 }
 		modifier = { scope:recipient = { has_trait = peasant_leader } add = 100 }
 		modifier = { scope:recipient = { has_trait = populist_leader } add = 100 }
 		modifier = { scope:recipient = { has_trait = slave } add = 1000 }
@@ -123,6 +122,8 @@
 		modifier = { add = -20 scope:actor.dynasty = scope:recipient.dynasty }
 		modifier = { add = -20 is_close_or_extended_family_of = scope:recipient }
 		modifier = { add = -20 is_close_family_of = scope:recipient }
+		modifier = { add = -50 is_child_of = scope:recipient }
+		modifier = { add = -50 is_heir_of = scope:recipient }
 		modifier = {
 			add = 20
 			scope:actor = {

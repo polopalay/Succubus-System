@@ -47,6 +47,10 @@
 			}
 		}
 		scope:recipient = {
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+			}
 			set_character_faith_with_conversion = scope:actor.faith
 			remove_trait = saint
 			mind_break_personality = yes

@@ -114,12 +114,6 @@ carn_buy_slave_effect = {
 		name = slave_price
 		value = $SLAVE_PRICE$
 	}
-	scope:buyer = {
-		pay_short_term_gold = { target = scope:seller gold = scope:slave_price }
-		add_courtier = scope:slave
-		save_scope_as = slave_owner
-	}
-
 	scope:slave = {
 		remove_relation_slave_owner = scope:seller
 		set_relation_slave_owner = { target = scope:buyer }
@@ -129,6 +123,11 @@ carn_buy_slave_effect = {
 	}
 	scope:buyer = {
 		set_relation_slave = { target = scope:slave }
+	}
+	scope:buyer = {
+		pay_short_term_gold = { target = scope:seller gold = scope:slave_price }
+		add_courtier = scope:slave
+		save_scope_as = slave_owner
 	}
 }
 

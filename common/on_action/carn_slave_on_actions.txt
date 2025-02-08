@@ -31,25 +31,7 @@ on_title_gain = {
 	}
 }
 
-on_imprison = {
-	trigger = {
-		is_ruler = no
-		has_trait = slave
-	}
-	effect = {
-		release_from_prison = yes
-	}
-}
-
 on_join_court = {
-	trigger = {
-		is_ruler = no
-		has_trait = slave
-		has_relation_slave_owner = scope:old_employer
-	}
-	effect = {
-		scope:old_employer = {
-			add_courtier = root
-		}
-	}
+	trigger = { is_ruler = no has_trait = slave has_relation_slave_owner = scope:old_employer }
+	effect = { scope:old_employer = { add_courtier = root } }
 }

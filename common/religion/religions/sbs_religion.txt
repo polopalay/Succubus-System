@@ -40,7 +40,7 @@ satanic_religion = {
 	doctrine = doctrine_funeral_mummification
 
 	traits = {
-		virtues = { lustful deceitful callous sadistic vengeful greedy }
+		virtues = { lustful deceitful callous sadistic vengeful greedy sbs_demon }
 		sins = { chaste honest compassionate forgiving temperate }
 	}
 	custom_faith_icons = {
@@ -217,7 +217,6 @@ satanic_religion = {
 			doctrine = tenet_sanctity_of_nature
 			doctrine = tenet_megaliths
 
-			doctrine = carn_doctrine_prostitution_virtuous
 			doctrine = doctrine_funeral_sky_burial
 		}
 		lilith = {

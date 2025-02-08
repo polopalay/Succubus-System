@@ -141,10 +141,10 @@
 		base = 0
 		modifier = { add = 1000 scope:recipient = scope:actor }
 		ai_value_modifier = {
-			ai_vengefulness = -1
-			ai_greed = -0.5
-			ai_compassion = 1
-			ai_honor = 0.5
+			ai_vengefulness = -0.25
+			ai_greed = -0.2
+			ai_compassion = 0.25
+			ai_honor = 0.1
 			ai_rationality = 0.1
 		}
 		modifier = {

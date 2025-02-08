@@ -104,12 +104,10 @@ random_ntr_on_action = {
 
 hidden_effect_on_action = {
 	events = {
-		# return slave to the owner
-		carn_slave.004
 		# saint is always protected by god
 		sbs_event.9998
 		# hof of satanic religion is always need spouse
-		sbs_event.9999
+		#sbs_event.9999
 	}
 }
 
