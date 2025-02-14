@@ -1,9 +1,8 @@
 ﻿l_spanish:
+  NOT_IS_IMMORTAL_TRIGGER: "No es inmortal"
   any_prisoner_count: "Cualquier [prisoners|E]"
   any_county_province: "Cualquier [province|E]"
-
-  have_sex_opinion: "Tuvo sexo recientemente"
-  be_healed_opinion: "Sanado por magia negra"
+  COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
 
   magic_creation: "$trinket$"
   magic_creation_miscellaneous: "$trinket$"
@@ -17,20 +16,6 @@
 
   mistress_dildo: "Guardiana Humilde"
   mistress_dildo_desc: "Solo mirarlo hace que las partes femeninas palpen."
-
-  prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] se acuesta con [prostitute.GetShortUIName]"
-
-  nickname_the_bitch: "La Perra"
-  nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] es una perra caliente, dispuesta a tener sexo sin pagar."
- 
-  nickname_the_slut: "La Prostituta"
-  nickname_the_slut_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] declara abiertamente ser una prostituta, para la ira y diversión de los clientes."
-
-  nickname_the_wench: "La Ramera"
-  nickname_the_wench_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] es famosa en todo el reino como una ramera."
-
-  nickname_the_whore: "La Prostituta"
-  nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] solía ser noble, pero renunció a todo para convertirse en prostituta."
 
   nickname_the_semen_tank: "El Tanque de Semen"
   nickname_the_semen_tank_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] tiene una fuerte pasión por el semen."
@@ -84,18 +69,6 @@
 
   succubus_generals: "General Demonio"
   succubus_generals_desc: "Los guerreros demoníacos son convocados para servir a la amante del diablo."
-
-  cast_spell_recetly: "Magia Usada Recientemente"
-  cast_spell_recetly_desc: "Magia utilizada recientemente, no puede ser usada por un periodo de tiempo."
-
-  action_can_offer_prostitute_combined_group_name: "Ofrecer Prostituta"
-  action_can_offer_prostitute_combined_group_label: "Puede ofrecer Prostituta"
-  action_can_offer_prostitute_combined_group_description: "Puede ofrecer una prostituta a los personajes"
-  action_can_offer_prostitute_combined_label: "Ofrecer Prostituta para [recipient.GetShortUIName|E]"
-  action_can_offer_prostitute_label: "Ofrecer Prostituta para [recipient.GetShortUIName|E]"
-  action_can_offer_prostitute: "Ofrecer Prostituta"
-  action_can_offer_prostitute_desc: "Ofrecer servicios sexuales a [recipient.GetShortUIName]"
-  action_can_offer_prostitute_click: ""
 
   beelzebub_is_alive: "Belcebú está vivo"
   beelzebub_isn_seal: "Belcebú no está sellado"

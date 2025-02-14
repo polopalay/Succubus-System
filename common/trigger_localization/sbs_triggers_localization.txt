@@ -1,4 +1,0 @@
-carn_slavery_is_illegal = {
-	first_not = carn_slavery_is_illegal
-	third_not = carn_slavery_is_illegal
-}

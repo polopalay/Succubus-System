@@ -5,8 +5,8 @@
   succubus_dealing_with_stress_interaction: "Gérer le Stress"
   succubus_dealing_with_stress_interaction.desc: "Éliminez le stress et tous ses effets"
 
-  devil_dead_interaction: "Guérison"
-  devil_dead_interaction.desc: "Élimine toutes sortes de maladies, blessures et tous les noms disgracieux"
+  sbs_devil_dead_interaction: "Guérison"
+  sbs_devil_dead_interaction.desc: "Élimine toutes sortes de maladies, blessures et tous les noms disgracieux"
 
   succubus_imprison_interaction: "Emprisonner"
   succubus_imprison_interaction.desc: "Emprisonnez [recipient.GetShortUIName] dans votre donjon"
@@ -26,13 +26,13 @@
   sbs_switch_body_interaction: "Changer"
   sbs_switch_body_interaction.desc: "Incarnez [recipient.GetShortUIName]"
 
-  create_lesser_succubus_interaction: "Créer une Succube Inférieure"
-  create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube Inférieure"
-  recipient_secondary_create_lesser_succubus_interaction: "Choisir un"
+  sbs_create_lesser_succubus_interaction: "Créer une Succube Inférieure"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube Inférieure"
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "Choisir un"
 
-  create_succubus_interaction: "Créer une Succube"
-  create_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube"
-  recipient_secondary_create_succubus_interaction: "Choisir un"
+  sbs_create_succubus_interaction: "Créer une Succube"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] deviendra une Succube"
+  recipient_secondary_sbs_create_succubus_interaction: "Choisir un"
 
   sbs_absorb_interaction: "Absorber"
   sbs_absorb_interaction.desc: "Absorbez la puissance de [recipient.GetShortUIName] en loyauté"
@@ -65,17 +65,17 @@
   naked: "Nue"
   glass: "Verre"
 
-  deal_with_the_devil_interaction: "Faire un pacte avec le diable"
-  deal_with_the_devil_interaction.desc: "Faites un pacte avec le diable pour obtenir ce que vous voulez à un \"petit\" prix."
+  sbs_deal_with_the_devil_interaction: "Faire un pacte avec le diable"
+  sbs_deal_with_the_devil_interaction.desc: "Faites un pacte avec le diable pour obtenir ce que vous voulez à un \"petit\" prix."
   small_price: "Petit Prix"
 
-  ask_for_become_lesser_succubus_interaction: "Demander à devenir une Sucube inférieure"
-  ask_for_become_lesser_succubus_interaction.desc: "Demander au diable de devenir une Sucube inférieure."
-  recipient_secondary_ask_for_become_lesser_succubus_interaction: "Choisir un"
+  sbs_ask_for_become_lesser_succubus_interaction: "Demander à devenir une Sucube inférieure"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "Demander au diable de devenir une Sucube inférieure."
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Choisir un"
 
-  ask_for_become_succubus_interaction: "Demander à devenir Sucube"
-  ask_for_become_succubus_interaction.desc: "Demander au diable de devenir une Sucube."
-  recipient_secondary_ask_for_become_succubus_interaction: "Choisir un"
+  sbs_ask_for_become_succubus_interaction: "Demander à devenir Sucube"
+  sbs_ask_for_become_succubus_interaction.desc: "Demander au diable de devenir une Sucube."
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "Choisir un"
 
   mind_break_the_saint_interaction: "Casser l'esprit du Saint"
   mind_break_the_saint_interaction.desc: "Cassez l'esprit du Saint [recipient.GetShortUIName]"

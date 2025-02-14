@@ -1,6 +1,6 @@
 sbs_demon = {
 	category = health
-	icon = demon.dds
+	icon = sbs_demon.dds
 
 	immortal = yes
 	no_prowess_loss_from_age = yes
@@ -22,7 +22,7 @@ sbs_demon = {
 			desc = sbs_demon_character_desc
 		}
 	}
-	opposites = { sbs_succubus sbs_lesser_succubus seed_of_destruction incapable }
+	opposites = { sbs_succubus sbs_lesser_succubus sbs_seed_of_destruction incapable }
 
 	monthly_lifestyle_xp_gain_mult = -1000
 	long_reign_bonus_mult = -1000
@@ -57,7 +57,7 @@ sbs_demon = {
 
 sbs_succubus = {
 	category = health
-	icon = succubus.dds
+	icon = sbs_succubus.dds
 
 	immortal = yes
 	no_prowess_loss_from_age = yes
@@ -85,7 +85,7 @@ sbs_succubus = {
 		}
 	}
 
-	opposites = { sbs_demon sbs_lesser_succubus seed_of_destruction chaste incapable }
+	opposites = { sbs_demon sbs_lesser_succubus sbs_seed_of_destruction chaste incapable }
 
 	fertility = -0.5
 	general_opinion = 5
@@ -196,7 +196,7 @@ sbs_succubus = {
 }
 
 sbs_lesser_succubus = {
-	category = health
+	category = sbs_lesser_succubus
 	icon = lesser_succubus.dds
 
 	immortal = yes
@@ -213,7 +213,7 @@ sbs_lesser_succubus = {
 	ai_greed = dominant_positive_ai_value
 	ai_zeal = dominant_negative_ai_value
 
-	opposites = { sbs_demon sbs_succubus seed_of_destruction chaste incapable }
+	opposites = { sbs_demon sbs_succubus sbs_seed_of_destruction chaste incapable }
 
 	name = trait_lesser_succubus_neutral
 
@@ -278,9 +278,9 @@ sbs_lesser_succubus = {
 	ruler_designer_cost = 50
 }
 
-seed_of_destruction = {
+sbs_seed_of_destruction = {
 	category = health
-	icon = corruption.dds
+	icon = sbs_seed_of_destruction.dds
 	
 	immortal = yes
 	no_prowess_loss_from_age = yes
@@ -290,6 +290,7 @@ seed_of_destruction = {
 	flag = immortal_visuals
 	flag = immortal_fertility
 	flag = immortal_incapability
+	flag = slave_owner
 
 	valid_sex = male
 	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus incapable }
@@ -303,9 +304,9 @@ seed_of_destruction = {
 				trigger = {
 					NOT = { exists = this }
 				}
-				desc = seed_of_destruction_desc
+				desc = sbs_seed_of_destruction_desc
 			}
-			desc = seed_of_destruction_character_desc
+			desc = sbs_seed_of_destruction_character_desc
 		}
 	}
 

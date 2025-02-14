@@ -1,10 +1,7 @@
 ﻿l_english:
+ NOT_IS_IMMORTAL_TRIGGER: "Is not immortal"
  any_prisoner_count: "Any [prisoners|E]"
  any_county_province: "Any [province|E]"
-
- have_sex_opinion: "Had sex recently"
- be_healed_opinion: "Healed by black magic"
-
  COA_DESIGNER_CATEGORY_cherilewd: "Lewd"
 
  magic_creation: "$trinket$"
@@ -19,20 +16,6 @@
 
  mistress_dildo: "Humble Guardian"
  mistress_dildo_desc: "Just looking at it makes lady parts pulse."
-
- prostitute_effect.tt: "[had_sex_root_character.GetShortUIName|U] lays with [prostitute.GetShortUIName]"
-
- nickname_the_bitch: "The Bitch"
- nickname_the_bitch_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a horny bitch, willing to fuck without paying."
- 
- nickname_the_slut: "The Slut"
- nickname_the_slut_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] openly declares a prostitute, much to the anger and amusement of customers."
-
- nickname_the_wench: "The Wench"
- nickname_the_wench_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is famous throughout the kingdom as a slutty whore"
-
- nickname_the_whore: "The Whore"
- nickname_the_whore_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] used to be a noble, but gave it all up to become a prostitute."
 
  nickname_the_semen_tank: "The Semen Tank"
  nickname_the_semen_tank_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] has a strong passion for semen."
@@ -89,23 +72,6 @@
 
  succubus_generals: "Devil General"
  succubus_generals_desc: "The devil's warriors are summoned to serve the devil's mistress."
-
- cast_spell_recetly: "Recently Used Magic"
- cast_spell_recetly_desc: "Recently used magic, cannot be used for a period of time."
-
- action_can_offer_prostitute_combined_group_name: "Offer Prostitute"
- action_can_offer_prostitute_combined_group_label: "Can offer Prostitute"
- action_can_offer_prostitute_combined_group_description: "You can offer a prostitute to the characters"
- action_can_offer_prostitute_combined_label: "Offer Prostitute for [recipient.GetShortUIName|E]"
- action_can_offer_prostitute_label: "Offer Prostitute for [recipient.GetShortUIName|E]"
- action_can_offer_prostitute: "Offer Prostitute"
- action_can_offer_prostitute_desc: "Offer [recipient.GetShortUIName] sexual services"
- action_can_offer_prostitute_click: ""
-
- secret_prostitute: "Secret Prostitute"
- secret_prostitute_desc: "Is a prostitute"
- secret_prostitute_tooltip_desc: "This character is a prostitute"
- secret_prostitute_type_desc: "$secret_prostitute_tooltip_desc$"
 
  beelzebub_is_alive: "The essence of Beelzebub still exists"
  beelzebub_isn_seal: "Beelzebub is not sealed yet"

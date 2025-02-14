@@ -7,8 +7,8 @@
 
   COA_DESIGNER_CATEGORY_cherilewd: "Lascivo"
 
-  devil_dead_interaction: "Curación"
-  devil_dead_interaction.desc: "Elimina todo tipo de enfermedades, lesiones y todos los nombres vergonzosos"
+  sbs_devil_dead_interaction: "Curación"
+  sbs_devil_dead_interaction.desc: "Elimina todo tipo de enfermedades, lesiones y todos los nombres vergonzosos"
 
   succubus_imprison_interaction: "Aprisionar"
   succubus_imprison_interaction.desc: "Aprisionar a [recipient.GetShortUIName] en tu mazmorras"
@@ -28,13 +28,13 @@
   sbs_switch_body_interaction: "Cambiar"
   sbs_switch_body_interaction.desc: "Jugar con [recipient.GetShortUIName]"
 
-  create_lesser_succubus_interaction: "Crear Súcubo Menor"
-  create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en Súcubo Menor"
-  recipient_secondary_create_lesser_succubus_interaction: "Elegir uno"
+  sbs_create_lesser_succubus_interaction: "Crear Súcubo Menor"
+  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en Súcubo Menor"
+  recipient_secondary_sbs_create_lesser_succubus_interaction: "Elegir uno"
 
-  create_succubus_interaction: "Crear Súcubo"
-  create_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en un Súcubo"
-  recipient_secondary_create_succubus_interaction: "Elegir uno"
+  sbs_create_succubus_interaction: "Crear Súcubo"
+  sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en un Súcubo"
+  recipient_secondary_sbs_create_succubus_interaction: "Elegir uno"
 
   sbs_absorb_interaction: "Absorber"
   sbs_absorb_interaction.desc: "Absorber el poder de [recipient.GetShortUIName] en lealtad"
@@ -63,17 +63,17 @@
   naked: "Desnudo"
   glass: "Cristal"
 
-  deal_with_the_devil_interaction: "Trato con el Diablo"
-  deal_with_the_devil_interaction.desc: "Hacer un trato con el diablo, obtener lo que quieras a cambio de un \"pequeño\" precio"
+  sbs_deal_with_the_devil_interaction: "Trato con el Diablo"
+  sbs_deal_with_the_devil_interaction.desc: "Hacer un trato con el diablo, obtener lo que quieras a cambio de un \"pequeño\" precio"
   small_price: "Pequeño Precio"
 
-  ask_for_become_lesser_succubus_interaction: "Pedir convertirse en Súcubo Menor"
-  ask_for_become_lesser_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo Menor"
-  recipient_secondary_ask_for_become_lesser_succubus_interaction: "Elegir uno"
+  sbs_ask_for_become_lesser_succubus_interaction: "Pedir convertirse en Súcubo Menor"
+  sbs_ask_for_become_lesser_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo Menor"
+  recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Elegir uno"
 
-  ask_for_become_succubus_interaction: "Pedir convertirse en Súcubo"
-  ask_for_become_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo"
-  recipient_secondary_ask_for_become_succubus_interaction: "Elegir uno"
+  sbs_ask_for_become_succubus_interaction: "Pedir convertirse en Súcubo"
+  sbs_ask_for_become_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo"
+  recipient_secondary_sbs_ask_for_become_succubus_interaction: "Elegir uno"
 
   mind_break_the_saint_interaction: "Romper la Mente del Santo"
   mind_break_the_saint_interaction.desc: "Convertir al santo en un antihéroe, tu esclavo"

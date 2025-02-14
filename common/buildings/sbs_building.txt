@@ -11,7 +11,7 @@ brothel1 = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_less_succubus
-			has_trait = seed_of_destruction
+			has_trait = sbs_seed_of_destruction
 			has_trait = lustful
 			has_trait = rakish
 		}
@@ -49,7 +49,7 @@ brothel2 = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_less_succubus
-			has_trait = seed_of_destruction
+			has_trait = sbs_seed_of_destruction
 			has_trait = lustful
 			has_trait = rakish
 		}
@@ -85,7 +85,7 @@ brothel3 = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_less_succubus
-			has_trait = seed_of_destruction
+			has_trait = sbs_seed_of_destruction
 			has_trait = lustful
 			has_trait = rakish
 		}
@@ -123,7 +123,7 @@ alchemy1 = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_less_succubus
-			has_trait = seed_of_destruction
+			has_trait = sbs_seed_of_destruction
 		}
 	}
 
@@ -160,7 +160,7 @@ alchemy2 = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_less_succubus
-			has_trait = seed_of_destruction
+			has_trait = sbs_seed_of_destruction
 		}
 	}
 
@@ -195,7 +195,7 @@ alchemy3 = {
 			has_trait = sbs_demon
 			has_trait = sbs_succubus
 			has_trait = sbs_less_succubus
-			has_trait = seed_of_destruction
+			has_trait = sbs_seed_of_destruction
 		}
 	}
 

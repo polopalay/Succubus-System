@@ -29,8 +29,8 @@
   deviant_blood_desc: "[ROOT.GetCharacter.GetName] ist ein Kind des Teufels."
   deviant_blood_character_desc: "[ROOT.GetCharacter.GetName] ist ein Kind des Teufels."
 
-  trait_seed_of_destruction: "Samen der Zerstörung"
-  seed_of_destruction_desc: "[ROOT.GetCharacter.GetName] wird von dem Teufel mit Macht gegeben, ist ein Zeichen der Zerstörung und des Chaos."
-  seed_of_destruction_character_desc: "Die Diener Abaddons, die Zerstörung und Chaos in die Welt bringen."
-  trait_track_seed_of_destruction: "Korruption"
-  trait_track_seed_of_destruction_desc: "Die Samen der Zerstörung brauchen Zeit, um zu keimen."
+  trait_sbs_seed_of_destruction: "Samen der Zerstörung"
+  sbs_seed_of_destruction_desc: "[ROOT.GetCharacter.GetName] wird von dem Teufel mit Macht gegeben, ist ein Zeichen der Zerstörung und des Chaos."
+  sbs_seed_of_destruction_character_desc: "Die Diener Abaddons, die Zerstörung und Chaos in die Welt bringen."
+  trait_track_sbs_seed_of_destruction: "Korruption"
+  trait_track_sbs_seed_of_destruction_desc: "Die Samen der Zerstörung brauchen Zeit, um zu keimen."

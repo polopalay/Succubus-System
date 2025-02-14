@@ -1,6 +1,6 @@
 ﻿l_english:
- devil_dead_interaction: "Healing"
- devil_dead_interaction.desc: "Eliminates all kinds of diseases, injuries, and all disgraceful names"
+ sbs_devil_dead_interaction: "Healing"
+ sbs_devil_dead_interaction.desc: "Eliminates all kinds of diseases, injuries, and all disgraceful names"
  stress_flag: "Stress"
  healing_flag: "Healing"
  honor_flag: "Honor"
@@ -21,13 +21,13 @@
  sbs_switch_body_interaction: "Switch"
  sbs_switch_body_interaction.desc: "Play [recipient.GetShortUIName]"
  
- create_lesser_succubus_interaction: "Create Lesser Succubus"
- create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] will become Lesser Succubus"
- recipient_secondary_create_lesser_succubus_interaction: "Choose one"
+ sbs_create_lesser_succubus_interaction: "Create Lesser Succubus"
+ sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] will become Lesser Succubus"
+ recipient_secondary_sbs_create_lesser_succubus_interaction: "Choose one"
 
- create_succubus_interaction: "Create Succubus"
- create_succubus_interaction.desc: "[recipient.GetShortUIName] will become a Succubus"
- recipient_secondary_create_succubus_interaction: "Choose one"
+ sbs_create_succubus_interaction: "Create Succubus"
+ sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName] will become a Succubus"
+ recipient_secondary_sbs_create_succubus_interaction: "Choose one"
 
  sbs_absorb_interaction: "Absorb"
  sbs_absorb_interaction.desc: "Absorb the power from [recipient.GetShortUIName] into loyalty"
@@ -56,20 +56,17 @@
  naked: "Naked"
  glass: "Glass"
 
- deal_with_the_devil_interaction: "Deal with the Devil"
- deal_with_the_devil_interaction.desc: "Make a deal with the devil, get what ever you want with a \"small\" price"
+ sbs_deal_with_the_devil_interaction: "Deal with the Devil"
+ sbs_deal_with_the_devil_interaction.desc: "Make a deal with the devil, get what ever you want with a \"small\" price"
  small_price: "Small Price"
 
- ask_for_become_lesser_succubus_interaction: "Ask for become Lesser Succubus"
- ask_for_become_lesser_succubus_interaction.desc: "Ask the devil to become a Lesser Succubus"
- recipient_secondary_ask_for_become_lesser_succubus_interaction: "Choose one"
+ sbs_ask_for_become_lesser_succubus_interaction: "Ask for become Lesser Succubus"
+ sbs_ask_for_become_lesser_succubus_interaction.desc: "Ask the devil to become a Lesser Succubus"
+ recipient_secondary_sbs_ask_for_become_lesser_succubus_interaction: "Choose one"
 
- ask_for_become_succubus_interaction: "Ask for become Succubus"
- ask_for_become_succubus_interaction.desc: "Ask the devil to become a Succubus"
- recipient_secondary_ask_for_become_succubus_interaction: "Choose one"
-
- mind_break_the_saint_interaction: "Mind Break the Saint"
- mind_break_the_saint_interaction.desc: "Turn a saint into an antichrist, your slave"
+ sbs_ask_for_become_succubus_interaction: "Ask for become Succubus"
+ sbs_ask_for_become_succubus_interaction.desc: "Ask the devil to become a Succubus"
+ recipient_secondary_sbs_ask_for_become_succubus_interaction: "Choose one"
 
  sbs_looking_new_owner_interaction: "Looking for a new owner"
  sbs_looking_new_owner_interaction.desc: "Looking for a new owner for [recipient.GetShortUIName]"

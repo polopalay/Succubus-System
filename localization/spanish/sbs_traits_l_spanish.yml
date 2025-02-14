@@ -29,8 +29,8 @@
   deviant_blood_desc: "[ROOT.GetCharacter.GetName] es un hijo del diablo."
   deviant_blood_character_desc: "[ROOT.GetCharacter.GetName] es un hijo del diablo."
 
-  trait_seed_of_destruction: "Semilla de la Destrucción"
-  seed_of_destruction_desc: "[ROOT.GetCharacter.GetName] es dado por el diablo, es un signo de destrucción y caos."
-  seed_of_destruction_character_desc: "Los sirvientes de Abaddon, que traen la destrucción y el caos al mundo."
-  trait_track_seed_of_destruction: "Corrupción"
-  trait_track_seed_of_destruction_desc: "Las semillas de la destrucción necesitan tiempo para germinar."
+  trait_sbs_seed_of_destruction: "Semilla de la Destrucción"
+  sbs_seed_of_destruction_desc: "[ROOT.GetCharacter.GetName] es dado por el diablo, es un signo de destrucción y caos."
+  sbs_seed_of_destruction_character_desc: "Los sirvientes de Abaddon, que traen la destrucción y el caos al mundo."
+  trait_track_sbs_seed_of_destruction: "Corrupción"
+  trait_track_sbs_seed_of_destruction_desc: "Las semillas de la destrucción necesitan tiempo para germinar."

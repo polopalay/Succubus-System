@@ -19,7 +19,7 @@ incapable = {
 	disables_combat_leadership = yes
 	
 	shown_in_ruler_designer = no
-	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus seed_of_destruction }
+	opposites = { sbs_demon sbs_succubus sbs_lesser_succubus sbs_seed_of_destruction }
 	
 	desc = {
 		first_valid = {
