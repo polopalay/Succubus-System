@@ -24,9 +24,6 @@
 			}
 		}
 	}
-	is_valid = {
-		scope:actor.faith = scope:recipient.faith
-	}
 	send_option = {
 		is_shown = {
 			scope:actor = { has_trait = sbs_lesser_succubus }
@@ -165,14 +162,14 @@
 		}
 	}
 	ai_accept = {
-		base = -25
+		base = -50
 		opinion_modifier = {
 			opinion_target = scope:actor
 			who = scope:recipient
-			multiplier = 0.5
+			multiplier = 0.25
 		}
-		modifier = { add = 20 scope:recipient = { is_vassal_of = scope:actor } }
-		modifier = { add = 25 scope:recipient = { is_parent_of = scope:actor } }
+		modifier = { add = 30 scope:recipient.faith = scope:actor.faith }
+		modifier = { add = 50 scope:recipient = { is_parent_of = scope:actor } }
 	}
 	ai_frequency = 12
 	ai_targets = {
