@@ -134,7 +134,7 @@
 			who = scope:recipient
 			multiplier = 0.1
 		}
-		modifier = { add = -10 scope:recipient = { has_trait = chaste } }
+		modifier = { add = -50 scope:recipient = { has_trait = chaste } }
 		modifier = { add = -30 scope:actor = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
 		modifier = { add = -5 scope:actor = { has_trait = beauty_bad_1 } }
 		modifier = { add = -10 scope:actor = { has_trait = beauty_bad_2 } }
@@ -166,7 +166,7 @@
 		modifier = { add = -5 scope:actor = { has_trait = weak } }
 		modifier = { add = -5 scope:actor = { has_trait = dull } }
 		modifier = { add = -10 scope:actor = { has_trait = disfigured } }
-		modifier = { add = -25 scope:recipient = { is_close_family_of = scope:actor faith = { NOT = { has_doctrine = tenet_divine_marriage } } } }
+		modifier = { add = -25 scope:recipient = { is_close_family_of = scope:actor faith = { NOT = { has_doctrine = doctrine_consanguinity_unrestricted } } } }
 		modifier = { add = -50 scope:actor = { has_std_trigger = yes } }
 		modifier = { add = 10 scope:recipient = { faith = { has_doctrine = tenet_polyamory } } }
 		modifier = {
@@ -201,34 +201,6 @@
 	ai_will_do = {
 		base = 0
 		modifier = { add = -100 scope:recipient = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
-		modifier = {
-			add = 12
-			scope:recipient.primary_title.tier = tier_duchy
-		}
-		modifier = {
-			add = 25
-			scope:recipient.primary_title.tier = tier_kingdom
-		}
-		modifier = {
-			add = 50
-			scope:recipient.primary_title.tier = tier_empire
-		}
-		modifier = {
-			add = 12
-			scope:recipient.primary_spouse.primary_title.tier = tier_kingdom
-		}
-		modifier = {
-			add = 25
-			scope:recipient.primary_spouse.primary_title.tier = tier_empire
-		}
-		modifier = {
-			add = 12
-			scope:recipient = { any_child = { primary_title = { tier = tier_kingdom } } }
-		}
-		modifier = {
-			add = 25
-			scope:recipient = { any_child = { primary_title = { tier = tier_empire } } }
-		}
 		modifier = { add = 10 scope:actor.faith = { has_doctrine = tenet_polyamory } }
 		modifier = { add = 10 scope:actor = { stress_level >= 1 } }
 		modifier = { add = -10 scope:actor = { has_trait = chaste } }

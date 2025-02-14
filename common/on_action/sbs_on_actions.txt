@@ -133,12 +133,12 @@ sbs_seed_of_destruction_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
-		is_lowborn = no
 		has_trait = slave
 		liege = { is_adult = yes }
 		OR = {
 			is_ai = no
 			liege = { has_trait = seed_of_destruction }
+			liege = { has_trait = sbs_demon }
 		}
 	}
 	events = {

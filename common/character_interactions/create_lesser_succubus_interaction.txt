@@ -22,7 +22,9 @@
 		}
 	}
 	is_valid = {
+		scope:actor.faith.religion = religion:satanic_religion
 		scope:recipient = {
+			has_trait = saint
 			has_trait = lustful
 			OR = {
 				has_trait = deviant
@@ -36,9 +38,23 @@
 	}
 	on_accept = {
 		scope:recipient = {
-			remove_character_modifier = succubus_buff
+			if = {
+				limit = { has_trait = saint }
+				remove_trait = saint
+				set_character_faith_with_conversion = scope:actor.faith
+				give_nickname = nick_the_betrayer
+			}
+			if = {
+				limit = { has_trait = immortal }
+				remove_trait = immortal
+			}
 			add_trait = sbs_lesser_succubus
 			set_immortal_age = 18
+		}
+	}
+	auto_accept = {
+		scope:recipient = {
+			is_courtier_of = scope:actor
 		}
 	}
 	ai_accept = {

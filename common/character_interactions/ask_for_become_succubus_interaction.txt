@@ -139,6 +139,7 @@
 		modifier = { add = 5 scope:hook = yes }
 		modifier = { add = 5 scope:favor = yes }
 		modifier = { add = 5 scope:demand_conversion = yes }
+		modifier = { scope:recipient = { is_courtier_of = scope:actor } add = 10 }
 	}
 	ai_potential = { always = yes }
 	ai_frequency = 12

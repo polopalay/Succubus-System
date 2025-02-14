@@ -79,8 +79,8 @@
   extortion_interaction: "Extorsionar"
   extortion_interaction.desc: "Extorsiona a [recipient.GetShortUINameNoTooltip] por [gold|E]."
 
-  slave_training_interaction: "Entrena al esclavo"
-  slave_training_interaction.desc: "Entrena a [recipient.GetShortUINameNoTooltip] para que sea un esclavo dócil"
+  carn_slave_training_interaction: "Entrena al esclavo"
+  carn_slave_training_interaction.desc: "Entrena a [recipient.GetShortUINameNoTooltip] para que sea un esclavo dócil"
   have_sex: "Tener Sexo"
   extort_gold: "Extorsionar Oro"
   forced_labor: "Trabajo Forzado"

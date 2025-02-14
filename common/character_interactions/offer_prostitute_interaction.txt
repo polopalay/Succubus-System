@@ -21,7 +21,6 @@
 			is_incapable = no
 			is_imprisoned = no
 			NOT = { is_at_war_with = scope:actor }
-			NOT = { has_character_modifier = recently_had_sex }
 			NOT = { has_trait = celibate }
 			OR = {
 				stress_level >= 1
@@ -31,7 +30,6 @@
 				has_trait = profligate
 				has_trait = seducer
 				has_trait = deviant
-				has_trait = paranoid
 				any_secret = { secret_type = secret_deviant }
 			}
 		}
@@ -149,7 +147,8 @@
 			multiplier = 0.1
 		}
 		modifier = { add = 10 scope:recipient = { stress_level >= 1 } }
-		modifier = { add = -10 scope:recipient = { has_trait = chaste } }
+		modifier = { add = -50 scope:recipient = { has_trait = chaste } }
+		modifier = { add = -25 scope:recipient = { is_close_family_of = scope:secondary_recipient faith = { NOT = { has_doctrine = doctrine_consanguinity_unrestricted } } } }
 		modifier = { add = 15 scope:recipient = { has_trait = lustful } }
 		modifier = { add = 15 scope:recipient = { has_trait = rakish } }
 		modifier = { add = -100 scope:secondary_recipient = { OR = { has_trait = lovers_pox has_trait = early_great_pox } } }
@@ -189,7 +188,6 @@
 		modifier = { add = 10 scope:secondary_recipient = { age <= 20 } }
 		modifier = { add = -5 scope:secondary_recipient = { age >= 30 is_immortal = no } }
 		modifier = { add = -10 scope:secondary_recipient = { age >= 40 is_immortal = no } }
-		modifier = { add = -25 scope:recipient = { is_close_family_of = scope:secondary_recipient faith = { NOT = { has_doctrine = tenet_divine_marriage } } } }
 		modifier = { add = 10 scope:secondary_recipient = { should_be_naked_trigger = yes } }
 		modifier = {
 			desc = cant_have_sex_without_contraception
@@ -206,31 +204,31 @@
 			scope:use_contraception = no
 		}
 		modifier = {
-			add = 1
+			add = 5
 			scope:secondary_recipient.primary_title.tier = tier_duchy
 		}
 		modifier = {
-			add = 2
+			add = 10
 			scope:secondary_recipient.primary_title.tier = tier_kingdom
 		}
 		modifier = {
-			add = 3
+			add = 20
 			scope:secondary_recipient.primary_title.tier = tier_empire
 		}
 		modifier = {
-			add = 1
+			add = 5
 			scope:secondary_recipient.primary_spouse.primary_title.tier = tier_kingdom
 		}
 		modifier = {
-			add = 2
+			add = 10
 			scope:secondary_recipient.primary_spouse.primary_title.tier = tier_empire
 		}
 		modifier = {
-			add = 1
+			add = 5
 			scope:secondary_recipient = { any_child = { primary_title = { tier = tier_kingdom } } }
 		}
 		modifier = {
-			add = 2
+			add = 10
 			scope:secondary_recipient = { any_child = { primary_title = { tier = tier_empire } } }
 		}
 	}
