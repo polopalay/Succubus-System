@@ -1,27 +1,16 @@
 ﻿l_korean:
-  succubus_weight_interaction: "체중 조절"
-  succubus_weight_interaction.desc: "당신의 체중을 완벽한 수준으로 조절합니다."
-
-  succubus_dealing_with_stress_interaction: "스트레스 해소"
-  succubus_dealing_with_stress_interaction.desc: "스트레스와 그로 인한 모든 영향을 제거합니다."
-
   sbs_devil_dead_interaction: "치유"
   sbs_devil_dead_interaction.desc: "모든 종류의 질병, 부상 및 모든 불명예스러운 이름을 제거합니다."
-
-  succubus_imprison_interaction: "감금"
-  succubus_imprison_interaction.desc: "[recipient.GetShortUIName]를 당신의 감옥에 감금합니다."
+  stress_flag: "스트레스"
+  healing_flag: "치유"
+  honor_flag: "명예"
+  dna_flag: "유전자"
 
   sbs_devils_gift_interaction: "정신 파괴"
   sbs_devils_gift_interaction.desc: "[recipient.GetShortUIName]에게 음탕한 생각에 시달리게 합니다."
 
   sbs_devils_curse_interaction: "저주"
   sbs_devils_curse_interaction.desc: "[recipient.GetShortUIName]에게 \"저주\"를 부여합니다."
-
-  sbs_child_interaction: "아이 만들기"
-  sbs_child_interaction.desc: "[recipient.GetShortUIName]의 자녀를 만듭니다."
-
-  sbs_switch_body_interaction: "변경"
-  sbs_switch_body_interaction.desc: "[recipient.GetShortUIName]를 플레이합니다."
 
   sbs_create_lesser_succubus_interaction: "하위 서큐버스 만들기"
   sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName]가 하위 서큐버스가 됩니다."
@@ -31,15 +20,11 @@
   sbs_create_succubus_interaction.desc: "[recipient.GetShortUIName]가 서큐버스가 됩니다."
   recipient_secondary_sbs_create_succubus_interaction: "하나 선택하기"
 
-  succubus_add_courtier_interaction: "법원에 추가"
-  succubus_add_courtier_interaction.desc: "[recipient.GetShortUIName]를 당신의 법원에 추가합니다."
-
   sbs_absorb_interaction: "흡수"
   sbs_absorb_interaction.desc: "[recipient.GetShortUIName]의 힘을 충성도로 흡수합니다."
 
   sbs_makeup_interaction: "메이크업"
   sbs_makeup_interaction.desc: "[recipient.GetShortUIName]에게 메이크업을 합니다."
-
   succubus_no_horn: "뿔 없음"
   succubus_horn0: "긴 곡선 뿔"
   succubus_horn1: "꼬인 뿔"
@@ -73,9 +58,6 @@
   sbs_ask_for_become_succubus_interaction: "섹시한 악마가 되기를 요청하기"
   sbs_ask_for_become_succubus_interaction.desc: "악마에게 섹시한 악마가 되기를 요청하세요."
   recipient_secondary_sbs_ask_for_become_succubus_interaction: "하나 선택하기"
-
-  mind_break_the_saint_interaction: "성인을 깨뜨리기"
-  mind_break_the_saint_interaction.desc: "성인의 정신을 깨뜨립니다."
 
   sbs_looking_new_owner_interaction: "새 주인 찾기"
   sbs_looking_new_owner_interaction.desc: "[recipient.GetShortUIName]을 위한 새 주인을 찾습니다."

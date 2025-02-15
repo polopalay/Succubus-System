@@ -1,30 +1,16 @@
 ﻿l_german:
-  succubus_weight_interaction: "Gewicht anpassen"
-  succubus_weight_interaction.desc: "Passen Sie Ihr Gewicht auf das perfekte Niveau an"
-
-  succubus_dealing_with_stress_interaction: "Stress bewältigen"
-  succubus_dealing_with_stress_interaction.desc: "Eliminieren Sie Stress und alle seine Auswirkungen"
-
   sbs_devil_dead_interaction: "Heilung"
   sbs_devil_dead_interaction.desc: "Beseitigt alle Arten von Krankheiten, Verletzungen und alle unehrenhaften Namen"
-
-  succubus_imprison_interaction: "Einsperren"
-  succubus_imprison_interaction.desc: "Sperren Sie [recipient.GetShortUIName] in Ihrem Verlies ein"
+  stress_flag: "Stress"
+  healing_flag: "Heilung"
+  honor_flag: "Ehre"
+  dna_flag: "Gen"
 
   sbs_devils_gift_interaction: "Geistige Zerrüttung"
   sbs_devils_gift_interaction.desc: "Bringt [recipient.GetShortUIName] dazu, von lüsternen Gedanken heimgesucht zu werden"
 
   sbs_devils_curse_interaction: "Fluch"
   sbs_devils_curse_interaction.desc: "Geben Sie [recipient.GetShortUIName] einen \"Fluch\""
-
-  sbs_child_interaction: "Ein Kind erschaffen"
-  sbs_child_interaction.desc: "Ein Kind erschaffen, das das Kind von [recipient.GetShortUIName] sein wird"
-
-  succubus_rumor_interaction: "Gerüchte verbreiten"
-  succubus_rumor_interaction.desc: "Verbreiten Sie schlechte Gerüchte über [recipient.GetShortUIName]"
-
-  sbs_switch_body_interaction: "Wechseln"
-  sbs_switch_body_interaction.desc: "Inkarniere [recipient.GetShortUIName]"
 
   sbs_create_lesser_succubus_interaction: "Einen niederen Succubus erschaffen"
   sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] wird zu einem niederen Succubus"
@@ -39,14 +25,12 @@
 
   sbs_makeup_interaction: "Make-up"
   sbs_makeup_interaction.desc: "Tragen Sie Make-up auf [recipient.GetShortUIName] auf"
-
   succubus_no_horn: "Ohne Hörner"
   succubus_horn0: "Lange, gebogene Hörner"
   succubus_horn1: "Verdrehte Hörner"
   succubus_horn2: "Spitze Hörner"
   succubus_horn3: "Gebogene Hörner"
   succubus_horn4: "Kleine Hörner"
-
   succubus_no_eyes: "Ohne rauchige Augen"
   succubus_marking_1: "Weinende rauchige Augen"
   succubus_marking_2: "Abgeriebene rauchige Augen"
@@ -74,9 +58,6 @@
   sbs_ask_for_become_succubus_interaction: "Bitte um die Transformation zur Succubus"
   sbs_ask_for_become_succubus_interaction.desc: "Bitte den Teufel, um eine Succubus zu werden."
   recipient_secondary_sbs_ask_for_become_succubus_interaction: "Wähle eine"
-
-  mind_break_the_saint_interaction: "Den Heiligen brechen"
-  mind_break_the_saint_interaction.desc: "Brechen Sie den Geist des Heiligen"
   
   sbs_looking_new_owner_interaction: "Suche nach einem neuen Besitzer"
   sbs_looking_new_owner_interaction.desc: "Suche nach einem neuen Besitzer für [recipient.GetShortUIName]"

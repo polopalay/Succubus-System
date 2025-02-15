@@ -25,10 +25,6 @@
   trait_track_sbs_lesser_succubus: "Pouvoir"
   trait_track_sbs_lesser_succubus_desc: "Elle sert de prostituée bon marché, servant les hommes pour obtenir leur semence."
 
-  trait_deviant_blood: "Sang du Diable"
-  deviant_blood_desc: "[ROOT.GetCharacter.GetName] est un enfant du diable."
-  deviant_blood_character_desc: "[ROOT.GetCharacter.GetName] est un enfant du diable."
-
   trait_sbs_seed_of_destruction: "Graine de destruction"
   sbs_seed_of_destruction_desc: "[ROOT.GetCharacter.GetName] est donné par le diable, est un signe de destruction et de chaos."
   sbs_seed_of_destruction_character_desc: "Les serviteurs d'Abaddon, qui apportent la destruction et le chaos dans le monde."

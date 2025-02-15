@@ -1,32 +1,16 @@
 ﻿l_spanish:
-  succubus_weight_interaction: "Ajustar Peso"
-  succubus_weight_interaction.desc: "Consigue que tu peso esté en el nivel perfecto"
-
-  succubus_dealing_with_stress_interaction: "Manejando el estrés"
-  succubus_dealing_with_stress_interaction.desc: "Elimina el estrés y todos los efectos que trae"
-
-  COA_DESIGNER_CATEGORY_cherilewd: "Lascivo"
-
   sbs_devil_dead_interaction: "Curación"
   sbs_devil_dead_interaction.desc: "Elimina todo tipo de enfermedades, lesiones y todos los nombres vergonzosos"
-
-  succubus_imprison_interaction: "Aprisionar"
-  succubus_imprison_interaction.desc: "Aprisionar a [recipient.GetShortUIName] en tu mazmorras"
+  stress_flag: "Estrés"
+  healing_flag: "Curación"
+  honor_flag: "Honor"
+  dna_flag: "Gen"
 
   sbs_devils_gift_interaction: "El regalo del Diablo"
   sbs_devils_gift_interaction.desc: "Dar a [recipient.GetShortUIName] una \"bendición\""
 
   sbs_devils_curse_interaction: "La maldición del Diablo"
   sbs_devils_curse_interaction.desc: "Dar a [recipient.GetShortUIName] una \"maldición\""
-
-  sbs_child_interaction: "Crear Hijo"
-  sbs_child_interaction.desc: "Crear un hijo que sea hijo de [recipient.GetShortUIName]"
-
-  succubus_rumor_interaction: "Difundir Rumores"
-  succubus_rumor_interaction.desc: "Difundir malos rumores sobre [recipient.GetShortUIName]"
-
-  sbs_switch_body_interaction: "Cambiar"
-  sbs_switch_body_interaction.desc: "Jugar con [recipient.GetShortUIName]"
 
   sbs_create_lesser_succubus_interaction: "Crear Súcubo Menor"
   sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] se convertirá en Súcubo Menor"
@@ -74,9 +58,6 @@
   sbs_ask_for_become_succubus_interaction: "Pedir convertirse en Súcubo"
   sbs_ask_for_become_succubus_interaction.desc: "Pedir al diablo convertirse en un Súcubo"
   recipient_secondary_sbs_ask_for_become_succubus_interaction: "Elegir uno"
-
-  mind_break_the_saint_interaction: "Romper la Mente del Santo"
-  mind_break_the_saint_interaction.desc: "Convertir al santo en un antihéroe, tu esclavo"
 
   sbs_looking_new_owner_interaction: "Buscando un nuevo dueño"
   sbs_looking_new_owner_interaction.desc: "Buscando un nuevo dueño para [recipient.GetShortUIName]"

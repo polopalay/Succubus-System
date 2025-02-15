@@ -12,15 +12,6 @@
  sbs_devils_curse_interaction: "The Devil's curse"
  sbs_devils_curse_interaction.desc: "Give [recipient.GetShortUIName] a \"curse\""
 
- sbs_child_interaction: "Create Child"
- sbs_child_interaction.desc: "Create a child that is the child of [recipient.GetShortUIName]"
-
- succubus_rumor_interaction: "Spreading Rumors"
- succubus_rumor_interaction.desc: "Spreading bad rumors about [recipient.GetShortUIName]"
-
- sbs_switch_body_interaction: "Switch"
- sbs_switch_body_interaction.desc: "Play [recipient.GetShortUIName]"
- 
  sbs_create_lesser_succubus_interaction: "Create Lesser Succubus"
  sbs_create_lesser_succubus_interaction.desc: "[recipient.GetShortUIName] will become Lesser Succubus"
  recipient_secondary_sbs_create_lesser_succubus_interaction: "Choose one"

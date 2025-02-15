@@ -8,29 +8,11 @@
  magic_creation_miscellaneous: "$trinket$"
  artifact_magic_creation: "Magic Creation"
 
- philosopher_stone: "Philosopher's Stone"
- philosopher_stone.d: "The Philosopher's Stone is a legendary alchemical substance said to be capable of turning base metals into gold or silver, and also acting as an elixir of life that grants immortality."
-
  master_dildo: "My Master"
  master_dildo_desc: "Just looking at it makes knees feel weak."
 
  mistress_dildo: "Humble Guardian"
  mistress_dildo_desc: "Just looking at it makes lady parts pulse."
-
- nickname_the_semen_tank: "The Semen Tank"
- nickname_the_semen_tank_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] has a strong passion for semen."
-
- nickname_the_penis_guillotine: "The Penis Guillotine"
- nickname_the_penis_guillotine_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] makes love anywhere, anytime, with anyone."
-
- nickname_the_sex_machine: "The Sex Machine"
- nickname_the_sex_machine_desc: "Semen Extractor, Cock Cutter all these titles are not enough to describe [CHARACTER.GetHerHis|U] talent in sex"
-
- nickname_the_ladycow: "The Ladycow"
- nickname_the_ladycow_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is the cow whore of [CHARACTER.GetHerHis|U] army. my honor and dignity were trampled by my own soldiers."
-
- nickname_the_exhibitionist: "The Exhibitionist"
- nickname_the_exhibitionist_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is famous for [CHARACTER.GetHerHis|U] exhibitionism, public sex, and public urination."
 
  nickname_the_demon_queen: "The Demon Queen"
  nickname_the_demon_queen_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] is a creature of hell who will bring the blessings of evil to the world"
@@ -40,9 +22,6 @@
 
  nickname_the_devil_creation: "Demonic Creatures"
  nickname_the_devil_creation_desc: "Children born from the power of demons, destined to bring chaos and destruction to the world."
-
- nickname_the_antichrist: "The Antichrist"
- nickname_the_antichrist_desc: "The one who betrayed God to follow [CHARACTER.GetHerHis|U] own desires."
 
  d_laamp_saint: "Purification of the Saints"
  d_laamp_missionary: "The Missionaries of Jesus"
