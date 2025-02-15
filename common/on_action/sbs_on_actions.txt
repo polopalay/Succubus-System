@@ -3,7 +3,7 @@ random_yearly_everyone_pulse = {
 		random_ntr_on_action
 		sbs_devil_on_action
 		hidden_effect_on_action
-		sbs_sbs_seed_of_destruction_on_action
+		sbs_seed_of_destruction_on_action
 	}
 }
 
@@ -129,7 +129,7 @@ sbs_devil_on_action = {
 	}
 }
 
-sbs_sbs_seed_of_destruction_on_action = {
+sbs_seed_of_destruction_on_action = {
 	trigger = {
 		is_adult = yes
 		is_female = yes
