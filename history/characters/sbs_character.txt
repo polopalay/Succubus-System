@@ -30,7 +30,6 @@
 		effect = {
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
-			add_character_flag = carn_cannot_be_enslaved
 			set_landless_government_effect = yes
 			add_piety_level = 6
 			add_prestige_level = 6
@@ -110,7 +109,6 @@ catarina_character = {
 		effect = {
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
-			add_character_flag = carn_cannot_be_enslaved
 			set_landless_government_effect = yes
 			add_piety_level = 6
 			add_prestige_level = 6
@@ -186,7 +184,6 @@ lilim_character = {
 			give_nickname = nickname_the_devil_creation
 			add_character_flag = has_scripted_appearance
 			add_character_flag = do_not_generate_starting_family
-			add_character_flag = carn_cannot_be_enslaved
 			set_immortal_age = 18
 		}
 	}
