@@ -11,7 +11,6 @@
 				has_trait = sbs_succubus
 				has_trait = sbs_lesser_succubus
 			}
-			is_ruler = yes
 			NOT = { is_at_war_with = scope:recipient }
 		}
 		scope:recipient = {
@@ -88,55 +87,55 @@
 	on_accept = {
 		scope:actor = {
 			if = {
-				limit = { scope:sbs_lesser_succubus = yes }
+				limit = { scope:lesser_succubus = yes }
 				if = {
-					limit = { has_character_flag = pussy_cum }
+					limit = { scope:recipient = { has_character_flag = pussy_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
 				}
 				if = {
-					limit = { has_character_flag = ass_cum }
+					limit = { scope:recipient = { has_character_flag = ass_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
 				}
 				if = {
-					limit = { has_character_flag = face_cum }
+					limit = { scope:recipient = { has_character_flag = face_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
 				}
 				if = {
-					limit = { has_character_flag = body_cum }
+					limit = { scope:recipient = { has_character_flag = body_cum } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 4 }
 				}
 				if = {
-					limit = { has_trait = sbs_demon }
+					limit = { scope:recipient = { has_trait = sbs_demon } }
 					add_trait_xp = { trait = sbs_lesser_succubus value = 10 }
 				}
 			}
 			else_if = {
 				limit = { scope:power = yes }
 				if = {
-					limit = { has_character_flag = pussy_cum }
+					limit = { scope:recipient = { has_character_flag = pussy_cum } }
 					add_trait_xp = { trait = sbs_succubus track = power value = 2 }
 				}
 				if = {
-					limit = { has_character_flag = ass_cum }
+					limit = { scope:recipient = { has_character_flag = ass_cum } }
 					add_trait_xp = { trait = sbs_succubus track = power value = 2 }
 				}
 				if = {
-					limit = { has_trait = sbs_demon }
+					limit = { scope:recipient = { has_trait = sbs_demon } }
 					add_trait_xp = { trait = sbs_succubus track = power value = 5 }
 				}
 			}
 			else_if = {
 				limit = { scope:daring = yes }
 				if = {
-					limit = { has_character_flag = body_cum }
+					limit = { scope:recipient = { has_character_flag = body_cum } }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 2 }
 				}
 				if = {
-					limit = { has_character_flag = face_cum }
+					limit = { scope:recipient = { has_character_flag = face_cum } }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 2 }
 				}
 				if = {
-					limit = { has_trait = sbs_demon }
+					limit = { scope:recipient = { has_trait = sbs_demon } }
 					add_trait_xp = { trait = sbs_succubus track = daring value = 5 }
 				}
 			}

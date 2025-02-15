@@ -196,8 +196,8 @@ sbs_succubus = {
 }
 
 sbs_lesser_succubus = {
-	category = sbs_lesser_succubus
-	icon = lesser_succubus.dds
+	category = health
+	icon = sbs_lesser_succubus.dds
 
 	immortal = yes
 	no_prowess_loss_from_age = yes

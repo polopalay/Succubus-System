@@ -1,5 +1,5 @@
 ﻿sbs_ask_for_become_succubus_interaction = {
-	icon = devil
+	icon = sbs_ask_for_become_succubus_interaction
 	desc = sbs_ask_for_become_succubus_interaction.desc
 	category = interaction_category_diplomacy
 	use_diplomatic_range = {
